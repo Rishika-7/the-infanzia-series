@@ -1,4 +1,4 @@
-# worditkid
+# word_it_kid
 
 A new Flutter application.
 

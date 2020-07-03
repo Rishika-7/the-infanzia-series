@@ -1,4 +1,4 @@
-package com.example.worditkid
+package com.example.word_it_kid
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

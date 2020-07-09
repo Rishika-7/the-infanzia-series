@@ -134,7 +134,7 @@ class HomeState extends State<Home>{
             ),
 
             Container(
-              height: 50,
+              height: 22,
               width: 50,
               child: Material(
                 borderRadius: BorderRadius.circular(120.0),

@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class RedirectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
       home: Scaffold(
 
         body: Container(
@@ -25,6 +23,7 @@ class MyApp extends StatelessWidget {
                         height: 120,
                         width: 200,
                         alignment: Alignment.topRight,
+                        fit: BoxFit.fill,
                       ),
                       Container(
                           alignment: Alignment.bottomRight,

@@ -44,8 +44,8 @@ class DemoCard extends State<Card> {
 
   build(context) {
     return Container(
-      alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.only(bottom: 50, left: 24, right: 24),
+      alignment: Alignment.center,
+      margin: EdgeInsets.all(24),
       padding: EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
 
@@ -56,6 +56,15 @@ class DemoCard extends State<Card> {
         children: <Widget>[
 
           Container(
+            height: 200,
+            child: Image(
+              image: AssetImage("Images/Heading.png"),
+              fit: BoxFit.contain,
+            ),
+          ),
+
+
+           Container(
             alignment: Alignment.center,
 
             child: TextField(
@@ -85,8 +94,9 @@ class DemoCard extends State<Card> {
             ),
           ),
 
-
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
 
           Text(
             'SELECT GROUP',
@@ -106,7 +116,7 @@ class DemoCard extends State<Card> {
                 Container(
                   padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.green[800],
                     borderRadius: BorderRadius.all(Radius.circular(50)),
                   ),
 
@@ -119,6 +129,7 @@ class DemoCard extends State<Card> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+
                       Icon(Icons.pets),
 
                       SizedBox(
@@ -138,7 +149,7 @@ class DemoCard extends State<Card> {
                 Container(
                   padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.green[800],
                     borderRadius: BorderRadius.all(Radius.circular(50)),
                   ),
 
@@ -151,6 +162,7 @@ class DemoCard extends State<Card> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+
                       Icon(Icons.pets),
 
                       SizedBox(
@@ -163,6 +175,7 @@ class DemoCard extends State<Card> {
                           groupValue: radioValue,
                         ),
                       ),
+
                     ],
                   ),
                 ),

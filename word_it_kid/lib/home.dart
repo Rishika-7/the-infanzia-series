@@ -45,7 +45,7 @@ class DemoCard extends State<Card> {
   build(context) {
     return Container(
       alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.only(bottom: 80, left: 24, right: 24),
+      margin: EdgeInsets.only(bottom: 50, left: 24, right: 24),
       padding: EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
 

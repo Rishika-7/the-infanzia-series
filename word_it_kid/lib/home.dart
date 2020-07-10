@@ -9,18 +9,17 @@ class Home extends StatefulWidget {
   HomeState createState() => new HomeState();
 }
 
-class HomeState extends State<Home>{
+class HomeState extends State<Home> {
   String name = "";
   String radioValue;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       resizeToAvoidBottomPadding: false,
-
       body: Container(
         alignment: Alignment.center,
+        height: MediaQuery.of(context).size.height,
 
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -28,119 +27,157 @@ class HomeState extends State<Home>{
             fit: BoxFit.fill,
           ),
         ),
+        child: Card(),
+      ),
+    );
+  }
+}
 
-        child: Column(
-          children: <Widget>[
+class Card extends StatefulWidget {
+  @override
+  DemoCard createState() => new DemoCard();
+}
 
-            Row(
+class DemoCard extends State<Card> {
+  String name = "";
+  String radioValue;
+
+  build(context) {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      margin: EdgeInsets.only(bottom: 80, left: 24, right: 24),
+      padding: EdgeInsets.all(8),
+      width: MediaQuery.of(context).size.width,
+
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+
+        children: <Widget>[
+
+          Container(
+            alignment: Alignment.center,
+
+            child: TextField(
+              autofocus: true,
+              cursorColor: Colors.green,
+              textDirection: TextDirection.ltr,
+
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(left: 100.0),
+                labelText: 'ENTER NAME',
+                labelStyle: TextStyle(
+                  color: Colors.yellow,
+                  fontSize: 25.0,
+                ),
+
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.green,
+                  ),
+                ),
+              ),
+
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.green,
+              ),
+            ),
+          ),
+
+
+          SizedBox(height: 20,),
+
+          Text(
+            'SELECT GROUP',
+            style: TextStyle(
+              color: Colors.yellow,
+              fontSize: 20.0,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(left: 65, right: 65),
-                    padding: EdgeInsets.only(top: 380.0),
-                    child: TextField(
-                      autofocus: true,
-                      cursorColor: Colors.green,
-                      textDirection: TextDirection.ltr,
 
-                      onChanged: (String textinput) {
-                        setState(() {
-                          name = textinput;
-                        });
-                      },
+                Container(
+                  padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
 
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(left: 70),
-                        labelText: 'ENTER NAME',
-                        labelStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'PRE-\nSCHOOL',
+                        style: TextStyle(
                           color: Colors.yellow,
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.green,
-                            )
+                        textAlign: TextAlign.center,
+                      ),
+                      Icon(Icons.pets),
+
+                      SizedBox(
+                        child: Radio(
+                          onChanged: (String val) {
+                            setRadioValue(val);
+                          },
+                          activeColor: Colors.yellow,
+                          value: 'pre-school',
+                          groupValue: radioValue,
                         ),
                       ),
-
-                      style: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.green,
-                      ),
-                    ),
+                    ],
                   ),
                 ),
-              ],
-            ),
 
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(left: 65, right: 65),
-                    padding: EdgeInsets.only(top: 30.0),
+                Container(
+                  padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
 
-                    child: Text(
-                      "SELECT GROUP",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.yellow,
-                        decoration: TextDecoration.none,
-                        fontSize: 20.0,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'KINDER\nGARTEN',
+                        style: TextStyle(
+                          color: Colors.yellow,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                      textDirection: TextDirection.ltr,
-                    ),
+                      Icon(Icons.pets),
+
+                      SizedBox(
+                        child: Radio(
+                          onChanged: (String val) {
+                            setRadioValue(val);
+                          },
+                          activeColor: Colors.yellow,
+                          value: 'kindergarten',
+                          groupValue: radioValue,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+
               ],
             ),
+          ),
 
-            Row(
+          SizedBox(height: 20,),
 
+          Container(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-
-                Padding(
-                  padding: EdgeInsets.only(top: 160),
-                ),
-
-                SizedBox(
-                  width: 145,
-                  child: Radio(
-                    onChanged: (String val) {
-                      setRadioValue(val);
-                    },
-                    activeColor: Colors.green,
-                    value: 'pre-school',
-                    groupValue: radioValue,
-                  ),
-                ),
-
-                SizedBox(
-                  width: 110,
-                  child: Radio(
-                    onChanged: (String val) {
-                      setRadioValue(val);
-                    },
-                    activeColor: Colors.green,
-                    value: 'kindergarten',
-                    groupValue: radioValue,
-                  ),
-                )
-              ],
-            ),
-
-            Container(
-              height: 22,
-              width: 50,
-              child: Material(
-                borderRadius: BorderRadius.circular(120.0),
-                color: Colors.green,
-                elevation: 7.0,
-                child: FloatingActionButton(
+                FloatingActionButton(
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -158,10 +195,10 @@ class HomeState extends State<Home>{
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

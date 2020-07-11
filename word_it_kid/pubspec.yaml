@@ -55,6 +55,8 @@ flutter:
     - Images/LearnSymbol.png
     - Images/HomeBG.png
     - Images/Heading.png
+    - Images/gtc.png
+    - Images/GameBG.png
     - 'success.mp3'
 
 

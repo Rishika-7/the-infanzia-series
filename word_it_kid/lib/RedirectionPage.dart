@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'game.dart';
+
 
 class RedirectionPage extends StatelessWidget {
   @override
@@ -108,7 +110,13 @@ class RedirectionPage extends StatelessWidget {
                       Container(
                           alignment: Alignment.topRight,
                           child :RaisedButton(
-                              onPressed: (){},
+                              onPressed: () {
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Game();
+                                })
+                                );
+                              },
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)

@@ -2,21 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'PressStart',
-      ),
-      home: ColorGame(),
-    );
-  }
-}
-
 class ColorGame extends StatefulWidget {
   ColorGame({Key key}) : super(key: key);
 

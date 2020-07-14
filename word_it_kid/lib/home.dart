@@ -63,6 +63,15 @@ class DemoCard extends State<Card> {
             ),
           ),
 
+          Text(
+            'ENTER NAME',
+            style: TextStyle(
+              color: Colors.yellow,
+              fontSize: 20.0,
+            ),
+            textAlign: TextAlign.center,
+          ),
+
 
            Container(
             alignment: Alignment.center,
@@ -71,15 +80,9 @@ class DemoCard extends State<Card> {
               autofocus: true,
               cursorColor: Colors.green,
               textDirection: TextDirection.ltr,
+              textAlign: TextAlign.center,
 
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.only(left: 100.0),
-                labelText: 'ENTER NAME',
-                labelStyle: TextStyle(
-                  color: Colors.yellow,
-                  fontSize: 25.0,
-                ),
-
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.green,

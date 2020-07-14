@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:worditkid/Dictionary.dart';
 import 'package:worditkid/rhymes.dart';
 import 'game.dart';
 
@@ -30,7 +31,13 @@ class RedirectionPage extends StatelessWidget {
                       Container(
                           alignment: Alignment.bottomRight,
                           child : RaisedButton(
-                              onPressed: (){},
+                              onPressed: () {
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return FirstRoute();
+                                })
+                                );
+                              },
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)

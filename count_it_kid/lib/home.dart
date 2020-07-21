@@ -1,4 +1,4 @@
-import 'package:countitkid/redirection.dart';
+import 'package:countitkid/Screens/redirection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

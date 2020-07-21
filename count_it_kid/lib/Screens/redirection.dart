@@ -1,4 +1,4 @@
-import 'package:countitkid/rhymes.dart';
+import 'package:countitkid/Screens/rhymes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

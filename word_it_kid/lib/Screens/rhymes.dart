@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Rhyme extends StatefulWidget {
   @override
@@ -39,39 +40,105 @@ class Grid extends StatefulWidget {
 }
 
 class GridApp extends State<Grid> {
-  String name = "";
-  String radioValue;
+  YoutubePlayerController _controller1 = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/yCjJyiqpAuU"),
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      )
+  );
 
-  build(context) {
+  YoutubePlayerController _controller2 = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/F4tHL8reNCs"),
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      )
+  );
+
+  YoutubePlayerController _controller3 = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/MR5XSOdjKMA"),
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      )
+  );
+
+  YoutubePlayerController _controller4 = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/0oKreL1jvkg"),
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      )
+  );
+
+  YoutubePlayerController _controller5 = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/LIWbUjHZFTw"),
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      )
+  );
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
-      margin: EdgeInsets.all(25),
+      margin: EdgeInsets.only(top: 100, bottom: 80, left: 40, right: 40),
 
-      child: GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        scrollDirection: Axis.vertical,
+      child: ListView(
         children: <Widget>[
 
           Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.green,
+            padding: EdgeInsets.all(10),
+            height: 200,
+            child: YoutubePlayer(
+              controller: _controller1,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.blueAccent,
+            ),
           ),
 
           Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.pink,
+            padding: EdgeInsets.all(10),
+            height: 200,
+            child: YoutubePlayer(
+              controller: _controller2,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.blueAccent,
+            ),
           ),
 
           Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.purple,
+            padding: EdgeInsets.all(10),
+            height: 200,
+            child: YoutubePlayer(
+              controller: _controller3,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.blueAccent,
+            ),
+
           ),
 
           Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.blue,
+            padding: EdgeInsets.all(10),
+            height: 200,
+            child: YoutubePlayer(
+              controller: _controller4,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.blueAccent,
+            ),
+
+          ),
+
+          Container(
+            padding: EdgeInsets.all(10),
+            height: 200,
+            child: YoutubePlayer(
+              controller: _controller5,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.blueAccent,
+            ),
           ),
         ],
       ),

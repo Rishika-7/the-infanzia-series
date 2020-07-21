@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:audioplayers/audio_cache.dart';
-
+import 'package:flutter_tts/flutter_tts.dart';
 class FirstRoute extends StatefulWidget {
   @override
   _FirstRouteState createState() => _FirstRouteState();
@@ -186,6 +185,7 @@ class _FirstRouteState extends State<FirstRoute> {
 }
 
 class Detail extends StatelessWidget {
+  final FlutterTts _flutterTts = FlutterTts();
   @override
   String alphabet;
   String image;
@@ -199,6 +199,9 @@ class Detail extends StatelessWidget {
   Detail({this.alphabet, this.image, this.image2, this.image3, this.image4,
     this.text1, this.text2, this.text3, this.text4});
   Widget build(BuildContext context) {
+    speak() async{
+      await _flutterTts.speak(alphabet);
+    }
     return Scaffold(
       backgroundColor: Colors.green[900],
       body:  new ListView(
@@ -214,7 +217,10 @@ class Detail extends StatelessWidget {
                 ),
               ),
               Container(
-                child: _Audioplayer(),
+                  child: IconButton(
+                      icon: Icon(Icons.volume_up),
+                      onPressed:  () => speak()
+                  )
               )
             ],
           ),
@@ -316,22 +322,4 @@ class Detail extends StatelessWidget {
   }
 }
 
-class _Audioplayer extends StatefulWidget {
-  @override
-  __AudioplayerState createState() => __AudioplayerState();
-}
 
-class __AudioplayerState extends State<_Audioplayer> {
-  static AudioCache audioCache = AudioCache();
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: IconButton(
-            icon: Icon(Icons.volume_up),
-            onPressed:  () async{
-              audioCache.play('Sounds/a (1).mp3');
-            }
-        )
-    );
-  }
-}

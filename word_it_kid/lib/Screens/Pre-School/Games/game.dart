@@ -2,7 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:worditkid/ColorMatchGame.dart';
+
+import 'ColorMatchGame.dart';
 
 class Game extends StatefulWidget {
   @override

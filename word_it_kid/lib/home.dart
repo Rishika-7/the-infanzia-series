@@ -2,7 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'RedirectionPage.dart';
+
+import 'Screens/RedirectionPage.dart';
+
 
 class Home extends StatefulWidget {
   @override

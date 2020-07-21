@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:worditkid/Dictionary.dart';
-import 'package:worditkid/rhymes.dart';
-import 'game.dart';
+import 'package:worditkid/Screens/rhymes.dart';
+
+import 'Pre-School/Games/game.dart';
+import 'Pre-School/Learn/Dictionary.dart';
 
 
 class RedirectionPage extends StatelessWidget {
@@ -165,13 +166,8 @@ class RedirectionPage extends StatelessWidget {
               ),
             ),
           ),
-
         ),
-
-
-
       ),
     );
-
   }
 }

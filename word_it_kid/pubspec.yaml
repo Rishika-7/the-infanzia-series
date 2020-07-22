@@ -31,6 +31,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   flutter_tts: ^0.6.0
   audioplayers: 0.11.0
+  flip_card: ^0.4.4
 
 dev_dependencies:
   flutter_test:
@@ -165,6 +166,18 @@ flutter:
     - Images/X-mas tree.png
     - Images/X-ray.jpg
     - Images/Forest.png
+    - Images/RhymingWords/call.png
+    - Images/RhymingWords/tall.png
+    - Images/RhymingWords/jar.png
+    - Images/RhymingWords/war.png
+    - Images/RhymingWords/bar.png
+    - Images/RhymingWords/pot.png
+    - Images/RhymingWords/dot.png
+    - Images/RhymingWords/cot.png
+    - Images/RhymingWords/can.png
+    - Images/RhymingWords/pan.png
+    - Images/RhymingWords/grass.png
+    - Images/RhymingWords/hot.png
 
 
 

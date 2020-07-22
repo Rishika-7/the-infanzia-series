@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'RhymingWords2.dart';
-void main(){
-  runApp(
-    MaterialApp(
-      title: "Rhyming Words",
-      home: rhymingPage(),
-    )
-  );
-}
 
 class rhymingPage extends StatefulWidget {
   @override
@@ -20,6 +12,8 @@ class _rhymingPageState extends State<rhymingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
+
         decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -28,6 +22,7 @@ class _rhymingPageState extends State<rhymingPage> {
               fit: BoxFit.fill,
             )
         ),
+
         child:  Column(
           children: <Widget>[
             Row(
@@ -46,7 +41,9 @@ class _rhymingPageState extends State<rhymingPage> {
                     ),
                   ),
                 )
-              ],),
+              ],
+            ),
+
             Row(children: <Widget>[
               Container(
                 height:  50,
@@ -75,8 +72,9 @@ class _rhymingPageState extends State<rhymingPage> {
                             text3: "Mat",
                             image4: "Images/rat.png",
                             text4: "Rat",
+
                             audiofile: "Hello. We will learn about"
-                                "rhyming words that end with . at. Like a bat.   a cat. a mat. "
+                                "rhyming words that end with at. Like a bat.   a cat. a mat. "
                                 "and a rat. All these words have A T at the end.",
                           ),));
 

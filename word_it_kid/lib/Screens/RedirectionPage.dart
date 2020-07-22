@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:worditkid/Screens/rhymes.dart';
 
+import 'package:worditkid/Screens/Pre-School/Learn/levels.dart';
+import 'package:worditkid/Screens/rhymes.dart';
 import 'Pre-School/Games/game.dart';
-import 'Pre-School/Learn/Dictionary.dart';
+
 
 
 class RedirectionPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class RedirectionPage extends StatelessWidget {
                               onPressed: () {
                                 debugPrint('Clicked');
                                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return FirstRoute();
+                                  return Levels();
                                 })
                                 );
                               },

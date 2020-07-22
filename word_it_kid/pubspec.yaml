@@ -178,6 +178,11 @@ flutter:
     - Images/RhymingWords/pan.png
     - Images/RhymingWords/grass.png
     - Images/RhymingWords/hot.png
+    - Images/Levels/LearnBG.png
+    - Images/Levels/alphanary.png
+    - Images/Levels/rhyming_words.png
+    - Images/Levels/form_words.png
+    - Images/Levels/intro.png
 
 
 

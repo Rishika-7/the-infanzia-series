@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:worditkid/Screens/Games/game.dart';
+import 'package:worditkid/Screens/Kindergarten/levelsKG.dart';
+import 'package:worditkid/Screens/Rhymes/rhymes.dart';
 
 
 class KG_RP extends StatelessWidget {
@@ -30,7 +33,11 @@ class KG_RP extends StatelessWidget {
                           child : RaisedButton(
 
                               onPressed: () {
-
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Levels();
+                                })
+                                );
                               },
 
                               color: Colors.amber,
@@ -68,8 +75,13 @@ class KG_RP extends StatelessWidget {
                           alignment: Alignment.center,
                           child :RaisedButton(
                               onPressed: () {
-
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Rhyme();
+                                })
+                                );
                               },
+
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
@@ -114,9 +126,15 @@ class KG_RP extends StatelessWidget {
                       Container(
                           alignment: Alignment.topRight,
                           child :RaisedButton(
-                              onPressed: () {
 
+                              onPressed: () {
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Game();
+                                })
+                                );
                               },
+
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)

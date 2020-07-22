@@ -24,7 +24,7 @@ class RhymeState extends State<Rhyme> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/RhymesBG.png"),
+            image: AssetImage("Images/Rhymes/RhymesBG.png"),
             fit: BoxFit.fill,
           ),
         ),

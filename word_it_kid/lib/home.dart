@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'Screens/RedirectionPage.dart';
+import 'Screens/Kindergarten/redirectionKG.dart';
+import 'Screens/Pre-School/redirectionPS.dart';
+
 
 
 class Home extends StatefulWidget {
@@ -25,7 +27,7 @@ class HomeState extends State<Home> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/HomeBG.png"),
+            image: AssetImage("Images/Home/HomeBG.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -60,7 +62,7 @@ class DemoCard extends State<Card> {
           Container(
             height: 200,
             child: Image(
-              image: AssetImage("Images/Heading.png"),
+              image: AssetImage("Images/Home/Heading.png"),
               fit: BoxFit.contain,
             ),
           ),
@@ -199,10 +201,16 @@ class DemoCard extends State<Card> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return RedirectionPage();
+                      if(radioValue == 'pre-school') {
+                        return PS_RP();
+                      }
+                      else{
+                        return KG_RP();
+                      }
                     })
                     );
                   },
+                  backgroundColor: Colors.green,
                   child: Center(
                     child: Text(
                       'GO',

@@ -25,7 +25,7 @@ class GameState extends State<Game> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/GameBG.png"),
+            image: AssetImage("Images/Games/GameBG.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -63,7 +63,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/gtc.png"),
+                image: AssetImage("Images/Games/gtc.png"),
                 fit: BoxFit.fill,
               ),
             ),

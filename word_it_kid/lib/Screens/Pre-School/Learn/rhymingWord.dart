@@ -17,7 +17,7 @@ class _rhymingPageState extends State<rhymingPage> {
         decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                "Images/background.png",
+                "Images/Redirection/background.png",
               ),
               fit: BoxFit.fill,
             )

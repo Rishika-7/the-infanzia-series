@@ -48,18 +48,18 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - Images/background.png
-    - Images/frog.png
-    - Images/girrafe.png
-    - Images/bird.png
-    - Images/singSymbol.png
-    - Images/gamesSymbol.png
-    - Images/LearnSymbol.png
-    - Images/HomeBG.png
-    - Images/Heading.png
-    - Images/gtc.png
-    - Images/GameBG.png
-    - Images/RhymesBG.png
+    - Images/Redirection/background.png
+    - Images/Redirection/frog.png
+    - Images/Redirection/girrafe.png
+    - Images/Redirection/bird.png
+    - Images/Redirection/singSymbol.png
+    - Images/Redirection/gamesSymbol.png
+    - Images/Redirection/LearnSymbol.png
+    - Images/Home/HomeBG.png
+    - Images/Home/Heading.png
+    - Images/Games/gtc.png
+    - Images/Games/GameBG.png
+    - Images/Rhymes/RhymesBG.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

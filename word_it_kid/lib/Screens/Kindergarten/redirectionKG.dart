@@ -1,13 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:worditkid/Screens/Pre-School/Learn/levels.dart';
-import 'package:worditkid/Screens/rhymes.dart';
-import 'Pre-School/Games/game.dart';
 
-
-
-class RedirectionPage extends StatelessWidget {
+class KG_RP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +19,7 @@ class RedirectionPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Image.asset("Images/bird.png",
+                      Image.asset("Images/Redirection/bird.png",
                         height: 120,
                         width: 200,
                         alignment: Alignment.topRight,
@@ -33,13 +28,11 @@ class RedirectionPage extends StatelessWidget {
                       Container(
                           alignment: Alignment.bottomRight,
                           child : RaisedButton(
+
                               onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Levels();
-                                })
-                                );
+
                               },
+
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
@@ -47,7 +40,7 @@ class RedirectionPage extends StatelessWidget {
                               child: Row(
                                 children: <Widget>[
                                   Image.asset(
-                                    "Images/LearnSymbol.png",
+                                    "Images/Redirection/LearnSymbol.png",
                                     width: 30,
                                     height: 30,
                                   ),
@@ -75,11 +68,7 @@ class RedirectionPage extends StatelessWidget {
                           alignment: Alignment.center,
                           child :RaisedButton(
                               onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Rhyme();
-                                })
-                                );
+
                               },
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
@@ -87,7 +76,7 @@ class RedirectionPage extends StatelessWidget {
                               ) ,
                               child: Row(
                                 children: <Widget>[
-                                  Image.asset("Images/singSymbol.png",
+                                  Image.asset("Images/Redirection/singSymbol.png",
                                     width: 30,
                                     height: 30,
                                     alignment: Alignment.bottomLeft,),
@@ -111,13 +100,13 @@ class RedirectionPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Image.asset("Images/girrafe.png",
+                      Image.asset("Images/Redirection/girrafe.png",
                         height: 650,
                         width: 150,
                         alignment: Alignment.bottomLeft,
                       ),
                       Image.asset(
-                        "Images/frog.png",
+                        "Images/Redirection/frog.png",
                         height: 70,
                         width:  100,
                         alignment: Alignment.bottomCenter,
@@ -126,11 +115,7 @@ class RedirectionPage extends StatelessWidget {
                           alignment: Alignment.topRight,
                           child :RaisedButton(
                               onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Game();
-                                })
-                                );
+
                               },
                               color: Colors.amber,
                               shape: RoundedRectangleBorder(
@@ -139,7 +124,7 @@ class RedirectionPage extends StatelessWidget {
                               child: Row(
                                 children: <Widget>[
                                   Image.asset(
-                                    "Images/gamesSymbol.png",
+                                    "Images/Redirection/gamesSymbol.png",
                                     width: 20,
                                     height: 20,
                                   ),
@@ -162,13 +147,18 @@ class RedirectionPage extends StatelessWidget {
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
               image:  DecorationImage(
-                  image: AssetImage("Images/background.png"),
+                  image: AssetImage("Images/Redirection/background.png"),
                   fit: BoxFit.fill
               ),
             ),
           ),
+
         ),
+
+
+
       ),
     );
+
   }
 }

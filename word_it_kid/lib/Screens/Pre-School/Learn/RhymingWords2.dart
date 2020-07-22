@@ -59,7 +59,7 @@ class _secondPageState extends State<secondPage> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                "Images/background.png",
+                "Images/Redirection/background.png",
               ),
               fit: BoxFit.fill,
             )
@@ -81,7 +81,7 @@ class _secondPageState extends State<secondPage> {
                     ),
                   ),
                   Container(
-                    child: Image.asset("Images/bird.png",
+                    child: Image.asset("Images/Redirection/bird.png",
                       height: 100,
                       width: 92,
                       alignment: Alignment.topRight,),

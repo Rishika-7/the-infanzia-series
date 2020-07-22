@@ -55,147 +55,156 @@ class _secondPageState extends State<secondPage> {
       await _flutterTts.speak(spk);
     }
     return Scaffold(
-        backgroundColor: Colors.green[900],
-        body: ListView(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Text(content,
-                  style: TextStyle(
-                    fontSize: 200,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.amber,
-                  ),),
-                Container(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "Images/background.png",
+              ),
+              fit: BoxFit.fill,
+            )
+          ),
+          child: ListView(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Text(content,
+                    style: TextStyle(
+                      fontSize: 200,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amber,
+                    ),),
+                  Container(
                     child: IconButton(
                         icon: Icon(Icons.volume_up),
                         onPressed:  () => speak(audiofile)
                     ),
-                ),
-                Container(
-                  child: Image.asset("Images/bird.png",
-                  height: 100,
-                  width: 92,
-                  alignment: Alignment.topRight,),
+                  ),
+                  Container(
+                    child: Image.asset("Images/bird.png",
+                      height: 100,
+                      width: 92,
+                      alignment: Alignment.topRight,),
 
-                )
-              ],
-            ),
+                  )
+                ],
+              ),
 
-            Row(
+              Row(
 
-              children: <Widget>[
-                FlipCard(
-                    front: Container(
-                      margin: EdgeInsets.all(40),
-                      padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.amber,
-                      ),
-                      height: 150,
-                      width: 120,
-                      child: Text(text1,
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold,
-
+                children: <Widget>[
+                  FlipCard(
+                      front: Container(
+                        margin: EdgeInsets.all(40),
+                        padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.amber,
                         ),
-                        textAlign: TextAlign.center,),
-                    ),
-                    back: Container(
-                      margin: EdgeInsets.all(40),
-                      height: 150,
-                      width: 120,
-                      color: Colors.white,
-                      child: Image.asset(image1),
-                    )
-                ),
-                FlipCard(
-                    front: Container(
-                      margin: EdgeInsets.fromLTRB(0,40,0,40),
-                      padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.pink,
-                      ),
-                      height: 150,
-                      width: 125,
-                      child: Text(text2,
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold,
+                        height: 150,
+                        width: 120,
+                        child: Text(text1,
+                          style: TextStyle(
+                            fontSize: 50,
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold,
 
-                        ),),
-                    ),
-                    back: Container(
-                      margin: EdgeInsets.fromLTRB(0,40,0,40),
-                      color: Colors.white,
-                      height: 150,
-                      width: 125,
-                      child: Image.asset(image2),
-                    )
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                FlipCard(
-                    front: Container(
-                      margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
-                      height: 150,
-                      width: 120,
-                      padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.blue,
+                          ),
+                          textAlign: TextAlign.center,),
                       ),
-                      child: Text(text3,
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold,
-                        ),),
-                    ),
-                    back: Container(
-                      margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
-                      color: Colors.white,
-                      height: 150,
-                      width: 120,
-                      child: Image.asset(image3),
-                    )
-                ),
-                FlipCard(
-                    front: Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
-                      padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.lightGreenAccent,
-                      ),
-                      height: 150,
-                      width: 120,
-                      child: Text(text4,
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.green[900],
-                          fontWeight: FontWeight.bold,
-                        ),),
-                    ),
-                    back: Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
-                      color: Colors.white,
-                      height: 150,
-                      width: 120,
-                      child: Image.asset(image4),
-                    )
-                ),
-              ],
-            ),
+                      back: Container(
+                        margin: EdgeInsets.all(40),
+                        height: 150,
+                        width: 120,
+                        color: Colors.white,
+                        child: Image.asset(image1),
+                      )
+                  ),
+                  FlipCard(
+                      front: Container(
+                        margin: EdgeInsets.fromLTRB(0,40,0,40),
+                        padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.pink,
+                        ),
+                        height: 150,
+                        width: 125,
+                        child: Text(text2,
+                          style: TextStyle(
+                            fontSize: 50,
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold,
 
-          ],
+                          ),),
+                      ),
+                      back: Container(
+                        margin: EdgeInsets.fromLTRB(0,40,0,40),
+                        color: Colors.white,
+                        height: 150,
+                        width: 125,
+                        child: Image.asset(image2),
+                      )
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  FlipCard(
+                      front: Container(
+                        margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
+                        height: 150,
+                        width: 120,
+                        padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.blue,
+                        ),
+                        child: Text(text3,
+                          style: TextStyle(
+                            fontSize: 50,
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold,
+                          ),),
+                      ),
+                      back: Container(
+                        margin: EdgeInsets.fromLTRB(40, 0, 40, 40),
+                        color: Colors.white,
+                        height: 150,
+                        width: 120,
+                        child: Image.asset(image3),
+                      )
+                  ),
+                  FlipCard(
+                      front: Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
+                        padding: EdgeInsets.fromLTRB(10, 35, 10, 20),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.lightGreenAccent,
+                        ),
+                        height: 150,
+                        width: 120,
+                        child: Text(text4,
+                          style: TextStyle(
+                            fontSize: 50,
+                            color: Colors.green[900],
+                            fontWeight: FontWeight.bold,
+                          ),),
+                      ),
+                      back: Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
+                        color: Colors.white,
+                        height: 150,
+                        width: 120,
+                        child: Image.asset(image4),
+                      )
+                  ),
+                ],
+              ),
+
+            ],
+          ),
         )
     );
   }

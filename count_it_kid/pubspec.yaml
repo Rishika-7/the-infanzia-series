@@ -59,6 +59,7 @@ flutter:
     - Images/RhymesBG.png
     - Images/GameBG.png
     - Images/gtc.png
+    - Images/ttt.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,4 @@
+import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
 import 'package:countitkid/Screens/Pre-School/Games/game.dart';
 import 'package:countitkid/Screens/rhymes.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,7 +31,11 @@ class RedirectionPage extends StatelessWidget {
                           alignment: Alignment.bottomRight,
                           child : RaisedButton(
                               onPressed: () {
-
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return FirstRoute();
+                                })
+                                );
                               },
                               color: Colors.deepPurpleAccent,
                               shape: RoundedRectangleBorder(

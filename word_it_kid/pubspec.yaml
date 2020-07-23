@@ -58,6 +58,7 @@ flutter:
     - Images/Home/HomeBG.png
     - Images/Home/Heading.png
     - Images/Games/gtc.png
+    - Images/Games/ttt.png
     - Images/Games/GameBG.png
     - Images/Rhymes/RhymesBG.png
     - 'success.mp3'

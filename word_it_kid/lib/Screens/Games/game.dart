@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:worditkid/Screens/Games/TicTacToe.dart';
 
 import 'ColorMatchGame.dart';
 
@@ -73,6 +74,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
+                  heroTag: "btn2",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -98,7 +100,43 @@ class GridApp extends State<Grid> {
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.pink,
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Games/ttt.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn1",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return TicTacToe();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
 
           Container(

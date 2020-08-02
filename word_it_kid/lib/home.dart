@@ -1,12 +1,9 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'Screens/Kindergarten/redirectionKG.dart';
 import 'Screens/Pre-School/redirectionPS.dart';
-
-
 
 class Home extends StatefulWidget {
   @override

@@ -154,6 +154,8 @@ class _FirstRouteState extends State<FirstRoute> {
           fit: BoxFit.cover,
         ),
       ),
+
+
       backgroundColor: Colors.green[900],
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),

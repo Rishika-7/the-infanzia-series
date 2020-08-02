@@ -61,6 +61,15 @@ flutter:
     - Images/Games/ttt.png
     - Images/Games/GameBG.png
     - Images/Rhymes/RhymesBG.png
+    - Images/seasons/action.png
+    - Images/seasons/alphanary.png
+    - Images/seasons/autumn-bg.png
+    - Images/seasons/describe.png
+    - Images/seasons/form.png
+    - Images/seasons/naming.png
+    - Images/seasons/rhyme.png
+    - Images/seasons/summer-bg.png
+    - Images/seasons/winter-bg.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

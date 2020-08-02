@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:worditkid/Screens/Kindergarten/actionWords.dart';
+import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
+import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
 
 
 class Levels extends StatefulWidget {
@@ -93,29 +96,140 @@ class GridApp extends State<Grid> {
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/naming.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn2",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return NameWords();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+
+          ),
+
+          Container(
+            width: 260,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/describe.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn3",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return DescribeWords();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.blueAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+
+          ),
+
+          Container(
+            width: 260,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/action.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ActionWords();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            width: 260,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
             color: Colors.pink,
-
-
           ),
-
-          Container(
-            width: 260,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            color: Colors.blue,
-
-
-          ),
-
-          Container(
-            width: 260,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            color: Colors.orange,
-          ),
-
 
         ],
       ),

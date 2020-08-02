@@ -59,7 +59,7 @@ class _secondPageState extends State<secondPage> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                "Images/Redirection/background.png",
+                "Images/seasons/autumn-bg.png",
               ),
               fit: BoxFit.fill,
             )

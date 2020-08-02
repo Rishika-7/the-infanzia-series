@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:worditkid/Screens/Pre-School/Learn/levels.dart';
-import 'package:worditkid/Screens/Rhymes/rhymes.dart';
-import 'package:worditkid/Screens/Games/game.dart';
+import 'package:worditkid/Screens/Pre-School/levels.dart';
 
+import '../Games/game.dart';
+import '../Rhymes/rhymes.dart';
 
 
 class PS_RP extends StatelessWidget {

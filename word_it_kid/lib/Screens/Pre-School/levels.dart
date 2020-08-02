@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'package:worditkid/Screens/Pre-School/Learn/Dictionary.dart';
-import 'package:worditkid/Screens/Pre-School/Learn/rhymingWord.dart';
-
+import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
+import 'package:worditkid/Screens/Pre-School/formWords.dart';
+import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 
 class Levels extends StatefulWidget {
   @override
@@ -98,7 +98,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/alphanary.png"),
+                image: AssetImage("Images/seasons/alphanary.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -118,7 +118,7 @@ class GridApp extends State<Grid> {
                     );
                   },
 
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.redAccent,
                   child: Center(
                     child: Text(
                       'GO',
@@ -143,7 +143,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/form_words.png"),
+                image: AssetImage("Images/seasons/form.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -155,9 +155,15 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn3",
-                  onPressed: () {},
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return FormWords();
+                    })
+                    );
+                  },
 
-                  backgroundColor: Colors.orangeAccent,
+                  backgroundColor: Colors.blueAccent,
                   child: Center(
                     child: Text(
                       'GO',
@@ -182,7 +188,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/rhyming_words.png"),
+                image: AssetImage("Images/seasons/rhyme.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -202,7 +208,7 @@ class GridApp extends State<Grid> {
                     );
                   },
 
-                  backgroundColor: Colors.pinkAccent,
+                  backgroundColor: Colors.orange,
                   child: Center(
                     child: Text(
                       'GO',
@@ -217,6 +223,14 @@ class GridApp extends State<Grid> {
               ],
             ),
           ),
+
+          Container(
+            width: 260,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
         ],
       ),
     );

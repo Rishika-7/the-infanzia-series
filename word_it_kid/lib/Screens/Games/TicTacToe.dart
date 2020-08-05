@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           child: Center(
-          child: Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

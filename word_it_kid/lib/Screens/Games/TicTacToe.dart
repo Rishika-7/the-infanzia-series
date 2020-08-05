@@ -46,7 +46,14 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text('Tic Tac Toe'),
         ),
-        body: Center(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("Images/Redirection/background.png"),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +84,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ]
           ),
-        )
+        ),
+        ),
     );
   }
 
@@ -101,7 +109,8 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(
-                color: Colors.black
+                color: Colors.black,
+                width: 2.0,
             )
         ),
         child: Center(

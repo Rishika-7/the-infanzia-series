@@ -18,7 +18,7 @@ class ColorGameState extends State<ColorGame> {
     '🐥': Colors.yellow,
     '🐞': Colors.red,
     '🐬': Colors.blue,
-    '🐎': Colors.brown,
+    '🐒': Colors.brown,
     '🐅': Colors.orange
   };
 
@@ -58,7 +58,7 @@ class ColorGameState extends State<ColorGame> {
                   data: emoji,
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: Emoji(emoji: '🤍'),
+                  childWhenDragging: Emoji(emoji: '🐾'),
                 );
               }).toList()),
           Column(
@@ -82,11 +82,11 @@ class ColorGameState extends State<ColorGame> {
             color: Colors.white,
             child: Text('Correct!'),
             alignment: Alignment.center,
-            height: 100,
-            width: 200,
+            height: 50,
+            width: 100,
           );
         } else {
-          return Container(color: choices[emoji], height: 100, width: 200);
+          return Container(color: choices[emoji], height: 50, width: 100);
         }
       },
       onWillAccept: (data) => data == emoji,

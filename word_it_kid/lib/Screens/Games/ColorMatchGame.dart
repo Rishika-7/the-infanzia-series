@@ -14,12 +14,12 @@ class ColorGameState extends State<ColorGame> {
 
   /// Choices for game
   final Map choices = {
-    '💚': Colors.green,
-    '💛': Colors.yellow,
-    '❤': Colors.red,
-    '💜': Colors.purple,
-    '🤎': Colors.brown,
-    '🧡': Colors.orange
+    '🐖': Colors.pinkAccent,
+    '🐥': Colors.yellow,
+    '🐞': Colors.red,
+    '🐬': Colors.blue,
+    '🐎': Colors.brown,
+    '🐅': Colors.orange
   };
 
   // Random seed to shuffle order of items.
@@ -40,7 +40,14 @@ class ColorGameState extends State<ColorGame> {
           });
         },
       ),
-      body: Row(
+      body: Container(
+      decoration: BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage("Images/Redirection/background.png"),
+      fit: BoxFit.fill,
+    ),
+    ),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
@@ -63,6 +70,7 @@ class ColorGameState extends State<ColorGame> {
           )
         ],
       ),
+    ),
     );
   }
 

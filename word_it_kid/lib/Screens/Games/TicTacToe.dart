@@ -7,7 +7,7 @@ class TicTacToe extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(
-                color: Colors.black,
+                color: Colors.yellowAccent,
                 width: 2.0,
             )
         ),
@@ -117,7 +117,8 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             _matrix[i][j],
             style: TextStyle(
-                fontSize: 100.0
+                fontSize: 100.0,
+                color: Colors.yellowAccent,
             ),
           ),
         ),

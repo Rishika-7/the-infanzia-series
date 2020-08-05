@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("Images/Redirection/background.png"),
+              image: AssetImage("Images/Games/XorO_2.png"),
               fit: BoxFit.fill,
             ),
           ),

@@ -44,7 +44,7 @@ class ColorGameState extends State<ColorGame> {
       body: Container(
       decoration: BoxDecoration(
       image: DecorationImage(
-      image: AssetImage("Images/Redirection/background.png"),
+      image: AssetImage("Images/Games/MatchColor.png"),
       fit: BoxFit.fill,
     ),
     ),

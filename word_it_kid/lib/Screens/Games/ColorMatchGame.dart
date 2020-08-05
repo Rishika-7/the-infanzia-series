@@ -30,7 +30,8 @@ class ColorGameState extends State<ColorGame> {
     return Scaffold(
       appBar: AppBar(
           title: Text('Score ${score.length} / 6'),
-          backgroundColor: Colors.pink),
+          backgroundColor: Colors.green
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
         onPressed: () {

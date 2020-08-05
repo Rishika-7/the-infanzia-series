@@ -7,6 +7,8 @@ import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
 import 'package:worditkid/Screens/Pre-School/formWords.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 
+import 'Exercises/Exercise1.dart';
+
 class Levels extends StatefulWidget {
   @override
   LevelsState createState() => new LevelsState();
@@ -29,7 +31,12 @@ class LevelsState extends State<Levels> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Grid(),
+        child: Column(
+          children: <Widget>[
+            Grid(),
+            GridEx(),
+          ],
+        ),
       ),
     );
   }
@@ -45,13 +52,15 @@ class GridApp extends State<Grid> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.all(40),
-      height: 250.0,
 
-      //padding: EdgeInsets.all(20),
+      alignment: Alignment.center,
+      height: 250.0,
+      margin: EdgeInsets.only(top: 180, bottom: 20, right: 40, left: 40),
+
       child: ListView(
+
         scrollDirection: Axis.horizontal,
+
 
         children: <Widget>[
           Container(
@@ -231,6 +240,162 @@ class GridApp extends State<Grid> {
             color: Colors.pink,
           ),
 
+        ],
+      ),
+    );
+  }
+}
+
+
+class GridEx extends StatefulWidget {
+  @override
+  GridAppEx createState() => new GridAppEx();
+}
+
+class GridAppEx extends State<GridEx> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(bottom: 40, right: 40, left: 40),
+      height: 80.0,
+
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+
+        children: <Widget>[
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                SizedBox(
+                  width: 40.0,
+                  height: 40.0,
+                    child: FloatingActionButton(
+
+                      heroTag: "ebtn1",
+                      onPressed: () {
+                        Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                          return Exercise(
+                            max: 5,
+                            min: 0,
+                          );
+                        })
+                        );
+                      },
+
+                      backgroundColor: Colors.orange,
+                      child: Center(
+                        child: Text(
+                          'GO',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
+
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            color: Colors.pink,
+          ),
         ],
       ),
     );

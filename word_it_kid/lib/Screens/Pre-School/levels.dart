@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
-import 'package:worditkid/Screens/Pre-School/formWords.dart';
+import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 
 import 'Exercises/Exercise1.dart';
@@ -152,7 +152,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/seasons/form.png"),
+                image: AssetImage("Images/seasons/vowels.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -167,7 +167,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return FormWords();
+                      return Vowels();
                     })
                     );
                   },

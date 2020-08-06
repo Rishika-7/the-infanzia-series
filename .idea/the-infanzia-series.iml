@@ -3,6 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/count_it_kid/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/count_it_kid/build" />
+      <excludeFolder url="file://$MODULE_DIR$/know_it_kid/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/know_it_kid/build" />
       <excludeFolder url="file://$MODULE_DIR$/word_it_kid/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/word_it_kid/build" />
     </content>

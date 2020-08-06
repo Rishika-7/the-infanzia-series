@@ -34,6 +34,7 @@ class ColorGameState extends State<ColorGame> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
+        backgroundColor: Colors.green,
         onPressed: () {
           setState(() {
             score.clear();

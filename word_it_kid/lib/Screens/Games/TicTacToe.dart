@@ -5,7 +5,6 @@ class TicTacToe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -45,7 +44,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Tic Tac Toe'),
+            backgroundColor: Colors.green
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.refresh),
+          onPressed: () {
+            setState(() {
+              _initMatrix();
+          });
+        },
+      ),
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(

@@ -59,7 +59,7 @@ class ColorGameState extends State<ColorGame> {
                   data: emoji,
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: Emoji(emoji: '🐾'),
+                  childWhenDragging: Emoji(emoji: '❔'),
                 );
               }).toList()),
           Column(

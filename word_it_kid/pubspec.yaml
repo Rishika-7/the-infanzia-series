@@ -75,7 +75,6 @@ flutter:
     - Images/banana.png
     - Images/cat.png
     - Images/dog.png
-    - Sounds/a (1).mp3
     - Images/elephant.png
     - Images/fish.png
     - Images/grapes.png
@@ -205,6 +204,8 @@ flutter:
     - Images/ExerciseImages/treasure.png
     - Images/ExerciseImages/coin.png
     - Images/ExerciseImages/crown.gif
+    - Images/seasons/autumn-bg.png
+    - 'Sound/Miracle-sound-effect.mp3'
 
 
 

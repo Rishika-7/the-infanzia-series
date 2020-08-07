@@ -1,15 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:audioplayers/audio_cache.dart';
 
-void main() {
-  runApp(
-      MaterialApp(
-        title: "Rhyming Words",
-        home: Exercise2(),
-      )
-  );
-}
+
+AudioCache plyr = AudioCache();
 class Exercise2 extends StatefulWidget {
   @override
   _Exercise2State createState() => _Exercise2State();
@@ -22,7 +17,7 @@ class _Exercise2State extends State<Exercise2> {
       body:  Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/autumn-bg.png"),
+            image: AssetImage("Images/seasons/autumn-bg.png"),
             fit: BoxFit.cover,
           )
         ),
@@ -100,7 +95,7 @@ class _TargetState extends State<Target> {
         width: 150,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/treasure.png")
+            image: AssetImage("Images/ExerciseImages/treasure.png")
           )
         ),
         padding: EdgeInsets.only(top: 20,
@@ -130,8 +125,9 @@ class _TargetState extends State<Target> {
               res = Container(
                 height: 150,
                 width: 150,
-                child: Image.asset("Images/crown.gif"),
+                child: Image.asset("Images/ExerciseImages/crown.gif"),
               );
+              plyr.play('success.mp3');
             }
           },
           );
@@ -161,7 +157,7 @@ class _dragState extends State<drag> {
     alpha = Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage("https://www.pinclipart.com/picdir/big/210-2101979_gold-dollar-sign-clipart.png")
+          image: AssetImage("Images/ExerciseImages/coin.png")
         )
       ),
       height: 80,
@@ -184,7 +180,7 @@ class _dragState extends State<drag> {
       feedback: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage("https://www.pinclipart.com/picdir/big/210-2101979_gold-dollar-sign-clipart.png")
+                  image: AssetImage("Images/ExerciseImages/coin.png")
               )
           ),
           height: 80,

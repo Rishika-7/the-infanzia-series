@@ -1,5 +1,5 @@
 import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
-import 'package:countitkid/Screens/Pre-School/Games/game.dart';
+import 'package:countitkid/Screens/Games/game.dart';
 import 'package:countitkid/Screens/rhymes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

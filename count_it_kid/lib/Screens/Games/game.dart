@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import 'TicTacToe.dart';
+
 class Game extends StatefulWidget {
   @override
   GameState createState() => new GameState();
@@ -109,6 +111,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return TicTacToe();
+                    })
+                    );
                   },
                   backgroundColor: Colors.redAccent,
                   child: Center(

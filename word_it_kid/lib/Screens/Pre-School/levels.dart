@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/Exercise3.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 
 import 'Exercises/Exercise1.dart';
+import 'Exercises/Exercise2.dart';
+import 'Exercises/Exercise3.dart';
 
 class Levels extends StatefulWidget {
   @override
@@ -308,22 +311,106 @@ class GridAppEx extends State<GridEx> {
                     ),
                 ),
 
+
               ],
             ),
           ),
-
           Container(
             width: 80,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
+
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                SizedBox(
+                  width: 40.0,
+                  height: 40.0,
+                  child: FloatingActionButton(
+
+                    heroTag: "ebtn2",
+                    onPressed: () {
+                      Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                        return Exercise2(
+                        );
+                      })
+                      );
+                    },
+
+                    backgroundColor: Colors.orange,
+                    child: Center(
+                      child: Text(
+                        'GO',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+              ],
+            ),
           ),
+          Container(
+            width: 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
 
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                SizedBox(
+                  width: 40.0,
+                  height: 40.0,
+                  child: FloatingActionButton(
+
+                    heroTag: "ebtn3",
+                    onPressed: () {
+                      Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                        return Exercise3(
+                        );
+                      })
+                      );
+                    },
+
+                    backgroundColor: Colors.orange,
+                    child: Center(
+                      child: Text(
+                        'GO',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+              ],
+            ),
+          ),
           Container(
             width: 80,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
             color: Colors.pink,
+
           ),
 
           Container(

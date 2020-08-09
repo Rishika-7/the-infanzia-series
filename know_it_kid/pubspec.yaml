@@ -46,6 +46,12 @@ flutter:
   assets:
     - Images/HomeBG.png
     - Images/Heading.png
+    - Images/XorO.png
+    - Images/LearnSymbol.png
+    - Images/SingSymbol.png
+    - Images/GamesSymbol.png
+    - Images/Redirect.png
+    - Images/Redirect2.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

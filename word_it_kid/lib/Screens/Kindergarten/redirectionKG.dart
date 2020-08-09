@@ -24,8 +24,8 @@ class KG_RP extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Image.asset("Images/Redirection/bird.png",
-                        height: 150,
-                        width: 200,
+                        height: 170,
+                        width: 160,
                         alignment: Alignment.topRight,
                         fit: BoxFit.fill,
                       ),

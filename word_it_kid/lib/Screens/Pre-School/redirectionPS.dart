@@ -12,12 +12,10 @@ class PS_RP extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-
         body: Container(
           child: Container(
             child: Column(
               children: <Widget>[
-
                 Expanded (
                   flex: 3,
                   child : Row(
@@ -25,8 +23,8 @@ class PS_RP extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Image.asset("Images/Redirection/bird.png",
-                        height: 120,
-                        width: 200,
+                        height: 170,
+                        width: 160,
                         alignment: Alignment.topRight,
                         fit: BoxFit.fill,
                       ),

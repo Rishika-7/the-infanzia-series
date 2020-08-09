@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-//import 'Screens/Kindergarten/redirectionKG.dart';
-//import 'Screens/Pre-School/redirectionPS.dart';
+import 'Screens/Kindergarten/redirectionKG.dart';
+import 'Screens/Pre-School/redirectionPS.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -200,16 +200,16 @@ class DemoCard extends State<Card> {
               children: <Widget>[
                 FloatingActionButton(
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context, MaterialPageRoute(builder: (context){
-                      //if(radioValue == 'pre-school') {
-                        //return PS_RP();
-                      //}
-                      //else{
-                        //return KG_RP();
-                      //}
-                    //})
-                    //);
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      if(radioValue == 'pre-school') {
+                        return PreSchool();
+                      }
+                      else{
+                        return Kindergarten();
+                      }
+                    })
+                    );
                   },
                   backgroundColor: Colors.lightBlue,
                   child: Center(

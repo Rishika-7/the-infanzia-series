@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Games/XorO_2.png"),
+            image: AssetImage("Images/Games/XorO.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(
-              color: Colors.green,
+              color: Colors.black,
               width: 2.0,
             )
         ),
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
             _matrix[i][j],
             style: TextStyle(
               fontSize: 100.0,
-              color: Colors.green,
+              color: Colors.black,
             ),
           ),
         ),

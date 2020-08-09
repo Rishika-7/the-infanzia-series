@@ -22,7 +22,7 @@ class RedirectionPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Image.asset("Images/alien.png",
-                        height: 120,
+                        height: 150,
                         width: 200,
                         alignment: Alignment.topRight,
                         fit: BoxFit.fill,

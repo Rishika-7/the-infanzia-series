@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:knowitkid/Screens/Games/game.dart';
 
 
 class PreSchool extends StatelessWidget {
@@ -28,7 +29,7 @@ class PreSchool extends StatelessWidget {
                             //);
                           },
 
-                          color: Colors.blue[800],
+                          color: Colors.deepOrange,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)
                           ) ,
@@ -42,7 +43,7 @@ class PreSchool extends StatelessWidget {
                               Text(
                                 "  LEARN",
                                 style: TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18
                                 ),
@@ -71,7 +72,7 @@ class PreSchool extends StatelessWidget {
                                 //})
                                 //);
                               },
-                              color: Colors.blue[800],
+                              color: Colors.deepOrange,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
                               ) ,
@@ -84,7 +85,7 @@ class PreSchool extends StatelessWidget {
                                   Text(
                                     "SING",
                                     style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18
                                     ),
@@ -106,14 +107,14 @@ class PreSchool extends StatelessWidget {
                           alignment: Alignment.topRight,
                           child :RaisedButton(
                               onPressed: () {
-                                //debugPrint('Clicked');
-                                //Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  //return Game();
-                                //})
-                                //);
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Game();
+                                })
+                                );
                               },
 
-                              color: Colors.blue[800],
+                              color: Colors.deepOrange,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
                               ) ,
@@ -127,7 +128,7 @@ class PreSchool extends StatelessWidget {
                                   Text(
                                     "  PLAY",
                                     style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18
                                     ),

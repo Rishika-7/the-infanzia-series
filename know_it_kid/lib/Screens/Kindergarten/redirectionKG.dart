@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:knowitkid/Screens/Games/game.dart';
+
 
 
 class Kindergarten extends StatelessWidget {
@@ -15,7 +17,7 @@ class Kindergarten extends StatelessWidget {
                   flex: 3,
                   child : Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Container(
                         alignment: Alignment.bottomRight,
@@ -28,7 +30,7 @@ class Kindergarten extends StatelessWidget {
                             //);
                           },
 
-                          color: Colors.blue[800],
+                          color: Colors.deepOrange,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)
                           ),
@@ -42,7 +44,7 @@ class Kindergarten extends StatelessWidget {
                               Text(
                                 "  LEARN",
                                 style: TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18
                                 ),
@@ -71,7 +73,7 @@ class Kindergarten extends StatelessWidget {
                                 //})
                                 //);
                               },
-                              color: Colors.blue[800],
+                              color: Colors.deepOrange,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
                               ) ,
@@ -84,7 +86,7 @@ class Kindergarten extends StatelessWidget {
                                   Text(
                                     "SING",
                                     style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18
                                     ),
@@ -106,14 +108,14 @@ class Kindergarten extends StatelessWidget {
                           alignment: Alignment.topRight,
                           child :RaisedButton(
                               onPressed: () {
-                                //debugPrint('Clicked');
-                                //Navigator.push(context, MaterialPageRoute(builder: (context){
-                                //return Game();
-                                //})
-                                //);
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                return Game();
+                                })
+                                );
                               },
 
-                              color: Colors.blue[800],
+                              color: Colors.deepOrange,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
                               ) ,
@@ -127,7 +129,7 @@ class Kindergarten extends StatelessWidget {
                                   Text(
                                     "  PLAY",
                                     style: TextStyle(
-                                        color: Colors.white70,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18
                                     ),

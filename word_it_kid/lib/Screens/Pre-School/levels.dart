@@ -99,6 +99,23 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn12",
+                  onPressed: () {},
+
+                  backgroundColor: Colors.green,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
@@ -142,6 +159,31 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn22",
+                  onPressed: () {
+                    Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                      return Exercise(
+                        max: 5,
+                        min: 0,
+                      );
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
 
@@ -187,6 +229,24 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn32",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.blueAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
 
@@ -232,6 +292,24 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn42",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
@@ -240,8 +318,59 @@ class GridApp extends State<Grid> {
             width: 260,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/opp.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn5",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.lightBlueAccent[200],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.lightBlueAccent[200],
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
           ),
+
 
         ],
       ),

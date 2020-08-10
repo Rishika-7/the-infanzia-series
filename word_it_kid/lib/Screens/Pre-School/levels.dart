@@ -318,8 +318,59 @@ class GridApp extends State<Grid> {
             width: 260,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/opp.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn5",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.lightBlueAccent[200],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.lightBlueAccent[200],
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
           ),
+
 
         ],
       ),

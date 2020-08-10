@@ -70,6 +70,8 @@ flutter:
     - Images/seasons/rhyme.png
     - Images/seasons/summer-bg.png
     - Images/seasons/winter-bg.png
+    - Images/seasons/rain-bg.png
+    - Images/seasons/opp.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

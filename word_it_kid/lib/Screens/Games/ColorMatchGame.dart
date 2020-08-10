@@ -43,15 +43,15 @@ class ColorGameState extends State<ColorGame> {
         },
       ),
       body: Container(
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: AssetImage("Images/Games/MatchColor.png"),
-      fit: BoxFit.fill,
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("Images/Games/MatchColor.png"),
+        fit: BoxFit.fill,
     ),
     ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
           Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,

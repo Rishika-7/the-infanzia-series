@@ -72,6 +72,21 @@ flutter:
     - Images/seasons/winter-bg.png
     - Images/seasons/rain-bg.png
     - Images/seasons/opp.png
+    - Images/seasons/opp-bg.png
+    - Images/seasons/pink-bg.png
+    - Images/seasons/similar.png
+    - Images/Opposite/closed.png
+    - Images/Opposite/dark.png
+    - Images/Opposite/empty.png
+    - Images/Opposite/fast.png
+    - Images/Opposite/full.png
+    - Images/Opposite/happy.png
+    - Images/Opposite/light.png
+    - Images/Opposite/old.png
+    - Images/Opposite/open.png
+    - Images/Opposite/sad.png
+    - Images/Opposite/slow.png
+    - Images/Opposite/young.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

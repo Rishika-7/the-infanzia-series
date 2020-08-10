@@ -5,6 +5,8 @@ import 'package:flutter/rendering.dart';
 
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise3.dart';
+import 'package:worditkid/Screens/Pre-School/opposite.dart';
+import 'package:worditkid/Screens/Pre-School/similar.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 
@@ -321,7 +323,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/seasons/opp.png"),
+                image: AssetImage("Images/seasons/similar.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -333,8 +335,76 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn5",
-                  onPressed: () {
 
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Similar();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+
+          Container(
+            width: 260,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/opp.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn6",
+
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Opposite();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.lightBlueAccent[200],
@@ -355,7 +425,7 @@ class GridApp extends State<Grid> {
                 ),
 
                 FloatingActionButton(
-                  heroTag: "btn52",
+                  heroTag: "btn62",
                   onPressed: () {
                   },
 
@@ -397,53 +467,7 @@ class GridAppEx extends State<GridEx> {
         scrollDirection: Axis.horizontal,
 
         children: <Widget>[
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
 
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              children: <Widget>[
-                SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                    child: FloatingActionButton(
-
-                      heroTag: "ebtn1",
-                      onPressed: () {
-                        Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                          return Exercise(
-                            max: 5,
-                            min: 0,
-                          );
-                        })
-                        );
-                      },
-
-                      backgroundColor: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'GO',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ),
-                ),
-
-
-              ],
-            ),
-          ),
           Container(
             width: 80,
             padding: EdgeInsets.all(10),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../levels.dart';
 import 'DragginMech.dart';
 import 'dart:math';
 import 'RandomPairGenerator.dart';
@@ -87,7 +88,13 @@ class _ExerciseState extends State<Exercise> {
                     ),),
                 ],
               ),
+
+              SizedBox(
+                height: 20,
+              ),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),
@@ -105,7 +112,20 @@ class _ExerciseState extends State<Exercise> {
                             )));
                       });
                     },
-                  )
+                  ),
+
+                  FloatingActionButton(
+
+                    child: Icon(Icons.home),
+                    heroTag: "ebtn3",
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return Levels();
+                      })
+                      );
+                    },
+                  ),
+
 
                 ],
               )

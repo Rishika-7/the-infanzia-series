@@ -36,12 +36,8 @@ class LevelsState extends State<Levels> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Column(
-          children: <Widget>[
-            Grid(),
-            GridEx(),
-          ],
-        ),
+
+        child: Grid(),
       ),
     );
   }
@@ -59,8 +55,8 @@ class GridApp extends State<Grid> {
     return Container(
 
       alignment: Alignment.center,
-      height: 250.0,
-      margin: EdgeInsets.only(top: 180, bottom: 20, right: 40, left: 40),
+      height: 300.0,
+      margin: EdgeInsets.only(bottom: 20, right: 40, left: 40),
 
       child: ListView(
 
@@ -69,7 +65,7 @@ class GridApp extends State<Grid> {
 
         children: <Widget>[
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -123,7 +119,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -193,7 +189,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -256,7 +252,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -302,6 +298,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn42",
                   onPressed: () {
+                    Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                      return Exercise2(
+                      );
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.orange,
@@ -317,7 +318,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -380,7 +381,7 @@ class GridApp extends State<Grid> {
 
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -442,200 +443,6 @@ class GridApp extends State<Grid> {
           ),
 
 
-        ],
-      ),
-    );
-  }
-}
-
-
-class GridEx extends StatefulWidget {
-  @override
-  GridAppEx createState() => new GridAppEx();
-}
-
-class GridAppEx extends State<GridEx> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 40, right: 40, left: 40),
-      height: 80.0,
-
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-
-        children: <Widget>[
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              children: <Widget>[
-                SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                  child: FloatingActionButton(
-
-                    heroTag: "ebtn2",
-                    onPressed: () {
-                      Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                        return Exercise2(
-                        );
-                      })
-                      );
-                    },
-
-                    backgroundColor: Colors.orange,
-                    child: Center(
-                      child: Text(
-                        'GO',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-
-              ],
-            ),
-          ),
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              children: <Widget>[
-                SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                  child: FloatingActionButton(
-
-                    heroTag: "ebtn3",
-                    onPressed: () {
-                      Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                        return Exercise3(
-                        );
-                      })
-                      );
-                    },
-
-                    backgroundColor: Colors.orange,
-                    child: Center(
-                      child: Text(
-                        'GO',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-
-              ],
-            ),
-          ),
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
         ],
       ),
     );

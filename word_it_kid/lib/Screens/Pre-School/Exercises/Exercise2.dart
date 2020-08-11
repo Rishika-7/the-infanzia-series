@@ -2,6 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter/rendering.dart';
+
+import '../levels.dart';
+import 'Exercise3.dart';
 
 
 AudioCache plyr = AudioCache();
@@ -21,53 +25,95 @@ class _Exercise2State extends State<Exercise2> {
             fit: BoxFit.cover,
           )
         ),
+
         child:Column(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                  height: 75,
-                  width: 100,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.only(top: 80),
+              child: Column(
+                children: <Widget>[
+
+                  row1(),
+                  row2(),
+                  row3(),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Target(
+                        type: "all",
+                      )
+                    ],
+                  ),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Target(
+                        type: "ot",
+                      ) ,
+
+                      Target(
+                        type: "at",
+                      ) ,
+                    ],
+                  ),
+
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+
+                      FloatingActionButton(
+                        child: Icon(Icons.refresh),
+                        backgroundColor: Colors.deepOrange,
+                        heroTag: "ebtn1",
+                        onPressed: (){
+                          Navigator.of(context).pop(new MaterialPageRoute(
+                              builder: (BuildContext context) =>Exercise2()));
+                          Navigator.of(context).push(new MaterialPageRoute(
+                              builder: (BuildContext context) =>Exercise2(
+                              )));
+                        },
+                      ),
+
+                      FloatingActionButton(
+                        backgroundColor: Colors.deepOrange,
+                        child: Icon(Icons.home),
+                        heroTag: "ebtn3",
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return Levels();
+                          })
+                          );
+                        },
+                      ),
+
+                      FloatingActionButton(
+                        backgroundColor: Colors.deepOrange,
+                        child: Icon(Icons.arrow_forward),
+                        heroTag: "ebtn2",
+                        onPressed: () {
+                          Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                            return Exercise3(
+                            );
+                          })
+                          );
+                        },
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
             ),
-            row1(),
-            row2(),
-            row3(),
-            Row(
-              children: <Widget>[
-                Container(height: 100,
-                width: 100,),
-                Target(type: "all",)
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Target(
-                  type: "ot",
-                ) ,
-                Container(
-                  height: 150,
-                  width: 50,
-                ),
-                Target(
-                  type: "at",
-                ) ,
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                FloatingActionButton(
-                  child: Icon(Icons.refresh),
-                  onPressed: (){
-                    Navigator.of(context).pop(new MaterialPageRoute(
-                        builder: (BuildContext context) =>Exercise2()));
-                    Navigator.of(context).push(new MaterialPageRoute(
-                        builder: (BuildContext context) =>Exercise2(
-                        )));
-                  },)
-              ],
-            )
+
+
           ],
         )
       ),

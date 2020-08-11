@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/Exercise2.dart';
+import 'package:worditkid/Screens/Pre-School/levels.dart';
 
 class Exercise3 extends StatefulWidget {
   @override
@@ -18,56 +20,99 @@ class _Exercise3State extends State<Exercise3> {
                 fit: BoxFit.cover,
               )
           ),
-          child:Column(
+
+          child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                    height: 75,
-                    width: 100,
-                  ),
-                ],
+              Container(
+                margin: EdgeInsets.only(top: 80),
+
+                child: Column(
+                  children: <Widget>[
+
+                    row1(),
+                    row2(),
+                    row3(),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+
+                      children: <Widget>[
+                        Target(
+                          type: "an",
+                          imageurl: "Images/ExerciseImages/ball.png",
+                        ),
+                      ],
+                    ),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                      children: <Widget>[
+                        Target(
+                          type: "ot",
+                          imageurl: "Images/ExerciseImages/teddyBear.png",
+                        ) ,
+
+                        Target(
+                          type: "ar",
+                          imageurl: "Images/ExerciseImages/blocks.png",
+                        ) ,
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+
+                        FloatingActionButton(
+                          child: Icon(Icons.arrow_back),
+                          heroTag: "ebtn1",
+                          onPressed: () {
+                            Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                              return Exercise2(
+                              );
+                            })
+                            );
+                          },
+                        ),
+
+                        FloatingActionButton(
+                          child: Icon(Icons.home),
+                          heroTag: "ebtn3",
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return Levels();
+                            })
+                            );
+                          },
+                        ),
+
+                        FloatingActionButton(
+                          child: Icon(Icons.refresh),
+                          heroTag: "ebtn2",
+                          onPressed: (){
+                            Navigator.of(context).pop(new MaterialPageRoute(
+                                builder: (BuildContext context) =>Exercise3()));
+                            Navigator.of(context).push(new MaterialPageRoute(
+                                builder: (BuildContext context) =>Exercise3(
+                                )
+                              ),
+                            );
+                          },
+                        ),
+
+
+                      ],
+                    )
+                  ],
+                ),
               ),
-              row1(),
-              row2(),
-              row3(),
-              Row(
-                children: <Widget>[
-                  Container(height: 100,
-                    width: 100,),
-                  Target(type: "an",
-                    imageurl: "Images/ExerciseImages/ball.png",)
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Target(
-                    type: "ot",
-                    imageurl: "Images/ExerciseImages/teddyBear.png",
-                  ) ,
-                  Container(
-                    height: 150,
-                    width: 50,
-                  ),
-                  Target(
-                    type: "ar",
-                    imageurl: "Images/ExerciseImages/blocks.png",
-                  ) ,
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  FloatingActionButton(
-                    child: Icon(Icons.refresh),
-                    onPressed: (){
-                      Navigator.of(context).pop(new MaterialPageRoute(
-                          builder: (BuildContext context) =>Exercise3()));
-                      Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) =>Exercise3(
-                          )));
-                    },)
-                ],
-              )
             ],
           )
       ),

@@ -87,6 +87,16 @@ flutter:
     - Images/Opposite/sad.png
     - Images/Opposite/slow.png
     - Images/Opposite/young.png
+    - Images/similar/big.png
+    - Images/similar/fast.png
+    - Images/similar/grin.png
+    - Images/similar/large.png
+    - Images/similar/sad.png
+    - Images/similar/small.png
+    - Images/similar/smile.png
+    - Images/similar/speedy.png
+    - Images/similar/tiny.png
+    - Images/similar/unhappy.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

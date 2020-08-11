@@ -10,11 +10,11 @@ class _SimilarState extends State<Similar> {
   List<Container> oppList = new List();
 
   var inputs = [
-    {"Image1" : "Images/Opposite/full.png", "Image2" : "Images/Opposite/empty.png"},
-    {"Image1" : "Images/Opposite/old.png", "Image2" : "Images/Opposite/young.png"},
-    {"Image1" : "Images/Opposite/fast.png", "Image2" : "Images/Opposite/slow.png"},
-    {"Image1" : "Images/Opposite/light.png", "Image2" : "Images/Opposite/dark.png"},
-    {"Image1" : "Images/Opposite/happy.png", "Image2" : "Images/Opposite/sad.png"},
+    {"Image1" : "Images/similar/big.png", "Image2" : "Images/similar/large.png"},
+    {"Image1" : "Images/similar/fast.png", "Image2" : "Images/similar/speedy.png"},
+    {"Image1" : "Images/similar/grin.png", "Image2" : "Images/similar/smile.png"},
+    {"Image1" : "Images/similar/sad.png", "Image2" : "Images/similar/unhappy.png"},
+    {"Image1" : "Images/similar/small.png", "Image2" : "Images/similar/tiny.png"},
   ];
 
   buildList() async{

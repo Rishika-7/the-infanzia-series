@@ -56,7 +56,7 @@ class GridApp extends State<Grid> {
 
       alignment: Alignment.center,
       height: 300.0,
-      margin: EdgeInsets.only(bottom: 20, right: 40, left: 40),
+      margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
 
       child: ListView(
 

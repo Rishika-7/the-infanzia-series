@@ -50,21 +50,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - Images/HomeBG.png
-    - Images/Heading.png
-    - Images/alien.png
-    - Images/alienp.png
-    - Images/background.png
-    - Images/gamesSymbol.png
-    - Images/LearnSymbol.png
-    - Images/singSymbol.png
-    - Images/RhymesBG.png
-    - Images/GameBG.png
-    - Images/gtc.png
-    - Images/ttt.png
-    - Images/XorO_2.png
-    - Images/XorO.png
-    - Images/MatchNumber.png
+    - Images/
     - 'success.mp3'
 
 

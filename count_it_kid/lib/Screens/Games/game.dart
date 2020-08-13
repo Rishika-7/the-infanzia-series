@@ -1,9 +1,10 @@
 
+import 'package:countitkid/Screens/Games/TicTacToe.dart';
+import 'package:countitkid/Screens/Games/memorygame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'TicTacToe.dart';
 
 class Game extends StatefulWidget {
   @override
@@ -60,13 +61,14 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
+            color: Colors.pinkAccent,
 
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/gtc.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
+            //decoration: BoxDecoration(
+              //image: DecorationImage(
+                //image: AssetImage("Images/gtc.png"),
+                //fit: BoxFit.fill,
+              //),
+            //),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -75,8 +77,13 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn1",
                   onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return MemoryGame();
+                    })
+                    );
                   },
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.blue,
                   child: Center(
                     child: Text(
                       'GO',

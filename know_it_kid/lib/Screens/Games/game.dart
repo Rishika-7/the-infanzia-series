@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Games/memorygame.dart';
 import 'package:knowitkid/Screens/Games/tictactoe.dart';
 
 class Game extends StatefulWidget {
@@ -58,6 +59,7 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
+            color: Colors.pinkAccent,
 
             //decoration: BoxDecoration(
               //image: DecorationImage(
@@ -73,13 +75,13 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context, MaterialPageRoute(builder: (context){
-                      //return ColorGame();
-                    //})
-                    //);
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return MemoryGame();
+                    })
+                    );
                   },
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.blue,
                   child: Center(
                     child: Text(
                       'GO',
@@ -144,7 +146,7 @@ class GridApp extends State<Grid> {
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.blue,
+            color: Colors.yellow,
           ),
         ],
       ),

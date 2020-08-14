@@ -144,14 +144,13 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
-            color: Colors.purple,
 
-            //decoration: BoxDecoration(
-              //image: DecorationImage(
-                //image: AssetImage("Images/Games/ttt.png"),
-                //fit: BoxFit.fill,
-              //),
-            //),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Games/memory-game.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +165,7 @@ class GridApp extends State<Grid> {
                     })
                     );
                   },
-                  backgroundColor: Colors.pinkAccent,
+                  backgroundColor: Colors.orangeAccent,
                   child: Center(
 
                     child: Text(

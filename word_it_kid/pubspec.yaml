@@ -60,6 +60,7 @@ flutter:
     - Images/Games/gtc.png
     - Images/Games/ttt.png
     - Images/Games/GameBG.png
+    - Images/Games/memory-game.png
     - Images/Rhymes/RhymesBG.png
     - Images/seasons/action.png
     - Images/seasons/alphanary.png
@@ -75,6 +76,8 @@ flutter:
     - Images/seasons/opp-bg.png
     - Images/seasons/pink-bg.png
     - Images/seasons/similar.png
+    - Images/seasons/singular.png
+    - Images/seasons/sing-full.png
     - Images/Opposite/closed.png
     - Images/Opposite/dark.png
     - Images/Opposite/empty.png

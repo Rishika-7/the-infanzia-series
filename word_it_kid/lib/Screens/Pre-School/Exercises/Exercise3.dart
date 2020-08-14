@@ -74,7 +74,7 @@ class _Exercise3State extends State<Exercise3> {
                           child: Icon(Icons.arrow_back),
                           heroTag: "ebtn1",
                           onPressed: () {
-                            Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                            Navigator.of(context).pop(new MaterialPageRoute(builder: (BuildContext context) {
                               return Exercise2(
                               );
                             })

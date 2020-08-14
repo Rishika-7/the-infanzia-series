@@ -2,10 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:worditkid/Screens/Kindergarten/actionWords.dart';
-import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
-import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
-import 'package:worditkid/Screens/Pre-School/Exercises/Exercise1.dart';
 
 class Levels extends StatefulWidget {
   @override
@@ -29,12 +25,8 @@ class LevelsState extends State<Levels> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Column(
-          children: <Widget>[
-            Grid(),
-            GridEx(),
-          ],
-        ),
+
+        child: Grid(),
       ),
     );
   }
@@ -50,17 +42,19 @@ class GridApp extends State<Grid> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      height: 250.0,
-      margin: EdgeInsets.only(top: 180, bottom: 20, right: 40, left: 40),
 
-      //padding: EdgeInsets.all(20),
+      alignment: Alignment.center,
+      height: 300.0,
+      margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+
       child: ListView(
+
         scrollDirection: Axis.horizontal,
+
 
         children: <Widget>[
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -92,12 +86,29 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn12",
+                  onPressed: () {},
+
+                  backgroundColor: Colors.green,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -116,11 +127,6 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return NameWords();
-                    })
-                    );
                   },
 
                   backgroundColor: Colors.redAccent,
@@ -135,6 +141,25 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn22",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
 
@@ -142,7 +167,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -161,11 +186,7 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn3",
                   onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return DescribeWords();
-                    })
-                    );
+
                   },
 
                   backgroundColor: Colors.blueAccent,
@@ -180,14 +201,31 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn32",
+                  onPressed: () {
+                  },
+
+                  backgroundColor: Colors.blueAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
               ],
             ),
-
 
           ),
 
           Container(
-            width: 260,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
 
@@ -206,11 +244,7 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn4",
                   onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return ActionWords();
-                    })
-                    );
+
                   },
 
                   backgroundColor: Colors.orange,
@@ -225,80 +259,21 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
 
-          Container(
-            width: 260,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-        ],
-      ),
-    );
-  }
-}
-
-class GridEx extends StatefulWidget {
-  @override
-  GridAppEx createState() => new GridAppEx();
-}
-
-class GridAppEx extends State<GridEx> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 40, right: 40, left: 40),
-      height: 80.0,
-
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-
-        children: <Widget>[
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-
-              children: <Widget>[
                 SizedBox(
-                  width: 40.0,
-                  height: 40.0,
-                  child: FloatingActionButton(
+                  width: 40,
+                ),
 
-                    heroTag: "ebtn1",
-                    onPressed: () {
-                      Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                        return Exercise(
-                          max: 5,
-                          min: 0,
-                        );
-                      })
-                      );
-                    },
+                FloatingActionButton(
+                  heroTag: "btn42",
+                  onPressed: () {
 
-                    backgroundColor: Colors.orange,
-                    child: Center(
-                      child: Text(
-                        'GO',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
                     ),
                   ),
                 ),
@@ -308,92 +283,63 @@ class GridAppEx extends State<GridEx> {
           ),
 
           Container(
-            width: 80,
+            width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/seasons/singular.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn5",
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+                  onPressed: () {
+                  },
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+                SizedBox(
+                  width: 40,
+                ),
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+                  },
 
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
 
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
-          ),
-
-          Container(
-            width: 80,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            color: Colors.pink,
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 }
-

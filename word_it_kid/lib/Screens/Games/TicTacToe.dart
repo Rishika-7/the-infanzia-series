@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
             _matrix[i][j],
             style: TextStyle(
                 fontSize: 100.0,
-                color: Colors.yellowAccent,
+                color: Colors.yellow,
             ),
           ),
         ),

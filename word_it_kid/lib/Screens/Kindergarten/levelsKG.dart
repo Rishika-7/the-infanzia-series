@@ -2,6 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:worditkid/Screens/Kindergarten/actionWords.dart';
+import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
+import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
+import 'package:worditkid/Screens/Kindergarten/singular-plural.dart';
 
 class Levels extends StatefulWidget {
   @override
@@ -126,7 +130,13 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn2",
+
                   onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return NameWords();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.redAccent,
@@ -186,7 +196,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn3",
                   onPressed: () {
-
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return DescribeWords();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.blueAccent,
@@ -244,7 +258,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn4",
                   onPressed: () {
-
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ActionWords();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.orange,
@@ -303,6 +321,11 @@ class GridApp extends State<Grid> {
                   heroTag: "btn5",
 
                   onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SingPlu();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.pinkAccent,

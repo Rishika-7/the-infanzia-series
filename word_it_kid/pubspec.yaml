@@ -100,6 +100,16 @@ flutter:
     - Images/similar/speedy.png
     - Images/similar/tiny.png
     - Images/similar/unhappy.png
+    - Images/sp/ant.png
+    - Images/sp/ants.png
+    - Images/sp/apple.png
+    - Images/sp/apples.png
+    - Images/sp/box.png
+    - Images/sp/boxes.png
+    - Images/sp/cat.png
+    - Images/sp/cats.png
+    - Images/sp/hat.png
+    - Images/sp/hats.png
     - 'success.mp3'
     - Images/apple.png
     - Images/banana.png

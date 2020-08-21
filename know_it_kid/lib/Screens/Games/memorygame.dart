@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               )),
-          backgroundColor: Colors.blue),
+          backgroundColor: Colors.blue[600]),
       body: letsPlay
           ? SingleChildScrollView(
         child: Container(
@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                         width: 170,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.blue[600],
                           border: Border.all(
                               width: 3, color: Colors.black),
                           borderRadius: BorderRadius.circular(32),
@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.black),
-                  color: Colors.blue,
+                  color: Colors.blue[600],
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: Text(
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.black),
-                  color: Colors.blue,
+                  color: Colors.blue[600],
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: Text(
@@ -258,11 +258,60 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.black),
-                  color: Colors.blue,
+                  color: Colors.blue[600],
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: Text(
                   "HARD",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('How to Play?', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        content: Text(
+                          "1. Remember positions of animals 🤔\n \n"
+                              '2. Click on cards to flip 🔄\n\n'
+                          '3. Match same animal cards ✔\n\n'
+                          "                🐵🐼🦁🐨🦊🐻",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text(
+                              "Let's Play!",
+                              style: TextStyle(fontSize: 19),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      );
+                    });
+              },
+              child: Container(
+                height: 40,
+                width: 160,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black),
+                  color: Colors.blue[400],
+                  borderRadius: BorderRadius.circular(32),
+                ),
+                child: Text(
+                  "How to Play?",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

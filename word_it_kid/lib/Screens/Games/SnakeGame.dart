@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
 
+// ignore: camel_case_types
 class Snake_Game extends StatelessWidget {
   // This widget is the root of your application.
   @override

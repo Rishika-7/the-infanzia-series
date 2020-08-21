@@ -299,8 +299,6 @@ flutter:
   # example:
   fonts:
     - family: PressStart
-      fonts:
-        - asset: assets/PressStart2P-Regular.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

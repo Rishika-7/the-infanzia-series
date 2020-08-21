@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Games/colormatchgame.dart';
 import 'package:knowitkid/Screens/Games/memorygame.dart';
+import 'package:knowitkid/Screens/Games/snakegame.dart';
 import 'package:knowitkid/Screens/Games/tictactoe.dart';
 
 class Game extends StatefulWidget {
@@ -59,7 +61,6 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
-            //color: Colors.pinkAccent,
 
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -73,7 +74,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn2",
+                  heroTag: "btn1",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -81,7 +82,7 @@ class GridApp extends State<Grid> {
                     })
                     );
                   },
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.orange,
                   child: Center(
                     child: Text(
                       'GO',
@@ -114,7 +115,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn1",
+                  heroTag: "btn2",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -122,7 +123,7 @@ class GridApp extends State<Grid> {
                     })
                     );
                   },
-                  backgroundColor: Colors.redAccent,
+                  backgroundColor: Colors.red,
                   child: Center(
 
                     child: Text(
@@ -141,12 +142,86 @@ class GridApp extends State<Grid> {
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.purple,
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/snake-game.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn3",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Snake_Game();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.lightGreen,
+                  child: Center(
+
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
+
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.yellow,
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/gtc.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ColorGame();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

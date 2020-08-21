@@ -79,6 +79,7 @@ flutter:
     - Images/seasons/singular.png
     - Images/seasons/sing-full.png
     - Images/seasons/naming-full.png
+    - Images/seasons/describe-full.png
     - Images/Opposite/closed.png
     - Images/Opposite/dark.png
     - Images/Opposite/empty.png
@@ -109,6 +110,10 @@ flutter:
     - Images/NamingWords/thing_b.png
     - Images/NamingWords/boy_f.png
     - Images/NamingWords/boy_b.png
+    - Images/DescribingWords/big.png
+    - Images/DescribingWords/pink.png
+    - Images/DescribingWords/sweet.png
+    - Images/DescribingWords/tasty.png
     - Images/sp/ant.png
     - Images/sp/ants.png
     - Images/sp/apple.png

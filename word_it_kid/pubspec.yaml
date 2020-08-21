@@ -80,6 +80,7 @@ flutter:
     - Images/seasons/sing-full.png
     - Images/seasons/naming-full.png
     - Images/seasons/describe-full.png
+    - Images/seasons/action-full.png
     - Images/Opposite/closed.png
     - Images/Opposite/dark.png
     - Images/Opposite/empty.png
@@ -114,6 +115,14 @@ flutter:
     - Images/DescribingWords/pink.png
     - Images/DescribingWords/sweet.png
     - Images/DescribingWords/tasty.png
+    - Images/Action/run.gif
+    - Images/Action/run.png
+    - Images/Action/eat.gif
+    - Images/Action/eat.png
+    - Images/Action/jump.png
+    - Images/Action/jump.gif
+    - Images/Action/drive.gif
+    - Images/Action/drive.png
     - Images/sp/ant.png
     - Images/sp/ants.png
     - Images/sp/apple.png

@@ -59,14 +59,14 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
-            color: Colors.pinkAccent,
+            //color: Colors.pinkAccent,
 
-            //decoration: BoxDecoration(
-              //image: DecorationImage(
-                //image: AssetImage("Images/Games/gtc.png"),
-                //fit: BoxFit.fill,
-              //),
-            //),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/mg.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -101,6 +101,14 @@ flutter:
     - Images/similar/speedy.png
     - Images/similar/tiny.png
     - Images/similar/unhappy.png
+    - Images/NamingWords/name_f.png
+    - Images/NamingWords/name_b.png
+    - Images/NamingWords/place_f.png
+    - Images/NamingWords/place_b.png
+    - Images/NamingWords/thing_f.png
+    - Images/NamingWords/thing_b.png
+    - Images/NamingWords/boy_f.png
+    - Images/NamingWords/boy_b.png
     - Images/sp/ant.png
     - Images/sp/ants.png
     - Images/sp/apple.png

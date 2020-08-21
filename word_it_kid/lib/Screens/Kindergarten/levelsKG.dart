@@ -134,7 +134,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return NameWords();
+                      return NamingWords();
                     })
                     );
                   },

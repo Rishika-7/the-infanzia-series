@@ -137,7 +137,7 @@ class DemoCard extends State<Card> {
                         textAlign: TextAlign.center,
                       ),
 
-                      Icon(Icons.pets),
+                      Icon(Icons.opacity),
 
                       SizedBox(
                         child: Radio(
@@ -171,7 +171,7 @@ class DemoCard extends State<Card> {
                         textAlign: TextAlign.center,
                       ),
 
-                      Icon(Icons.pets),
+                      Icon(Icons.opacity),
 
                       SizedBox(
                         child: Radio(

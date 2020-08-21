@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:worditkid/Screens/Games/MemoryGame.dart';
+import 'package:worditkid/Screens/Games/SnakeGame.dart';
 import 'package:worditkid/Screens/Games/TicTacToe.dart';
 import 'ColorMatchGame.dart';
 
@@ -64,7 +65,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Games/gtc.png"),
+                image: AssetImage("Images/Games/memory-game.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -74,15 +75,15 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn2",
+                  heroTag: "btn1",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return ColorGame();
+                      return MemoryGame();
                     })
                     );
                   },
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.orange,
                   child: Center(
                     child: Text(
                       'GO',
@@ -115,7 +116,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn1",
+                  heroTag: "btn2",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -147,7 +148,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Games/memory-game.png"),
+                image: AssetImage("Images/Games/snake-game.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -161,11 +162,11 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return MemoryGame();
+                      return Snake_Game();
                     })
                     );
                   },
-                  backgroundColor: Colors.orangeAccent,
+                  backgroundColor: Colors.lightGreen,
                   child: Center(
 
                     child: Text(
@@ -185,7 +186,43 @@ class GridApp extends State<Grid> {
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.blue,
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Games/gtc.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ColorGame();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.blue,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

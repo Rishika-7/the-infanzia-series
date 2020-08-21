@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
@@ -29,50 +30,97 @@ class ColorGameState extends State<ColorGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Score ${score.length} / 6'),
-          backgroundColor: Colors.green
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
-        backgroundColor: Colors.green,
-        onPressed: () {
-          setState(() {
-            score.clear();
-            seed++;
-          });
-        },
-      ),
+          title: Text('Color Match Game'), backgroundColor: Colors.green[900]),
       body: Container(
         decoration: BoxDecoration(
-        image: DecorationImage(
-        image: AssetImage("Images/Games/MatchColor.png"),
-        fit: BoxFit.fill,
-    ),
-    ),
-        child: Row(
+          image: DecorationImage(
+            image: AssetImage("Images/Games/MatchColor.png"),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: choices.keys.map((emoji) {
+                      return Draggable<String>(
+                        data: emoji,
+                        child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
+                        feedback: Emoji(emoji: emoji),
+                        childWhenDragging: Emoji(emoji: '❔'),
+                      );
+                    }).toList()),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: choices.keys
+                      .map((emoji) => _buildDragTarget(emoji))
+                      .toList()
+                        ..shuffle(Random(seed)),
+                ),
+              ],
+            ),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: choices.keys.map((emoji) {
-                return Draggable<String>(
-                  data: emoji,
-                  child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
-                  feedback: Emoji(emoji: emoji),
-                  childWhenDragging: Emoji(emoji: '❔'),
-                );
-              }).toList()),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children:
-            choices.keys.map((emoji) => _buildDragTarget(emoji)).toList()
-              ..shuffle(Random(seed)),
-          )
-        ],
+              children: <Widget>[
+                FlatButton(
+                  color: Colors.green[900],
+                  child: Text('Help', style: TextStyle(fontSize: 20, color: Colors.white)),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('How to Play?',
+                                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                            content: Text(
+                              '          ❤🧡💛💚💙💜🤎 \n\n'
+                              'Match the animal to their colour\n\n'
+                              'Just Drag and Drop 👆➡✔',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: Text(
+                                  "Let's Play!",
+                                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              )
+                            ],
+                          );
+                        });
+                  },
+                ),
+                Text(
+                  'Score ${score.length} / 6',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
+                FloatingActionButton(
+                  child: Icon(Icons.refresh),
+                  backgroundColor: Colors.green[900],
+                  onPressed: () {
+                    setState(() {
+                      score.clear();
+                      seed++;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
-    ),
     );
   }
 
@@ -82,13 +130,13 @@ class ColorGameState extends State<ColorGame> {
         if (score[emoji] == true) {
           return Container(
             color: Colors.white,
-            child: Text('Correct!'),
+            child: Text('Correct!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             alignment: Alignment.center,
-            height: 50,
-            width: 100,
+            height: 70,
+            width: 120,
           );
         } else {
-          return Container(color: choices[emoji], height: 50, width: 100);
+          return Container(color: choices[emoji], height: 70, width: 120);
         }
       },
       onWillAccept: (data) => data == emoji,

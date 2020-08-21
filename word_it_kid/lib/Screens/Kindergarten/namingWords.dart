@@ -20,7 +20,7 @@ class FormState extends State<NameWords> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/seasons/summer-bg.png"),
+            image: AssetImage("Images/seasons/naming-full.png"),
             fit: BoxFit.fill,
           ),
         ),

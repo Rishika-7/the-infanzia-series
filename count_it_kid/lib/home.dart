@@ -1,4 +1,5 @@
-import 'package:countitkid/Screens/redirection.dart';
+import 'package:countitkid/Screens/Kindergarten/redirectionKG.dart';
+import 'package:countitkid/Screens/Pre-School/redirectionPS.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -132,7 +133,7 @@ class DemoCard extends State<Card> {
                         textAlign: TextAlign.center,
                       ),
 
-                      //Icon(Icons.stars),
+                      Icon(Icons.star),
 
                       SizedBox(
                         child: Radio(
@@ -165,7 +166,7 @@ class DemoCard extends State<Card> {
                         textAlign: TextAlign.center,
                       ),
 
-                      //Icon(Icons.stars),
+                      Icon(Icons.star),
 
                       SizedBox(
                         child: Radio(
@@ -196,7 +197,12 @@ class DemoCard extends State<Card> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return RedirectionPage();
+                      if(radioValue == 'pre-school') {
+                        return PSRedirectionPage();
+                      }
+                      else{
+                        return KGRedirectionPage();
+                      }
                     })
                     );
                   },

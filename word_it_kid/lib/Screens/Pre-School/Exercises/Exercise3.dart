@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise2.dart';
 import 'package:worditkid/Screens/Pre-School/levels.dart';
 
@@ -121,6 +122,7 @@ class _Exercise3State extends State<Exercise3> {
 }
 
 
+// ignore: must_be_immutable
 class Target extends StatefulWidget {
   String type;
   String word;
@@ -184,8 +186,8 @@ class _TargetState extends State<Target> {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class drag extends StatefulWidget {
-  @override
   String word;
   String type;
   Color color;
@@ -193,8 +195,8 @@ class drag extends StatefulWidget {
   _dragState createState() => _dragState(word, type, color);
 }
 
+// ignore: must_be_immutable, camel_case_types
 class _dragState extends State<drag> {
-  @override
   String word;
   String type;
   Color color;
@@ -257,8 +259,8 @@ class _dragState extends State<drag> {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row1 extends StatelessWidget {
-  @override
   List<String> words = ["Ran", "Fan", "Tan", "Car", "War", "Jar","Dot","Pot",
     "Rot",];
   static Random rand = new Random();
@@ -285,8 +287,8 @@ class row1 extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row2 extends StatelessWidget {
-  @override
   List<String> words = ["Man", "Pan", "Can",  "Not","Got", "Hot",];
   static Random rand = new Random();
   Widget build(BuildContext context) {
@@ -312,8 +314,8 @@ class row2 extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row3 extends StatelessWidget {
-  @override
   List<String> words = ["Bar", "Far", "Tar",  "Lot","Cot",
     "Van", "Nan"];
   static Random rand = new Random();

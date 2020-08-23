@@ -5,6 +5,7 @@ class TicTacToe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -90,6 +91,51 @@ class _HomePageState extends State<HomePage> {
                       _buildElement(2, 2),
                     ]
                 ),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Padding(
+                          padding: EdgeInsets.only(top: 50)
+                      ),
+                      FlatButton(
+                        color: Colors.green,
+                        child: Text('Help',
+                            style: TextStyle(fontSize: 24, color: Colors.white)),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('How to Play?',
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold)),
+                                  content: Text(
+                                    '1. Take turns to draw symbols ❌⭕ \n\n'
+                                        '2. Click on boxes ❎\n\n'
+                                        '3. First one with same symbols in a\n'
+                                        '    row wins 🎉\n\n'
+                                        "4. If no one gets a row it's a draw 🔄",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text(
+                                        "Let's Play!",
+                                        style: TextStyle(
+                                            fontSize: 19,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              });
+                        },
+                      ),
+                    ]),
               ]
           ),
         ),
@@ -117,7 +163,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(
-                color: Colors.yellowAccent,
+                color: Colors.green,
                 width: 2.0,
             )
         ),
@@ -190,11 +236,14 @@ class _HomePageState extends State<HomePage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Game Over'),
+            title: Text('Game Over',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             content: Text(dialogText),
             actions: <Widget>[
               FlatButton(
-                child: Text('Reset Game'),
+                child: Text('Reset Game',
+                    style:
+                    TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   Navigator.of(context).pop();
                   setState(() {
@@ -204,7 +253,6 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           );
-        }
-    );
+        });
   }
 }

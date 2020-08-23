@@ -4,17 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
-import 'package:worditkid/Screens/Pre-School/Exercises/Exercise3.dart';
-import 'package:worditkid/Screens/Pre-School/Exercises/opposite/oppExe.dart';
 import 'package:worditkid/Screens/Pre-School/opposite.dart';
 import 'package:worditkid/Screens/Pre-School/similar.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
-
-import 'Exercises/Exercise1.dart';
-import 'Exercises/Exercise2.dart';
-import 'Exercises/Exercise3.dart';
-import 'Exercises/similar/simExe.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/Exercise1.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/Exercise2.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/similar/simExe.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/opposite/oppExe.dart';
 
 class Levels extends StatefulWidget {
   @override

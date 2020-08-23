@@ -137,10 +137,10 @@ class _SnakeGameState extends State<SnakeGame> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: Text('Snake Game', style: TextStyle(fontSize: 20, color: Colors.black)),
+          backgroundColor: Colors.yellow[700],
+          title: Text('Snake Game', style: TextStyle(fontSize: 24, color: Colors.black)),
         ),
-        backgroundColor: Colors.green[900],
+        backgroundColor: Colors.black,
         body: Padding(
             padding: EdgeInsets.all(10),
             child: Column(children: <Widget>[
@@ -188,7 +188,7 @@ class _SnakeGameState extends State<SnakeGame> {
                           } else if (food[0] == x && food[1] == y) {
                             color = Colors.red;
                           } else {
-                            color = Colors.black87;
+                            color = Colors.grey[800];
                           }
 
                           return Container(
@@ -208,10 +208,10 @@ class _SnakeGameState extends State<SnakeGame> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
-                      color: isPlaying ? Colors.red : Colors.blue,
+                      color: isPlaying ? Colors.red : Colors.yellow[700],
                       child: Text(
                         isPlaying ? 'End' : 'Start',
-                        style: fontStyle,
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
                         if (isPlaying) {
@@ -226,10 +226,10 @@ class _SnakeGameState extends State<SnakeGame> {
                       style: fontStyle,
                     ),
                     RaisedButton(
-                      color: Colors.green,
+                      color: Colors.yellow[700],
                       child: Text(
                         'Help',
-                        style: fontStyle,
+                        style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       onPressed: () {
                         showDialog(

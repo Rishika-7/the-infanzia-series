@@ -1,6 +1,8 @@
 
 import 'package:countitkid/Screens/Games/TicTacToe.dart';
+import 'package:countitkid/Screens/Games/colormatchgame.dart';
 import 'package:countitkid/Screens/Games/memorygame.dart';
+import 'package:countitkid/Screens/Games/snakegame.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -61,14 +63,13 @@ class GridApp extends State<Grid> {
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.only(bottom: 5),
             alignment: Alignment.bottomCenter,
-            color: Colors.pinkAccent,
 
-            //decoration: BoxDecoration(
-              //image: DecorationImage(
-                //image: AssetImage("Images/gtc.png"),
-                //fit: BoxFit.fill,
-              //),
-            //),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/mg.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +84,7 @@ class GridApp extends State<Grid> {
                     })
                     );
                   },
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.orange,
                   child: Center(
                     child: Text(
                       'GO',
@@ -124,8 +125,51 @@ class GridApp extends State<Grid> {
                     })
                     );
                   },
-                  backgroundColor: Colors.redAccent,
+                  backgroundColor: Colors.red,
                   child: Center(
+
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/snake-game.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn3",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Snake_Game();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.lightGreen,
+                  child: Center(
+
                     child: Text(
                       'GO',
                       style: TextStyle(
@@ -143,12 +187,43 @@ class GridApp extends State<Grid> {
 
           Container(
             margin: EdgeInsets.all(10),
-            color: Colors.purple,
-          ),
+            padding: EdgeInsets.only(bottom: 5),
+            alignment: Alignment.bottomCenter,
 
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.blue,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/gtc.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return ColorGame();
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.pinkAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

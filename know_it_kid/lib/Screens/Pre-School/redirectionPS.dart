@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:knowitkid/Screens/Games/game.dart';
+import 'package:knowitkid/Screens/Rhymes/rhymes.dart';
 
 
 class PreSchool extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           child: Container(
@@ -66,11 +69,11 @@ class PreSchool extends StatelessWidget {
                           alignment: Alignment.center,
                           child :RaisedButton(
                               onPressed: () {
-                                //debugPrint('Clicked');
-                                //Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  //return Rhyme();
-                                //})
-                                //);
+                                debugPrint('Clicked');
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return Rhyme();
+                                })
+                                );
                               },
                               color: Colors.deepOrange,
                               shape: RoundedRectangleBorder(

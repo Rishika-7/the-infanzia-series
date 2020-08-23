@@ -5,7 +5,6 @@ import 'package:audioplayers/audio_cache.dart';
 
 class ColorGame extends StatefulWidget {
   ColorGame({Key key}) : super(key: key);
-
   createState() => ColorGameState();
 }
 
@@ -15,7 +14,7 @@ class ColorGameState extends State<ColorGame> {
 
   /// Choices for game
   final Map choices = {
-    '🐖': Colors.pinkAccent,
+    '🐖': Colors.pink[200],
     '🐥': Colors.yellow,
     '🐞': Colors.red,
     '🐬': Colors.blue,
@@ -80,7 +79,7 @@ class ColorGameState extends State<ColorGame> {
                                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                             content: Text(
                               '          ❤🧡💛💚💙💜🤎 \n\n'
-                              'Match the animal to their colour\n\n'
+                              'Match the animals to their colour\n\n'
                               'Just Drag and Drop 👆➡✔',
                               style: TextStyle(fontSize: 20),
                             ),

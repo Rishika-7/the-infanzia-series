@@ -141,7 +141,7 @@ class _SnakeGameState extends State<SnakeGame> {
           backgroundColor: Colors.blue[400],
           title: Text('Snake Game', style: TextStyle(fontSize: 20, color: Colors.black)),
         ),
-        backgroundColor: Colors.blue[800],
+        backgroundColor: Colors.black,
         body: Padding(
             padding: EdgeInsets.all(10),
             child: Column(children: <Widget>[
@@ -189,7 +189,7 @@ class _SnakeGameState extends State<SnakeGame> {
                           } else if (food[0] == x && food[1] == y) {
                             color = Colors.red;
                           } else {
-                            color = Colors.black87;
+                            color = Colors.grey[800];
                           }
 
                           return Container(

@@ -24,7 +24,7 @@ class RhymeState extends State<Rhyme> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Rhymes/RhymesBG.png"),
+            image: AssetImage("Images/RhymesBG.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -41,7 +41,8 @@ class Grid extends StatefulWidget {
 
 class GridApp extends State<Grid> {
   YoutubePlayerController _controller1 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/yCjJyiqpAuU"),
+      initialVideoId: YoutubePlayer.convertUrlToId(
+          "https://youtu.be/yCjJyiqpAuU"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -49,7 +50,8 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller2 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/F4tHL8reNCs"),
+      initialVideoId: YoutubePlayer.convertUrlToId(
+          "https://youtu.be/F4tHL8reNCs"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -57,7 +59,8 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller3 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/MR5XSOdjKMA"),
+      initialVideoId: YoutubePlayer.convertUrlToId(
+          "https://youtu.be/MR5XSOdjKMA"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -65,7 +68,8 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller4 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/0oKreL1jvkg"),
+      initialVideoId: YoutubePlayer.convertUrlToId(
+          "https://youtu.be/0oKreL1jvkg"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -73,7 +77,8 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller5 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/LIWbUjHZFTw"),
+      initialVideoId: YoutubePlayer.convertUrlToId(
+          "https://youtu.be/LIWbUjHZFTw"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -84,13 +89,13 @@ class GridApp extends State<Grid> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: 100, bottom: 80, left: 40, right: 40),
+      margin: EdgeInsets.only(top: 190, bottom: 220, left: 40, right: 40),
 
       child: ListView(
         children: <Widget>[
 
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             height: 200,
             child: YoutubePlayer(
               controller: _controller1,
@@ -100,7 +105,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             height: 200,
             child: YoutubePlayer(
               controller: _controller2,
@@ -110,7 +115,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             height: 200,
             child: YoutubePlayer(
               controller: _controller3,
@@ -121,7 +126,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             height: 200,
             child: YoutubePlayer(
               controller: _controller4,
@@ -132,7 +137,7 @@ class GridApp extends State<Grid> {
           ),
 
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             height: 200,
             child: YoutubePlayer(
               controller: _controller5,

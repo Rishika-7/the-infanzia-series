@@ -1,16 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:worditkid/Screens/Games/game.dart';
 import 'package:worditkid/Screens/Pre-School/levels.dart';
+import 'package:worditkid/Screens/Rhymes/rhymes.dart';
 
-import '../Games/game.dart';
-import '../Rhymes/rhymes.dart';
+
 
 
 class PS_RP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           child: Container(

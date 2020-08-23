@@ -270,6 +270,55 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 100,
+            ),
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('How to Play?', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        content: Text(
+                          "1. Remember positions of animals 🤔\n \n"
+                              '2. Click on cards to flip 🔄\n\n'
+                              '3. Match same animal cards ✔\n\n'
+                              "                🐵🐼🦁🐨🦊🐻",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text(
+                              "Let's Play!",
+                              style: TextStyle(fontSize: 19),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      );
+                    });
+              },
+              child: Container(
+                height: 40,
+                width: 160,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black),
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(32),
+                ),
+                child: Text(
+                  "How to Play?",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/rendering.dart';
 
-import '../levels.dart';
-import 'Exercise3.dart';
+import 'package:worditkid/Screens/Kindergarten/levelsKG.dart';
+import 'package:worditkid/Screens/Pre-School/Exercises/Exercise3.dart';
 
 
 AudioCache plyr = AudioCache();
@@ -122,6 +122,7 @@ class _Exercise2State extends State<Exercise2> {
 }
 
 
+// ignore: must_be_immutable
 class Target extends StatefulWidget {
   String type;
   String word;
@@ -184,8 +185,8 @@ class _TargetState extends State<Target> {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class drag extends StatefulWidget {
-  @override
   String word;
   String type;
   Color color;
@@ -193,8 +194,8 @@ class drag extends StatefulWidget {
   _dragState createState() => _dragState(word, type, color);
 }
 
+// ignore: camel_case_types
 class _dragState extends State<drag> {
-  @override
   String word;
   String type;
   Color color;
@@ -257,8 +258,8 @@ class _dragState extends State<drag> {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row1 extends StatelessWidget {
-  @override
   List<String> words = ["Ball", "Mall", "Fall", "Rat", "Mat", "Cat","Dot","Pot",
     "Rot",];
   static Random rand = new Random();
@@ -285,8 +286,8 @@ class row1 extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row2 extends StatelessWidget {
-  @override
   List<String> words = ["Tall", "Call", "Hall",  "Not","Got", "Hot",];
   static Random rand = new Random();
   Widget build(BuildContext context) {
@@ -312,8 +313,8 @@ class row2 extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable, camel_case_types
 class row3 extends StatelessWidget {
-  @override
   List<String> words = ["Fat", "Pat", "Hat",  "Lot","Cot",
   "Wall", "Gall"];
   static Random rand = new Random();

@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:knowitkid/Screens/Games/game.dart';
+import 'package:knowitkid/Screens/Pre-School/levelsPS.dart';
 import 'package:knowitkid/Screens/Rhymes/rhymes.dart';
+
+
 
 
 class PreSchool extends StatelessWidget {
@@ -25,11 +28,11 @@ class PreSchool extends StatelessWidget {
                         alignment: Alignment.bottomRight,
                         child : RaisedButton(
                           onPressed: () {
-                            //debugPrint('Clicked');
-                            //Navigator.push(context, MaterialPageRoute(builder: (context){
-                              //return Levels();
-                            //})
-                            //);
+                            debugPrint('Clicked');
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return PSLevels();
+                            })
+                            );
                           },
 
                           color: Colors.deepOrange,

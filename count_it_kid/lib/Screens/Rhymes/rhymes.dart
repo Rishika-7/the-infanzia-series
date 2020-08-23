@@ -41,7 +41,7 @@ class Grid extends StatefulWidget {
 
 class GridApp extends State<Grid> {
   YoutubePlayerController _controller1 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/yCjJyiqpAuU"),
+      initialVideoId: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=QUeTYJn4BSw"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -49,7 +49,7 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller2 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/F4tHL8reNCs"),
+      initialVideoId: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=htVUfH7MgWk"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -57,7 +57,7 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller3 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/MR5XSOdjKMA"),
+      initialVideoId: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=Xv9RphEP3yI"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -65,7 +65,7 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller4 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/0oKreL1jvkg"),
+      initialVideoId: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=WApvQ8yp5WE"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
@@ -73,7 +73,7 @@ class GridApp extends State<Grid> {
   );
 
   YoutubePlayerController _controller5 = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/LIWbUjHZFTw"),
+      initialVideoId: YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=FfyVPTuikiI"),
       flags: YoutubePlayerFlags(
         autoPlay: false,
         mute: false,

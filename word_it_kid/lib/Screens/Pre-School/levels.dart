@@ -6,7 +6,6 @@ import 'package:flutter/rendering.dart';
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
 import 'package:worditkid/Screens/Pre-School/opposite.dart';
 import 'package:worditkid/Screens/Pre-School/similar.dart';
-import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise1.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise2.dart';
@@ -194,69 +193,6 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/seasons/vowels.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn3",
-                  onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return Vowels();
-                    })
-                    );
-                  },
-
-                  backgroundColor: Colors.blueAccent,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn32",
-                  onPressed: () {
-                  },
-
-                  backgroundColor: Colors.blueAccent,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
-
-
-          ),
-
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              image: DecorationImage(
                 image: AssetImage("Images/seasons/rhyme.png"),
                 fit: BoxFit.fill,
               ),
@@ -268,7 +204,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn4",
+                  heroTag: "btn3",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -295,7 +231,7 @@ class GridApp extends State<Grid> {
                 ),
 
                 FloatingActionButton(
-                  heroTag: "btn42",
+                  heroTag: "btn32",
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
                       return Exercise2(
@@ -334,7 +270,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn5",
+                  heroTag: "btn4",
 
                   onPressed: () {
                     debugPrint('Clicked');
@@ -362,7 +298,7 @@ class GridApp extends State<Grid> {
                 ),
 
                 FloatingActionButton(
-                  heroTag: "btn52",
+                  heroTag: "btn42",
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
                       return SimilarExe(
@@ -404,7 +340,7 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn6",
+                  heroTag: "btn5",
 
                   onPressed: () {
                     debugPrint('Clicked');
@@ -432,7 +368,7 @@ class GridApp extends State<Grid> {
                 ),
 
                 FloatingActionButton(
-                  heroTag: "btn62",
+                  heroTag: "btn52",
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
                       return OppExe(

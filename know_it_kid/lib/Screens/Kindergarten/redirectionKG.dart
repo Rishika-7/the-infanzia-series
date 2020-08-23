@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:knowitkid/Screens/Games/game.dart';
+import 'package:knowitkid/Screens/Kindergarten/levelsKG.dart';
 import 'package:knowitkid/Screens/Rhymes/rhymes.dart';
 
 
@@ -26,11 +27,11 @@ class Kindergarten extends StatelessWidget {
                         alignment: Alignment.bottomRight,
                         child : RaisedButton(
                           onPressed: () {
-                            //debugPrint('Clicked');
-                            //Navigator.push(context, MaterialPageRoute(builder: (context){
-                            //return Levels();
-                            //})
-                            //);
+                            debugPrint('Clicked');
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return KGLevels();
+                            })
+                            );
                           },
 
                           color: Colors.deepOrange,

@@ -114,12 +114,43 @@ class _ExerciseState extends State<Exercise> {
                     },
                   ),
 
+                  FlatButton(
+                    color: Colors.blue,
+                    child: Text('Help', style: TextStyle(fontSize: 20, color: Colors.white)),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('How to Play?',
+                                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                              content: Text(
+                                'Match the Alphabet with the animal having the same first alphabet in its name!\n\n'
+                                    'Just Drag and Drop 👆➡✔',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text(
+                                    "Let's Play!",
+                                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                )
+                              ],
+                            );
+                          });
+                    },
+                  ),
+
                   FloatingActionButton(
 
                     child: Icon(Icons.home),
                     heroTag: "ebtn3",
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                      Navigator.pop(context, MaterialPageRoute(builder: (context){
                         return Levels();
                       })
                       );

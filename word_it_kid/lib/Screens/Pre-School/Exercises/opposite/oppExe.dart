@@ -105,6 +105,7 @@ class _OppExeState extends State<OppExe> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     FloatingActionButton(
+                      heroTag: "1",
                       child: Icon(Icons.refresh),
                       backgroundColor: Colors.blueGrey,
                       onPressed: (){
@@ -125,6 +126,39 @@ class _OppExeState extends State<OppExe> {
                         );
                       },
                     ),
+
+                    FloatingActionButton(
+                      heroTag: "2",
+                      backgroundColor: Colors.blueGrey,
+                      child: Icon(Icons.help),
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('How to Play?',
+                                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                                content: Text(
+                                  'Match the Opposite words!\n\n'
+                                      'Just Drag and Drop 👆➡✔',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text(
+                                      "Let's Play!",
+                                      style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  )
+                                ],
+                              );
+                            });
+                      },
+                    ),
+
                   ],
                 )
               ],

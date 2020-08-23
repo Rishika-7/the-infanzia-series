@@ -87,12 +87,44 @@ class _Exercise2State extends State<Exercise2> {
                         child: Icon(Icons.home),
                         heroTag: "ebtn3",
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                          Navigator.pop(context, MaterialPageRoute(builder: (context){
                             return Levels();
                           })
                           );
                         },
                       ),
+
+                      FloatingActionButton(
+                        backgroundColor: Colors.deepOrange,
+                        child: Icon(Icons.help),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('How to Play?',
+                                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                                  content: Text(
+                                    'Group the coins with the same rhyming sounds!\n\n'
+                                        'Just Drag and Drop 👆➡✔',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text(
+                                        "Let's Play!",
+                                        style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    )
+                                  ],
+                                );
+                              });
+                        },
+                      ),
+
 
                       FloatingActionButton(
                         backgroundColor: Colors.deepOrange,

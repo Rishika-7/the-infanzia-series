@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Pre-School/bodyparts.dart';
+
+import 'package:knowitkid/Screens/Pre-School/colors.dart';
+import 'package:knowitkid/Screens/Pre-School/fruits.dart';
+import 'package:knowitkid/Screens/Pre-School/shapes.dart';
+import 'package:knowitkid/Screens/Pre-School/veggies.dart';
 
 class PSLevels extends StatefulWidget {
   @override
@@ -46,7 +52,6 @@ class GridApp extends State<Grid> {
             width: 300,
             padding: EdgeInsets.all(10),
             margin: EdgeInsets.only(right: 10),
-
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("Images/colors.png"),
@@ -59,7 +64,13 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {},
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Colours();
+                    }));
+                  },
                   backgroundColor: Colors.redAccent,
                   child: Center(
                     child: Text(
@@ -105,11 +116,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context,
-                      //  MaterialPageRoute(builder: (context) {
-                      //return FirstRoute();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Shapes();
+                    }));
                   },
                   backgroundColor: Colors.lightBlueAccent[200],
                   child: Center(
@@ -129,12 +140,12 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
-                   // Navigator.of(context).push(
-                     //   new MaterialPageRoute(builder: (BuildContext context) {
-                      //return Exercise(
-                        //max: 5,
-                        //min: 0,
-                      //);
+                    // Navigator.of(context).push(
+                    //   new MaterialPageRoute(builder: (BuildContext context) {
+                    //return Exercise(
+                    //max: 5,
+                    //min: 0,
+                    //);
                     //}));
                   },
                   backgroundColor: Colors.lightBlueAccent[200],
@@ -147,7 +158,6 @@ class GridApp extends State<Grid> {
               ],
             ),
           ),
-
           Container(
             width: 300,
             padding: EdgeInsets.all(10),
@@ -165,11 +175,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn3",
                   onPressed: () {
-                   // debugPrint('Clicked');
-                    //Navigator.push(context,
-                      //  MaterialPageRoute(builder: (context) {
-                      //return rhymingPage();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Fruits();
+                    }));
                   },
                   backgroundColor: Colors.green,
                   child: Center(
@@ -190,8 +200,8 @@ class GridApp extends State<Grid> {
                   heroTag: "btn32",
                   onPressed: () {
                     //Navigator.of(context).push(
-                      //  new MaterialPageRoute(builder: (BuildContext context) {
-                      //return Exercise2();
+                    //  new MaterialPageRoute(builder: (BuildContext context) {
+                    //return Exercise2();
                     //}));
                   },
                   backgroundColor: Colors.green,
@@ -221,11 +231,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn4",
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context,
-                      //  MaterialPageRoute(builder: (context) {
-                      //return Similar();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Veggies();
+                    }));
                   },
                   backgroundColor: Colors.orange,
                   child: Center(
@@ -245,12 +255,12 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn42",
                   onPressed: () {
-                   // Navigator.of(context).push(
-                     //   new MaterialPageRoute(builder: (BuildContext context) {
-                      //return SimilarExe(
-                        //max: 5,
-                        //min: 0,
-                      //);
+                    // Navigator.of(context).push(
+                    //   new MaterialPageRoute(builder: (BuildContext context) {
+                    //return SimilarExe(
+                    //max: 5,
+                    //min: 0,
+                    //);
                     //}));
                   },
                   backgroundColor: Colors.orange,
@@ -280,11 +290,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn5",
                   onPressed: () {
-                   // debugPrint('Clicked');
-                    //Navigator.push(context,
-                      //  MaterialPageRoute(builder: (context) {
-                      //return Opposite();
-                    //}));
+                     debugPrint('Clicked');
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) {
+                    return BodyParts();
+                    }));
                   },
                   backgroundColor: Colors.pinkAccent,
                   child: Center(
@@ -304,12 +314,12 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn52",
                   onPressed: () {
-                  //  Navigator.of(context).push(
+                    //  Navigator.of(context).push(
                     //    new MaterialPageRoute(builder: (BuildContext context) {
-                      //return OppExe(
-                        //max: 5,
-                        //min: 0,
-                      //);
+                    //return OppExe(
+                    //max: 5,
+                    //min: 0,
+                    //);
                     //}));
                   },
                   backgroundColor: Colors.pinkAccent,

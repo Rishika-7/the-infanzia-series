@@ -277,6 +277,13 @@ flutter:
     - Images/jungle4.png
     - assets/
     - Images/Games/snake-game.png
+    - Images/ExerciseKGImages/carrot.png
+    - Images/ExerciseKGImages/Gloves.png
+    - Images/ExerciseKGImages/Hat.png
+    - Images/ExerciseKGImages/IceBlock.png
+    - Images/ExerciseKGImages/scarf.png
+    - Images/ExerciseKGImages/Branches.png
+    - Images/ExerciseKGImages/Snowman.gif
 
 
 

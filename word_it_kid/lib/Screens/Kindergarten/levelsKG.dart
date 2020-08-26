@@ -8,6 +8,8 @@ import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
 import 'package:worditkid/Screens/Kindergarten/singular-plural.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG3.dart';
+
 
 class Levels extends StatefulWidget {
   @override
@@ -415,6 +417,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn62",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Exercise4();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.blueAccent,

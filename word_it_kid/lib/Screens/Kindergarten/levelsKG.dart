@@ -7,6 +7,7 @@ import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
 import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
 import 'package:worditkid/Screens/Kindergarten/singular-plural.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG1.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG3.dart';
 
@@ -163,6 +164,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Exercise1();
+                    })
+                    );
 
                   },
 

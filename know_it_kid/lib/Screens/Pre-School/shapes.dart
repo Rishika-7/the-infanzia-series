@@ -14,19 +14,19 @@ class HomePage extends State<Shapes> {
   final FlutterTts flutterTts = FlutterTts();
 
   speak_circle() async {
-    await flutterTts.speak("Circle, c-i-r-c-l-e circle");
+    await flutterTts.speak("Circle");
   }
 
   speak_triangle() async {
-    await flutterTts.speak("Triangle, t-r-i-a-n-g-l-e, triangle");
+    await flutterTts.speak("Triangle");
   }
 
   speak_square() async {
-    await flutterTts.speak("Square, s-q-u-a-r-e, square");
+    await flutterTts.speak("Square");
   }
 
   speak_rectangle() async {
-    await flutterTts.speak("Rectangle, r-e-c-t-a-n-g-l-e, rectangle");
+    await flutterTts.speak("Rectangle");
   }
 
   List<Container> namingList = new List();
@@ -60,43 +60,29 @@ class HomePage extends State<Shapes> {
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 ),
               ),
-              back: Container(
-                alignment: Alignment.topRight,
-                padding: EdgeInsets.only(right: 15, top: 10),
-                decoration: BoxDecoration(
-                  color: Color(0xFF006666),
-                  image: DecorationImage(
-                    image: AssetImage(element["Image2"]),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 40,
-                      width: 40,
-                      child: FloatingActionButton(
-                        heroTag: i,
-                        onPressed: () {
-                          if (i == 0) {
-                            speak_circle();
-                          } else if (i == 1) {
-                            speak_triangle();
-                          } else if (i == 2) {
-                            speak_square();
-                          } else {
-                            speak_rectangle();
-                          }
-                        },
-                        backgroundColor: Colors.white,
-                        child: Icon(
-                          Icons.tag_faces,
-                          color: Colors.black,
-                        ),
-                      ),
+              back: GestureDetector(
+                onTap: () {
+                  if (i == 0) {
+                    speak_circle();
+                  } else if (i == 1) {
+                    speak_triangle();
+                  } else if (i == 2) {
+                    speak_square();
+                  } else {
+                    speak_rectangle();
+                  }
+                },
+                child: Container(
+                  alignment: Alignment.topRight,
+                  padding: EdgeInsets.only(right: 15, top: 10),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF006666),
+                    image: DecorationImage(
+                      image: AssetImage(element["Image2"]),
+                      fit: BoxFit.fill,
                     ),
-                  ],
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  ),
                 ),
               ),
             ),
@@ -134,7 +120,7 @@ class HomePage extends State<Shapes> {
             child: GridView.count(
               crossAxisSpacing: 20,
               mainAxisSpacing: 30,
-              crossAxisCount: 2,
+              crossAxisCount: 1,
               primary: false,
               children: namingList,
             ),

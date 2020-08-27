@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class BodyParts extends StatefulWidget {
-
   @override
   HomePage createState() => HomePage();
 }
@@ -13,9 +12,16 @@ class HomePage extends State<BodyParts> {
   final ScrollController _scrollController = ScrollController();
   final FlutterTts flutterTts = FlutterTts();
 
-
   speakPart(i) async {
-    var parts = ['body parts', 'hair', 'eyes and eyebrows', 'ear', 'mouth', 'hands', 'leg and knee'];
+    var parts = [
+      'body parts',
+      'hair',
+      'eyes and eyebrows',
+      'ear',
+      'mouth',
+      'hands',
+      'leg and knee'
+    ];
 
     await flutterTts.speak(parts[i]);
   }
@@ -41,35 +47,21 @@ class HomePage extends State<BodyParts> {
           child: Card(
             elevation: 5.0,
             color: Color(0x00000000),
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: EdgeInsets.only(right: 20, top: 20),
-              decoration: BoxDecoration(
-                color: Color(0xFF006666),
-                image: DecorationImage(
-                  image: AssetImage(element),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: FloatingActionButton(
-                      heroTag: i,
-                      onPressed: () {
-                        speakPart(i);
-                      },
-                      backgroundColor: Colors.blueAccent[200],
-                      child: Icon(
-                        Icons.tag_faces,
-                        color: Colors.white,
-                      ),
-                    ),
+            child: GestureDetector(
+              onTap: () {
+                speakPart(i);
+              },
+              child: Container(
+                alignment: Alignment.topRight,
+                padding: EdgeInsets.only(right: 20, top: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFF006666),
+                  image: DecorationImage(
+                    image: AssetImage(element),
+                    fit: BoxFit.fill,
                   ),
-                ],
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
               ),
             ),
           ),

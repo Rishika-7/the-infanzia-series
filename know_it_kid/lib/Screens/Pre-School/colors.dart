@@ -13,7 +13,18 @@ class _ColorsState extends State<Colours> {
   final FlutterTts flutterTts = FlutterTts();
 
   speakColor(i) async {
-    var parts = ['red', 'blue', 'green', 'yellow', 'black', 'pink', 'orange', 'purple', 'brown', 'white'];
+    var parts = [
+      'red',
+      'blue',
+      'green',
+      'yellow',
+      'black',
+      'pink',
+      'orange',
+      'purple',
+      'brown',
+      'white'
+    ];
 
     await flutterTts.speak(parts[i]);
   }
@@ -42,35 +53,21 @@ class _ColorsState extends State<Colours> {
           child: Card(
             elevation: 5.0,
             color: Color(0x00000000),
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: EdgeInsets.only(right: 20, top: 20),
-              decoration: BoxDecoration(
-                color: Color(0xFF006666),
-                image: DecorationImage(
-                  image: AssetImage(element),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: FloatingActionButton(
-                      heroTag: i,
-                      onPressed: () {
-                        speakColor(i);
-                      },
-                      backgroundColor: Colors.blueAccent[200],
-                      child: Icon(
-                        Icons.tag_faces,
-                        color: Colors.white,
-                      ),
-                    ),
+            child: GestureDetector(
+              onTap: () {
+                speakColor(i);
+              },
+              child: Container(
+                alignment: Alignment.topRight,
+                padding: EdgeInsets.only(right: 20, top: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFF006666),
+                  image: DecorationImage(
+                    image: AssetImage(element),
+                    fit: BoxFit.fill,
                   ),
-                ],
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
               ),
             ),
           ),

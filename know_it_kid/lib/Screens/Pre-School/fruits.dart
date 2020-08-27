@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class Fruits extends StatefulWidget {
-
   @override
   HomePage createState() => HomePage();
 }
@@ -62,49 +61,35 @@ class HomePage extends State<Fruits> {
           child: Card(
             elevation: 5.0,
             color: Color(0x00000000),
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: EdgeInsets.only(right: 20, top: 20),
-              decoration: BoxDecoration(
-                color: Color(0xFF006666),
-                image: DecorationImage(
-                  image: AssetImage(element["Image1"]),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: FloatingActionButton(
-                      heroTag: i,
-                      onPressed: () {
-                        if (i == 0) {
-                          speakApple();
-                        } else if (i == 1) {
-                          speakBanana();
-                        } else if (i == 2) {
-                          speakWatermelon();
-                        } else if (i == 3) {
-                          speakOrange();
-                        } else if (i == 4) {
-                          speakGrapes();
-                        } else if (i == 5) {
-                          speakPineapple();
-                        } else {
-                          speakStrawberry();
-                        }
-                      },
-                      backgroundColor: Colors.blueAccent[200],
-                      child: Icon(
-                        Icons.tag_faces,
-                        color: Colors.white,
-                      ),
-                    ),
+            child: GestureDetector(
+              onTap: () {
+                if (i == 0) {
+                  speakApple();
+                } else if (i == 1) {
+                  speakBanana();
+                } else if (i == 2) {
+                  speakWatermelon();
+                } else if (i == 3) {
+                  speakOrange();
+                } else if (i == 4) {
+                  speakGrapes();
+                } else if (i == 5) {
+                  speakPineapple();
+                } else {
+                  speakStrawberry();
+                }
+              },
+              child: Container(
+                alignment: Alignment.topRight,
+                padding: EdgeInsets.only(right: 20, top: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFF006666),
+                  image: DecorationImage(
+                    image: AssetImage(element["Image1"]),
+                    fit: BoxFit.fill,
                   ),
-                ],
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
               ),
             ),
           ),

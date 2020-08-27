@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class Veggies extends StatefulWidget {
-
   @override
   HomePage createState() => HomePage();
 }
@@ -13,9 +12,19 @@ class HomePage extends State<Veggies> {
   final ScrollController _scrollController = ScrollController();
   final FlutterTts flutterTts = FlutterTts();
 
-
   speakVeggie(i) async {
-    var veggies = ['cabbage', 'carrot', 'cauliflower', 'onion', 'potato', 'spinach', 'pumpkin', 'lettuce', 'garlic', 'bottlegourd'];
+    var veggies = [
+      'cabbage',
+      'carrot',
+      'cauliflower',
+      'onion',
+      'potato',
+      'spinach',
+      'pumpkin',
+      'lettuce',
+      'garlic',
+      'bottlegourd'
+    ];
 
     await flutterTts.speak(veggies[i]);
   }
@@ -44,35 +53,21 @@ class HomePage extends State<Veggies> {
           child: Card(
             elevation: 5.0,
             color: Color(0x00000000),
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: EdgeInsets.only(right: 20, top: 20),
-              decoration: BoxDecoration(
-                color: Color(0xFF006666),
-                image: DecorationImage(
-                  image: AssetImage(element),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: FloatingActionButton(
-                      heroTag: i,
-                      onPressed: () {
-                        speakVeggie(i);
-                      },
-                      backgroundColor: Colors.blueAccent[200],
-                      child: Icon(
-                        Icons.tag_faces,
-                        color: Colors.white,
-                      ),
-                    ),
+            child: GestureDetector(
+              onTap: () {
+                speakVeggie(i);
+              },
+              child: Container(
+                alignment: Alignment.topRight,
+                padding: EdgeInsets.only(right: 20, top: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFF006666),
+                  image: DecorationImage(
+                    image: AssetImage(element),
+                    fit: BoxFit.fill,
                   ),
-                ],
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
               ),
             ),
           ),

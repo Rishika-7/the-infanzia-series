@@ -372,7 +372,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
                       return OppExe(
-                        max: 5,
+                        max: 4,
                         min: 0,
                       );
                     })

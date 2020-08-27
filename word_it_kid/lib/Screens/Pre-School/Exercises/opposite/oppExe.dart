@@ -12,7 +12,8 @@ class OppExe extends StatefulWidget {
   @override
   int max ;
   int min ;
-  OppExe({this.min, this.max});
+  int seed;
+  OppExe({this.min, this.max,this.seed});
   _OppExeState createState() => _OppExeState(
     max: max,
     min: min,
@@ -21,6 +22,7 @@ class OppExe extends StatefulWidget {
 
 class _OppExeState extends State<OppExe> {
   int seed = 5;
+  int seed1 = 6;
   List<Widget> alpha = new List();
   List<Widget> targets = new List();
   static Random rand = new Random();
@@ -30,7 +32,7 @@ class _OppExeState extends State<OppExe> {
 
   buildList() async {
     for(int i = 0; i < 4;i++){
-      var element = AlphaList[min + rand.nextInt(max - min)];
+      var element = AlphaList[i];
       alpha.add(drag(
         img: element["alpha"],
       ));
@@ -38,8 +40,7 @@ class _OppExeState extends State<OppExe> {
         alphabet: element["alpha"],
         imgURL: element["I"],
       ));
-      max += 5;
-      min += 5;
+
     }
   }
 
@@ -89,7 +90,7 @@ class _OppExeState extends State<OppExe> {
                         margin: EdgeInsets.all(5),
                         color: Colors.white30,
                         child: Column(
-                            children: targets,
+                            children: targets..shuffle(Random(seed1)),
                           ),
 
                       ),

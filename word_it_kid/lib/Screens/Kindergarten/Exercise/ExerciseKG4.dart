@@ -4,15 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:worditkid/Screens/Kindergarten/levelsKG.dart';
 
 
-void main() {
-  runApp(
-      MaterialApp(
-        title: "Rhyming Words",
-        home: Route1A(),
-      )
-  );
-}
-
 class Route1A extends StatefulWidget {
   @override
   _Route1AState createState() => _Route1AState();

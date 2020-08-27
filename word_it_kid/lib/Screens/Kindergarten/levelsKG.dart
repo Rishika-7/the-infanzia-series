@@ -2,12 +2,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'package:worditkid/Screens/Kindergarten/actionWords.dart';
 import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
 import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
 import 'package:worditkid/Screens/Kindergarten/singular-plural.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG1.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG3.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG4.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG5/SinPluExe.dart';
+
 
 class Levels extends StatefulWidget {
   @override
@@ -161,6 +166,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Exercise1();
+                    })
+                    );
 
                   },
 
@@ -225,6 +234,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Route1A();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.blueAccent,
@@ -287,6 +300,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn42",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Route1();
+                    })
+                    );
 
                   },
 
@@ -350,6 +367,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn52",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SinPlu();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.pinkAccent,
@@ -411,6 +432,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn62",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Exercise4();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.blueAccent,

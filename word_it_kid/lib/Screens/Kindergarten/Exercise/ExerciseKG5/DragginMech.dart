@@ -13,6 +13,7 @@ class _dragState extends State<drag> {
   @override
   String img;
   var alpha;
+
   _dragState(this.img){
      alpha = Container(
        height: 100,

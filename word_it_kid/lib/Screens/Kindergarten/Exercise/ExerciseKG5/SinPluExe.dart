@@ -1,34 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'dart:math';
-
 import 'DragginMech.dart';
 import 'RandomPairGenerator.dart';
 
-
-
-class OppExe extends StatefulWidget {
+class SinPlu extends StatefulWidget {
   @override
   int max ;
   int min ;
-  int seed;
-  OppExe({this.min, this.max,this.seed});
-  _OppExeState createState() => _OppExeState(
+  SinPlu({this.min, this.max});
+  _SinPluState createState() => _SinPluState(
     max: max,
     min: min,
   );
 }
 
-class _OppExeState extends State<OppExe> {
+class _SinPluState extends State<SinPlu> {
   int seed = 5;
-  int seed1 = 6;
   List<Widget> alpha = new List();
   List<Widget> targets = new List();
   static Random rand = new Random();
   int max ;
   int min ;
-  _OppExeState({this.max, this.min});
+  _SinPluState({this.max, this.min});
 
   buildList() async {
     for(int i = 0; i < 4;i++){
@@ -55,7 +49,7 @@ class _OppExeState extends State<OppExe> {
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("Images/seasons/rain-bg.png"),
+                  image: AssetImage("Images/seasons/pink.png"),
                   fit: BoxFit.fill,
                 )
             ),
@@ -75,26 +69,14 @@ class _OppExeState extends State<OppExe> {
                   children: <Widget>[
                     Expanded(
                       flex: 5,
-                      child: Container(
-                        color: Colors.white30,
-                        margin: EdgeInsets.all(5),
-                        child: Column(
-                          children: alpha..shuffle(Random(seed)),
-                        ),
-
-                      ),
-                    ),
+                      child: Column(
+                        children: alpha..shuffle(Random(seed)),
+                      ),),
                     Expanded(
                       flex: 5,
-                      child: Container(
-                        margin: EdgeInsets.all(5),
-                        color: Colors.white30,
-                        child: Column(
-                            children: targets..shuffle(Random(seed1)),
-                          ),
-
-                      ),
-                    ),
+                      child: Column(
+                          children:targets
+                      ),),
                   ],
                 ),
 
@@ -115,9 +97,9 @@ class _OppExeState extends State<OppExe> {
                           max = 5;
                           min = 0;
                           Navigator.of(context).pop(new MaterialPageRoute(
-                              builder: (BuildContext context) =>OppExe()));
+                              builder: (BuildContext context) =>SinPlu()));
                           Navigator.of(context).push(new MaterialPageRoute(
-                              builder: (BuildContext context) =>OppExe(
+                              builder: (BuildContext context) =>SinPlu(
                                 min: 0,
                                 max: 5,
                               ),
@@ -140,7 +122,7 @@ class _OppExeState extends State<OppExe> {
                                 title: Text('How to Play?',
                                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                                 content: Text(
-                                  'Match the Opposite words!\n\n'
+                                  'Match the similar words!\n\n'
                                       'Just Drag and Drop 👆➡✔',
                                   style: TextStyle(fontSize: 20),
                                 ),

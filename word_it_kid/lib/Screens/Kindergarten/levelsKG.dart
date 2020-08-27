@@ -11,6 +11,7 @@ import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG1.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG3.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG4.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG5/SinPluExe.dart';
 
 
 class Levels extends StatefulWidget {
@@ -366,6 +367,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn52",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SinPlu();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.pinkAccent,

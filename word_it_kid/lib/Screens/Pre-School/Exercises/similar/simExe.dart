@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'dart:math';
-
 import 'DragginMech.dart';
 import 'RandomPairGenerator.dart';
-
-
 
 class SimilarExe extends StatefulWidget {
   @override
@@ -30,7 +26,7 @@ class _SimilarExeState extends State<SimilarExe> {
 
   buildList() async {
     for(int i = 0; i < 4;i++){
-      var element = AlphaList[min + rand.nextInt(max - min)];
+      var element = AlphaList[i];
       alpha.add(drag(
         img: element["alpha"],
       ));
@@ -38,8 +34,7 @@ class _SimilarExeState extends State<SimilarExe> {
         alphabet: element["alpha"],
         imgURL: element["I"],
       ));
-      max += 5;
-      min += 5;
+
     }
   }
 

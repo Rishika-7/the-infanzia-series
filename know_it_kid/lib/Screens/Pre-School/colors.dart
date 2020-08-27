@@ -90,7 +90,7 @@ class _ColorsState extends State<Colours> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/BodypartsBG.png"),
+            image: AssetImage("Images/ColorsBG.png"),
             fit: BoxFit.fill,
           ),
         ),

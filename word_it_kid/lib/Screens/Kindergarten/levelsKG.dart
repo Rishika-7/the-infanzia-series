@@ -10,6 +10,7 @@ import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG1.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG3.dart';
+import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG4.dart';
 
 
 class Levels extends StatefulWidget {
@@ -232,6 +233,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Route1A();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.blueAccent,

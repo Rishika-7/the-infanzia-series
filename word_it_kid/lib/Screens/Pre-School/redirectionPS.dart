@@ -32,6 +32,7 @@ class PS_RP extends StatelessWidget {
                 ),
 
                 Container(
+                  margin: EdgeInsets.only(right: 40, top: 10),
                   alignment: Alignment.bottomRight,
                   child : SizedBox(
                     height: 50,
@@ -71,8 +72,8 @@ class PS_RP extends StatelessWidget {
                   ),
                 ),
 
-
                 Container(
+                  margin: EdgeInsets.only(top: 60),
                   alignment: Alignment.center,
                   child :SizedBox(
                     height: 50,
@@ -112,6 +113,7 @@ class PS_RP extends StatelessWidget {
                 ),
 
                 Container(
+                  margin: EdgeInsets.only(right: 40, top: 60),
                   alignment: Alignment.bottomRight,
                   child : SizedBox(
                     height: 50,
@@ -153,22 +155,33 @@ class PS_RP extends StatelessWidget {
                 ),
 
                 Container(
-                  alignment: Alignment.bottomLeft,
-                  child: Image.asset("Images/Redirection/girrafe.png",
-                    height: 200,
-                    alignment: Alignment.bottomLeft,
+                  alignment: Alignment.bottomRight,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Image.asset("Images/Redirection/girrafe.png",
+                          height: 300,
+                          alignment: Alignment.bottomLeft,
+                        ),
+                      ),
+
+                      Container(
+                        child: Image.asset(
+                          "Images/Redirection/frog.png",
+                          height: 80,
+                          width:  100,
+                          alignment: Alignment.bottomCenter,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
-//                Image.asset(
-//                  "Images/Redirection/frog.png",
-//                  height: 70,
-//                  width:  100,
-//                  alignment: Alignment.bottomCenter,
-//                ),
-
-
-              ], ),
+              ],
+            ),
 
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(

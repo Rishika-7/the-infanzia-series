@@ -9,7 +9,8 @@ import 'package:worditkid/Screens/Rhymes/rhymes.dart';
 class PS_RP extends StatelessWidget {
 
   final String name;
-  PS_RP({Key key, @required this.name}) : super(key: key);
+  final String age;
+  PS_RP({Key key, @required this.name, this.age}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,10 @@ class PS_RP extends StatelessWidget {
                       onPressed: () {
                         debugPrint('Clicked');
                         Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return Levels();
+                          return Levels(
+                            name: name,
+                            age: age,
+                          );
                         }));
                         },
 

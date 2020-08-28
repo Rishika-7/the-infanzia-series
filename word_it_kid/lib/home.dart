@@ -22,6 +22,7 @@ class HomeState extends State<Home> {
   final _formKey = GlobalKey<FormState>();
   String name;
   String module;
+  String age;
 
   int _value = 1;
   int tag = 1;
@@ -44,10 +45,13 @@ class HomeState extends State<Home> {
             if('${doc.data['module']}'.contains('pre-school')) {
               return PS_RP(
                 name: '${doc.data['name']}',
+                  age: '${doc.data['age']}'
               );
             }
             else{
-              return KG_RP();
+              return KG_RP(
+//                name: '${doc.data['name']}',
+              );
             }
           })
           );
@@ -134,9 +138,7 @@ class HomeState extends State<Home> {
                           _value = value;
                         });
                       }
-
                   ),
-
                 ),
               ],
             )
@@ -146,48 +148,6 @@ class HomeState extends State<Home> {
 
     );
   }
-
-  TextFormField buildTextFormField() {
-    return TextFormField(
-      autofocus: true,
-      cursorColor: Colors.green,
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
-
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.green,
-          ),
-        ),
-        border: InputBorder.none,
-        hintText: 'name',
-      ),
-
-      style: TextStyle(
-        fontSize: 25.0,
-        color: Colors.green,
-      ),
-
-      // ignore: missing_return
-      validator: (value) {
-        if (value.isEmpty) {
-          return 'Please enter some text';
-        }
-      },
-      onSaved: (value) => name = value,
-    );
-  }
-
-  String radioValue;
-
-  setRadioValue(String value) {
-    setState(() {
-      radioValue = value;
-      module = value;
-    });
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -206,7 +166,6 @@ class HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
-
 
           children: <Widget>[
             Container(
@@ -272,15 +231,6 @@ class HomeState extends State<Home> {
         ),
       ),
     );
-  }
-
-  void createData() async {
-    if (_formKey.currentState.validate()) {
-      _formKey.currentState.save();
-      DocumentReference ref = await db.collection('USER').add({'name': '$name', 'module': '$module'});
-      setState(() => id = ref.documentID);
-      print(ref.documentID);
-    }
   }
 
   void updateData(DocumentSnapshot doc) async {

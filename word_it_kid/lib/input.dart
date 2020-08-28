@@ -44,6 +44,7 @@ class DemoCard extends State<Disp> {
   final _formKey = GlobalKey<FormState>();
   String name;
   String module;
+  String age;
 
   String radioValue;
 
@@ -83,6 +84,34 @@ class DemoCard extends State<Disp> {
     );
   }
 
+  TextFormField buildTextFormFieldAge() {
+    return TextFormField(
+      cursorColor: Colors.green,
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.center,
+
+      decoration: InputDecoration(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.green,
+          ),
+        ),
+      ),
+
+      style: TextStyle(
+        fontSize: 25.0,
+        color: Colors.green,
+      ),
+
+      // ignore: missing_return
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+      },
+      onSaved: (value) => age = value,
+    );
+  }
 
   build(context) {
     return Container(
@@ -120,6 +149,21 @@ class DemoCard extends State<Disp> {
               children: <Widget>[
 
                 buildTextFormField(),
+
+                SizedBox(
+                  height: 20,
+                ),
+
+                Text(
+                  'ENTER AGE',
+                  style: TextStyle(
+                    color: Colors.yellow,
+                    fontSize: 20.0,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                buildTextFormFieldAge(),
 
                 SizedBox(
                   height: 20,
@@ -255,7 +299,7 @@ class DemoCard extends State<Disp> {
 
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      DocumentReference ref = await db.collection('USER').add({'name': '$name', 'module': '$module'});
+      DocumentReference ref = await db.collection('USER').add({'name': '$name', 'module': '$module', 'age': '$age'});
       setState(() => id = ref.documentID);
       print(ref.documentID);
     }

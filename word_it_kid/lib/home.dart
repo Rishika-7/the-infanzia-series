@@ -1,235 +1,301 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'Screens/Kindergarten/redirectionKG.dart';
 import 'Screens/Pre-School/redirectionPS.dart';
+import 'input.dart';
+
 
 class Home extends StatefulWidget {
   @override
-  HomeState createState() => new HomeState();
+  HomeState createState() {
+    return HomeState();
+  }
 }
 
 class HomeState extends State<Home> {
-  String name = "";
+
+  String id;
+  final db = Firestore.instance;
+  final _formKey = GlobalKey<FormState>();
+  String name;
+  String module;
+
+  int _value = 1;
+  int tag = 1;
+
+  Card buildItem(DocumentSnapshot doc) {
+    return Card(
+      color: Colors.amber[200],
+
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: Colors.white30, width: 1),
+        borderRadius: BorderRadius.circular(20),
+      ),
+
+      margin: EdgeInsets.only(left: 80.0, right: 80, bottom: 30),
+
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            if('${doc.data['module']}'.contains('pre-school')) {
+              return PS_RP(
+                name: '${doc.data['name']}',
+              );
+            }
+            else{
+              return KG_RP();
+            }
+          })
+          );
+
+        },
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+            Text(
+              '${doc.data['name']}',
+              style: TextStyle(
+                fontSize: 34,
+                color: Colors.green[900],
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+
+            Text(
+              '${doc.data['module']}',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.green[900],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: DropdownButton(
+                      value: _value,
+                      items: [
+
+                        DropdownMenuItem(
+                          child: Icon(
+                            Icons.settings,
+                            color: Colors.green[900],
+                          ),
+                          value: 1,
+                        ),
+
+                        DropdownMenuItem(
+                          child: SizedBox(
+                            height: 40,
+                            child: FloatingActionButton(
+                              heroTag: tag++,
+                              onPressed: () => updateData(doc),
+                              backgroundColor: Colors.green,
+                              child: Center(
+                                child: Icon(Icons.swap_horiz),
+                              ),
+                            ),
+                          ),
+
+                          value: 2,
+                        ),
+
+                        DropdownMenuItem(
+                          child: SizedBox(
+                            height: 40,
+                            child: FloatingActionButton(
+                              heroTag: tag++,
+                              onPressed: () {
+                                return deleteData(doc);
+                              },
+                              backgroundColor: Colors.green,
+                              child: Center(
+                                child: Icon(Icons.delete),
+                              ),
+                            ),
+                          ),
+
+                          value: 3,
+                        ),
+                      ],
+                      onChanged: (value) {
+                        setState(() {
+                          _value = value;
+                        });
+                      }
+
+                  ),
+
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+
+    );
+  }
+
+  TextFormField buildTextFormField() {
+    return TextFormField(
+      autofocus: true,
+      cursorColor: Colors.green,
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.center,
+
+      decoration: InputDecoration(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.green,
+          ),
+        ),
+        border: InputBorder.none,
+        hintText: 'name',
+      ),
+
+      style: TextStyle(
+        fontSize: 25.0,
+        color: Colors.green,
+      ),
+
+      // ignore: missing_return
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+      },
+      onSaved: (value) => name = value,
+    );
+  }
+
   String radioValue;
+
+  setRadioValue(String value) {
+    setState(() {
+      radioValue = value;
+      module = value;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+
       body: Container(
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height,
-
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("Images/Home/HomeBG.png"),
             fit: BoxFit.fill,
           ),
         ),
-        child: Card(),
-      ),
-    );
-  }
-}
 
-class Card extends StatefulWidget {
-  @override
-  DemoCard createState() => new DemoCard();
-}
-
-class DemoCard extends State<Card> {
-  String name = "";
-  String radioValue;
-
-  build(context) {
-    return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.all(24),
-      padding: EdgeInsets.all(8),
-      width: MediaQuery.of(context).size.width,
-
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-
-        children: <Widget>[
-
-          Container(
-            height: 200,
-            child: Image(
-              image: AssetImage("Images/Home/Heading.png"),
-              fit: BoxFit.contain,
-            ),
-          ),
-
-          Text(
-            'ENTER NAME',
-            style: TextStyle(
-              color: Colors.yellow,
-              fontSize: 20.0,
-            ),
-            textAlign: TextAlign.center,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
 
 
-           Container(
-            alignment: Alignment.center,
-
-            child: TextField(
-              autofocus: true,
-              cursorColor: Colors.green,
-              textDirection: TextDirection.ltr,
-              textAlign: TextAlign.center,
-
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.green,
-                  ),
-                ),
-              ),
-
-              style: TextStyle(
-                fontSize: 25.0,
-                color: Colors.green,
+          children: <Widget>[
+            Container(
+              height: 200,
+              margin: EdgeInsets.only(top: 100),
+              child: Image(
+                image: AssetImage("Images/Home/Heading.png"),
+                fit: BoxFit.contain,
               ),
             ),
-          ),
 
-          SizedBox(
-            height: 20,
-          ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton(
+                    heroTag: "x3",
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return Input();
+                      })
+                      );
+                    },
 
-          Text(
-            'SELECT GROUP',
-            style: TextStyle(
-              color: Colors.yellow,
-              fontSize: 20.0,
-            ),
-            textAlign: TextAlign.center,
-          ),
-
-          Container(
-            margin: EdgeInsets.only(top: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-
-                Container(
-                  padding: EdgeInsets.only(top: 10, left: 10, right: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.green[800],
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  ),
-
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'PRE-\nSCHOOL',
+                    backgroundColor: Colors.green,
+                    child: Center(
+                      child: Text(
+                        'NEW',
                         style: TextStyle(
-                          color: Colors.yellow,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-
-                      Icon(Icons.pets),
-
-                      SizedBox(
-                        child: Radio(
-                          onChanged: (String val) {
-                            setRadioValue(val);
-                          },
-                          activeColor: Colors.yellow,
-                          value: 'pre-school',
-                          groupValue: radioValue,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                Container(
-                  padding: EdgeInsets.only(top: 10, left: 10, right: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.green[800],
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  ),
-
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'KINDER\nGARTEN',
-                        style: TextStyle(
-                          color: Colors.yellow,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-
-                      Icon(Icons.pets),
-
-                      SizedBox(
-                        child: Radio(
-                          onChanged: (String val) {
-                            setRadioValue(val);
-                          },
-                          activeColor: Colors.yellow,
-                          value: 'kindergarten',
-                          groupValue: radioValue,
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-
-          SizedBox(height: 20,),
-
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                FloatingActionButton(
-                  onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      if(radioValue == 'pre-school') {
-                        return PS_RP();
-                      }
-                      else{
-                        return KG_RP();
-                      }
-                    })
-                    );
-                  },
-                  backgroundColor: Colors.green,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ),
-              ],
+
+                ],
+              ),
             ),
-          )
-        ],
+
+            Expanded(
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.all(8),
+                children: <Widget>[
+
+                  StreamBuilder<QuerySnapshot>(
+                    stream: db.collection('USER').snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Column(
+                            children: snapshot.data.documents.map((doc) => buildItem(doc)).toList());
+                      } else {
+                        return SizedBox();
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  setRadioValue(String value) {
-    setState(() {
-      radioValue = value;
-      print(radioValue);
-    });
+  void createData() async {
+    if (_formKey.currentState.validate()) {
+      _formKey.currentState.save();
+      DocumentReference ref = await db.collection('USER').add({'name': '$name', 'module': '$module'});
+      setState(() => id = ref.documentID);
+      print(ref.documentID);
+    }
   }
+
+  void updateData(DocumentSnapshot doc) async {
+    if (module == 'kindergarten'){
+      module = 'pre-school';
+    }
+    else {
+      module = 'kindergarten';
+    }
+    await db.collection('USER').document(doc.documentID).updateData({'module': '$module🤫'});
+  }
+
+  void deleteData(DocumentSnapshot doc) async {
+    await db.collection('USER').document(doc.documentID).delete();
+    setState(() => id = null);
+  }
+
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "772916520379",
+    "firebase_url": "https://word-it-kid-56bcf.firebaseio.com",
+    "project_id": "word-it-kid-56bcf",
+    "storage_bucket": "word-it-kid-56bcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772916520379:android:8e599834c3a7da11a6509e",
+        "android_client_info": {
+          "package_name": "com.example.worditkid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772916520379-ld3huv582r5aol67hdkss8oqmo5ilgpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6O1DuVpTGh_-mhshXG7fXjnupv9pD6oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772916520379-ld3huv582r5aol67hdkss8oqmo5ilgpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

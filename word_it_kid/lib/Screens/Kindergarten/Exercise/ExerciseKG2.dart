@@ -43,6 +43,7 @@ class _Route1State extends State<Route1> {
                         isWrong = true;
                       });
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route2(score: score,),
@@ -67,6 +68,7 @@ class _Route1State extends State<Route1> {
                         isRight = true;
                       });
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route2(score: score + 1,),
@@ -136,6 +138,7 @@ class _Route2State extends State<Route2> {
                         isWrong = true;
                       });
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route3(),
@@ -159,6 +162,7 @@ class _Route2State extends State<Route2> {
                         isRight = true;
                       });
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route3(score: score,),
@@ -228,6 +232,7 @@ class _Route3State extends State<Route3> {
                         isRight = true;
                       });
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route4(score: score ,),
@@ -251,6 +256,7 @@ class _Route3State extends State<Route3> {
                       });
 
                       Future.delayed(const Duration(seconds: 2),(){
+                        Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => Route4(score: score,),
@@ -353,6 +359,7 @@ class _Route4State extends State<Route4> {
                     heroTag: "btn1",
                     child: Icon(Icons.refresh),
                     onPressed: (){
+                      Navigator.pop(context);
                       Navigator.of(context).push(new MaterialPageRoute(
                           builder: (BuildContext context) =>Route1(
                           )));
@@ -361,7 +368,7 @@ class _Route4State extends State<Route4> {
                     heroTag: "btn2",
                     child: Icon(Icons.arrow_back_ios),
                     onPressed: (){
-                      Navigator.of(context).push(new MaterialPageRoute(
+                      Navigator.of(context).pop(new MaterialPageRoute(
                           builder: (BuildContext context) => Levels()));
                     },),
 

@@ -64,19 +64,24 @@ class _secondPageState extends State<secondPage> {
               fit: BoxFit.fill,
             )
           ),
+
           child: ListView(
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(content,
-                    style: TextStyle(
-                      fontSize: 200,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.amber,
-                    ),),
                   Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: Text(content,
+                      style: TextStyle(
+                        fontSize: 200,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 10, right: 10),
                     child: IconButton(
-                        icon: Icon(Icons.volume_up),
+                        icon: Icon(Icons.volume_up, size: 50, color: Colors.deepOrange,),
                         onPressed:  () => speak(audiofile)
                     ),
                   ),

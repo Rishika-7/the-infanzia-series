@@ -41,11 +41,10 @@ class GridApp extends State<Grid> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(top: 60),
+      padding: EdgeInsets.only(top: 60, left: 20),
 
       child:  Column(
         children: <Widget>[
-
 
           Container(
               child: Text(

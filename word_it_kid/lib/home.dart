@@ -76,7 +76,7 @@ class HomeState extends State<Home> {
               '${doc.data['module']}',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.green[900],
+                color: Colors.redAccent,
                 fontWeight: FontWeight.bold,
               ),
             ),

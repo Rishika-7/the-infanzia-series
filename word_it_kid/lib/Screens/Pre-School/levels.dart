@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
+import 'package:worditkid/Screens/Pre-School/introduction.dart';
 import 'package:worditkid/Screens/Pre-School/opposite.dart';
 import 'package:worditkid/Screens/Pre-School/similar.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
@@ -105,8 +106,16 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {},
-
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Intro(
+                        name: name,
+                        age: age,
+                      );
+                    })
+                    );
+                  },
                   backgroundColor: Colors.green,
                   child: Center(
                     child: Text(

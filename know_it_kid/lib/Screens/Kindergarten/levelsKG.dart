@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Kindergarten/animals.dart';
+import 'package:knowitkid/Screens/Kindergarten/goodhabits.dart';
+import 'package:knowitkid/Screens/Kindergarten/profession.dart';
 import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
+import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
 
 class KGLevels extends StatefulWidget {
   @override
@@ -112,11 +116,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context,
-                    //  MaterialPageRoute(builder: (context) {
-                    //return FirstRoute();
-                    //}));
+                    debugPrint('Clicked');
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) {
+                        return Animals();
+                      }));
                   },
                   backgroundColor: Colors.redAccent,
                   child: Center(
@@ -172,11 +176,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn3",
                   onPressed: () {
-                    // debugPrint('Clicked');
-                    //Navigator.push(context,
-                    //  MaterialPageRoute(builder: (context) {
-                    //return rhymingPage();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return Professions();
+                        }));
                   },
                   backgroundColor: Colors.orange,
                   child: Center(
@@ -228,11 +232,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn4",
                   onPressed: () {
-                    //debugPrint('Clicked');
-                    //Navigator.push(context,
-                    //  MaterialPageRoute(builder: (context) {
-                    //return Similar();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return TrafficRules();
+                        }));
                   },
                   backgroundColor: Colors.pinkAccent,
                   child: Center(
@@ -287,11 +291,11 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn5",
                   onPressed: () {
-                    // debugPrint('Clicked');
-                    //Navigator.push(context,
-                    //  MaterialPageRoute(builder: (context) {
-                    //return Opposite();
-                    //}));
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return GoodHabits();
+                        }));
                   },
                   backgroundColor: Colors.lightBlueAccent[200],
                   child: Center(

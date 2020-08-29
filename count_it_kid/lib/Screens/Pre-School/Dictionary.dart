@@ -102,41 +102,28 @@ class _FirstRouteState extends State<FirstRoute> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-          backgroundColor: Colors.deepPurple[900],
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100),
-            child: AppBar(
-              backgroundColor: Colors.deepPurple[900],
-              elevation: 0,
-              title: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child:  Text(
-                  "NUMONARY",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 46,
-                    color: Colors.yellowAccent[100],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ),
+
           body:Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/background.png"),
+                image: AssetImage("Images/Levels/Numonary-full.png"),
                 fit: BoxFit.fill,
 
               ),
             ),
-            child: GridView.count(
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              crossAxisCount: 2,
-              padding: EdgeInsets.all(8),
-              children: alphaList,),
-          )
+
+            child: Container(
+              margin: EdgeInsets.only(top: 200),
+              child: GridView.count(
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                crossAxisCount: 2,
+                padding: EdgeInsets.only(top: 8, left: 8, right: 8),
+                children: alphaList,
+              ),
+            ),
+
+          ),
       ),
     );
   }
@@ -161,41 +148,51 @@ class Detail extends StatelessWidget {
       await _flutterTts.speak(alphabet);
     }
     return Container(
+
       child: Scaffold(
 
-        backgroundColor: Colors.deepPurple[900],
-        body:  Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(bottom: 50),
-                  child: Image.network(image),
-                  height: 200,
-                ),
-                Container(
-                    margin: EdgeInsets.only(bottom: 50),
-                    child: IconButton(
-                        icon: Icon(Icons.volume_up),
-                        onPressed:  () => speak()
-                    )
-                )
-              ],
-            ),
-            Image.network(image2,
-              alignment: Alignment.bottomCenter,
+        body:  Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("Images/Levels/nums.png"),
               fit: BoxFit.fill,
-              height: 350,
-            )
-          ],
+            ),
+          ),
+
+          child: Column(
+            children: <Widget>[
+
+              Row(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 50, top: 80, left: 50),
+                    child: Image.network(image),
+                    height: 200,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(bottom: 50),
+                      child: IconButton(
+                          icon: Icon(
+                            Icons.volume_up,
+                            size: 100,
+                            color: Colors.amber,
+                          ),
+                          onPressed:  () => speak()
+                      )
+                  )
+                ],
+              ),
+
+              Image.network(image2,
+                alignment: Alignment.bottomCenter,
+                fit: BoxFit.fill,
+                height: 350,
+              ),
+
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-

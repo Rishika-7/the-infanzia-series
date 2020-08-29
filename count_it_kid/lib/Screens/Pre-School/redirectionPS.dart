@@ -1,4 +1,5 @@
 import 'package:countitkid/Screens/Games/game.dart';
+import 'package:countitkid/Screens/Pre-School/ps_levels.dart';
 import 'package:countitkid/Screens/Rhymes/rhymes.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,7 @@ class PSRedirectionPage extends StatelessWidget {
 
                 Container(
                   alignment: Alignment.topLeft,
-                  child: Image.asset("Images/alien.png",
+                  child: Image.asset("Images/Redirection/alien.png",
                     height: 170,
                     width: 160,
                     alignment: Alignment.topRight,
@@ -33,13 +34,10 @@ class PSRedirectionPage extends StatelessWidget {
                     width: 150,
                     child: RaisedButton(
                       onPressed: () {
-//                        debugPrint('Clicked');
-//                        Navigator.push(context, MaterialPageRoute(builder: (context){
-//                          return Levels(
-//                            name: name,
-//                            age: age,
-//                          );
-//                        }));
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Levels();
+                        }));
                       },
 
                       color: Colors.deepPurpleAccent[100],
@@ -51,7 +49,7 @@ class PSRedirectionPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           Image.asset(
-                            "Images/LearnSymbol.png",
+                            "Images/Redirection/LearnSymbol.png",
                             width: 30,
                             height: 30,
                           ),
@@ -91,7 +89,7 @@ class PSRedirectionPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          Image.asset("Images/singSymbol.png",
+                          Image.asset("Images/Redirection/singSymbol.png",
                             width: 30,
                             height: 30,
                             alignment: Alignment.bottomLeft,),
@@ -134,7 +132,7 @@ class PSRedirectionPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           Image.asset(
-                            "Images/gamesSymbol.png",
+                            "Images/Redirection/gamesSymbol.png",
                             width: 40,
                             height: 40,
                           ),
@@ -164,7 +162,7 @@ class PSRedirectionPage extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         alignment: Alignment.bottomLeft,
-                        child: Image.asset("Images/alienp.png",
+                        child: Image.asset("Images/Redirection/alienp.png",
                           height: 200,
                           alignment: Alignment.bottomLeft,
                         ),
@@ -179,7 +177,7 @@ class PSRedirectionPage extends StatelessWidget {
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
               image:  DecorationImage(
-                  image: AssetImage("Images/background.png"),
+                  image: AssetImage("Images/Redirection/background.png"),
                   fit: BoxFit.fill
               ),
             ),

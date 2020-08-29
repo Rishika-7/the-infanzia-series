@@ -23,7 +23,7 @@ class HomeState extends State<Home> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/HomeBG.png"),
+            image: AssetImage("Images/Home/HomeBG.png"),
             fit: BoxFit.fill,
           ),
         ),
@@ -57,10 +57,6 @@ class DemoCard extends State<Card> {
 
           Container(
             height: 200,
-//            child: Image(
-//              image: AssetImage("Images/Heading.png"),
-//              fit: BoxFit.contain,
-//            ),
           ),
 
           Text(

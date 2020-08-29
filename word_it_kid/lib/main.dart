@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:worditkid/Screens/Kindergarten/levelsKG.dart';
+import 'package:worditkid/Screens/Kindergarten/redirectionKG.dart';
 
 import 'home.dart';
 
@@ -11,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home()
+        home: Home(),
     );
   }
+
 }

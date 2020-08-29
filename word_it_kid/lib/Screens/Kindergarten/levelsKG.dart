@@ -6,6 +6,7 @@ import 'package:worditkid/Screens/Kindergarten/actionWords.dart';
 import 'package:worditkid/Screens/Kindergarten/describeWords.dart';
 import 'package:worditkid/Screens/Kindergarten/namingWords.dart';
 import 'package:worditkid/Screens/Kindergarten/singular-plural.dart';
+import 'package:worditkid/Screens/Pre-School/introduction.dart';
 import 'package:worditkid/Screens/Pre-School/vowels.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG1.dart';
 import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG2.dart';
@@ -109,8 +110,16 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {},
-
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Intro(
+                        name: name,
+                        age: age,
+                      );
+                    })
+                    );
+                  },
                   backgroundColor: Colors.green,
                   child: Center(
                     child: Text(
@@ -120,22 +129,6 @@ class GridApp extends State<Grid> {
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
                       ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn12",
-                  onPressed: () {},
-
-                  backgroundColor: Colors.green,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
                     ),
                   ),
                 ),

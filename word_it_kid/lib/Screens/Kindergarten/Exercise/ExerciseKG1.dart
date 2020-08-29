@@ -35,7 +35,7 @@ class _Exercise1State extends State<Exercise1> {
     child: Text("John",
     style: TextStyle(
       fontSize: 30,
-      color: Colors.green,
+      color: Colors.amber,
       fontWeight: FontWeight.bold
     ),),
   );
@@ -115,7 +115,7 @@ class _Exercise1State extends State<Exercise1> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.yellow
+                                    color: Colors.green[900],
                                   ),),
                                 );
 
@@ -165,7 +165,7 @@ class _Exercise1State extends State<Exercise1> {
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.yellow
+                                        color: Colors.green[900]
                                     ),),
                                 );
 
@@ -216,7 +216,7 @@ class _Exercise1State extends State<Exercise1> {
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.yellow
+                                    color: Colors.green[900]
                                 ),),
                             );
 
@@ -266,7 +266,7 @@ class _Exercise1State extends State<Exercise1> {
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.yellow
+                                    color: Colors.green[900]
                                 ),),
                             );
                           }
@@ -303,7 +303,7 @@ class _Exercise1State extends State<Exercise1> {
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.yellow
+                                    color: Colors.green[900]
                                 ),),
                             );
                           }
@@ -320,11 +320,12 @@ class _Exercise1State extends State<Exercise1> {
                             bubble1 = dogBubble;
                           }
                           else{
-                            Navigator.of(context).push(new MaterialPageRoute(
+                            Navigator.of(context).pop(new MaterialPageRoute(
                                 builder: (BuildContext context) =>KennelView(
                                 )));
                           }
                         });
+
                       },
                       child: noun5
                   ),
@@ -361,7 +362,7 @@ class Nouns extends StatelessWidget {
      return Container(
        decoration: BoxDecoration(
          shape: BoxShape.circle,
-         color: Colors.yellow
+         color: Colors.amber
        ),
        height: 75,
        width: 75,
@@ -381,7 +382,7 @@ class Nouns extends StatelessWidget {
        child: Text(word.toUpperCase(),
          style: TextStyle(
              fontSize: 25,
-             color: Colors.green,
+             color: Colors.deepOrange,
              fontWeight: FontWeight.bold
          ),),
      );
@@ -418,7 +419,7 @@ class KennelView extends StatelessWidget {
                   heroTag: "btn2",
                   child: Icon(Icons.arrow_back_ios),
                   onPressed: (){
-                    Navigator.of(context).push(new MaterialPageRoute(
+                    Navigator.of(context).pop(new MaterialPageRoute(
                         builder: (BuildContext context) =>Levels(
                         )));
                   },),

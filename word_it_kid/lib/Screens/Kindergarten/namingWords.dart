@@ -14,19 +14,27 @@ class HomePage extends State<NamingWords> {
   final FlutterTts flutterTts = FlutterTts();
 
   speak_name() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("Hello! My name is Donut, and I am a Dog! All names are Naming Words.");
   }
 
   speak_place() async{
-    await flutterTts.speak("I live in my house! All places are Naming Words.");
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
+    await flutterTts.speak("I live in my house! My house is beautiful! All places are Naming Words.");
   }
 
   speak_thing() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("This is my bone! My bone is my favourite thing! All things are Naming Words.");
   }
 
   speak_boy() async{
-    await flutterTts.speak("This is Peeyush! He is my best friend! Peeyush is a boy! Boy is a Naming Word.");
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
+    await flutterTts.speak("This is Sonal! She is my best friend! Sonal is a girl! Girl is a Naming Word.");
   }
 
   List<Container> namingList = new List();
@@ -35,7 +43,7 @@ class HomePage extends State<NamingWords> {
     {"Image1" : "Images/NamingWords/name_f.png", "Image2" : "Images/NamingWords/name_b.png"},
     {"Image1" : "Images/NamingWords/place_f.png", "Image2" : "Images/NamingWords/place_b.png"},
     {"Image1" : "Images/NamingWords/thing_f.png", "Image2" : "Images/NamingWords/thing_b.png"},
-    {"Image1" : "Images/NamingWords/boy_f.png", "Image2" : "Images/NamingWords/boy_b.png"},
+    {"Image1" : "Images/NamingWords/girl_f.png", "Image2" : "Images/NamingWords/girl_b.png"},
 
   ];
 

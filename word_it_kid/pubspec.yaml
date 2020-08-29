@@ -118,6 +118,8 @@ flutter:
     - Images/NamingWords/thing_b.png
     - Images/NamingWords/boy_f.png
     - Images/NamingWords/boy_b.png
+    - Images/NamingWords/girl_f.png
+    - Images/NamingWords/girl_b.png
     - Images/DescribingWords/big.png
     - Images/DescribingWords/pink.png
     - Images/DescribingWords/sweet.png

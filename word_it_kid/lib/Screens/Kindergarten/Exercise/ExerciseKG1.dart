@@ -133,6 +133,7 @@ class _Exercise1State extends State<Exercise1> {
                                 bubble1 = dogBubble;
                               }
                               else{
+                                Navigator.pop(context);
                                 Navigator.of(context).push(new MaterialPageRoute(
                                     builder: (BuildContext context) =>KennelView(
                                     )));
@@ -183,6 +184,7 @@ class _Exercise1State extends State<Exercise1> {
                                 bubble1 = dogBubble;
                               }
                               else{
+                                Navigator.pop(context);
                                 Navigator.of(context).push(new MaterialPageRoute(
                                     builder: (BuildContext context) =>KennelView(
                                     )));
@@ -234,6 +236,7 @@ class _Exercise1State extends State<Exercise1> {
                             bubble1 = dogBubble;
                           }
                           else{
+                            Navigator.pop(context);
                             Navigator.of(context).push(new MaterialPageRoute(
                                 builder: (BuildContext context) =>KennelView(
                                 )));
@@ -282,7 +285,9 @@ class _Exercise1State extends State<Exercise1> {
                             bubble2 = path;
                             bubble1 = dogBubble;
                           }
-                          else{Navigator.of(context).push(new MaterialPageRoute(
+                          else{
+                            Navigator.pop(context);
+                            Navigator.of(context).push(new MaterialPageRoute(
                               builder: (BuildContext context) =>KennelView(
                               )));}
                         });
@@ -320,6 +325,7 @@ class _Exercise1State extends State<Exercise1> {
                             bubble1 = dogBubble;
                           }
                           else{
+                            Navigator.pop(context);
                             Navigator.of(context).pop(new MaterialPageRoute(
                                 builder: (BuildContext context) =>KennelView(
                                 )));
@@ -411,6 +417,7 @@ class KennelView extends StatelessWidget {
                   heroTag: "btn1",
                   child: Icon(Icons.refresh),
                   onPressed: (){
+                    Navigator.pop(context);
                     Navigator.of(context).push(new MaterialPageRoute(
                         builder: (BuildContext context) =>Exercise1(
                         )));

@@ -59,6 +59,7 @@ class _Exercise4State extends State<Exercise4> {
                         snowMan: "Images/ExerciseKGImages/Hat.png",);
                       count++;
                       if(count == 5){
+                        Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => SnowMan()));
                         seed++;
@@ -75,6 +76,7 @@ class _Exercise4State extends State<Exercise4> {
                         snowMan: "Images/ExerciseKGImages/scarf.png",);
                       count++;
                       if(count == 5){
+                        Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => SnowMan()));
                         seed++;
@@ -100,6 +102,7 @@ class _Exercise4State extends State<Exercise4> {
                       );
                       count++;
                       if(count == 5){
+                        Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => SnowMan()));
                         seed++;
@@ -123,6 +126,7 @@ class _Exercise4State extends State<Exercise4> {
                         snowMan: "Images/ExerciseKGImages/Gloves.png",);
                       count++;
                       if(count == 5){
+                        Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => SnowMan()));
                         seed++;
@@ -138,6 +142,7 @@ class _Exercise4State extends State<Exercise4> {
                       fourth = singleRock(icebreak: false, snowMan: "Images/ExerciseKGImages/Branches.png",);
                       count++;
                       if(count == 5){
+                        Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => SnowMan()));
                         seed++;
@@ -241,7 +246,7 @@ class Alphabet extends StatelessWidget {
         padding: EdgeInsets.all(10),
         width: 72,
         height: 100,
-        color: Colors.yellow,
+        color: Colors.blue,
         child: Text(
           alpha,
           style: TextStyle(
@@ -275,6 +280,7 @@ class SnowMan extends StatelessWidget {
                   heroTag: "btn1",
                   child: Icon(Icons.refresh),
                   onPressed: (){
+                    Navigator.pop(context);
                     Navigator.of(context).push(new MaterialPageRoute(
                         builder: (BuildContext context) =>Exercise4(
                         )));
@@ -283,7 +289,7 @@ class SnowMan extends StatelessWidget {
                   heroTag: "btn2",
                   child: Icon(Icons.arrow_back_ios),
                   onPressed: (){
-                    Navigator.of(context).push(new MaterialPageRoute(
+                    Navigator.of(context).pop(new MaterialPageRoute(
                         builder: (BuildContext context) =>Levels(
                         )));
                   },),

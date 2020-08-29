@@ -1,5 +1,5 @@
-
 import 'package:countitkid/Screens/Games/game.dart';
+import 'package:countitkid/Screens/Pre-School/ps_levels.dart';
 import 'package:countitkid/Screens/Rhymes/rhymes.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -11,165 +11,178 @@ class PSRedirectionPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-
         body: Container(
           child: Container(
             child: Column(
               children: <Widget>[
 
-                Expanded (
-                  flex: 3,
-                  child : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Image.asset("Images/alien.png",
-                        height: 150,
-                        width: 200,
-                        alignment: Alignment.topRight,
-                        fit: BoxFit.fill,
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset("Images/Redirection/alien.png",
+                    height: 170,
+                    width: 160,
+                    alignment: Alignment.topRight,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.only(right: 40, top: 10),
+                  alignment: Alignment.bottomRight,
+                  child : SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Levels();
+                        }));
+                      },
+
+                      color: Colors.deepPurpleAccent[100],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
                       ),
-                      Container(
-                          alignment: Alignment.bottomRight,
-                          child : RaisedButton(
-                              onPressed: () {
-                                //debugPrint('Clicked');
-                                //Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  //return FirstRoute();
-                                //})
-                                //);
-                              },
-                              color: Colors.deepPurpleAccent,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset(
-                                    "Images/LearnSymbol.png",
-                                    width: 30,
-                                    height: 30,
-                                  ),
-                                  Text(
-                                    "  LEARN",
-                                    style: TextStyle(
-                                        color: Colors.deepPurpleAccent[50],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
 
-                                ],
-                              ))
-                      ) ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset(
+                            "Images/Redirection/LearnSymbol.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "LEARN",
+                            style: TextStyle(
+                              color: Colors.deepPurpleAccent[50],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Expanded(
-                  flex: 3,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      Container(
-                          alignment: Alignment.center,
-                          child :RaisedButton(
-                              onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Rhyme();
-                                })
-                                );
-                              },
-                              color: Colors.deepPurpleAccent,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset("Images/singSymbol.png",
-                                    width: 30,
-                                    height: 30,
-                                    alignment: Alignment.bottomLeft,),
-                                  Text(
-                                    "SING",
-                                    style: TextStyle(
-                                        color: Colors.deepPurpleAccent[50],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
 
-                                ],
-                              ))
-                      )],
+                Container(
+                  margin: EdgeInsets.only(top: 60),
+                  alignment: Alignment.center,
+                  child :SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Rhyme();
+                        })
+                        );
+                      },
+
+                      color: Colors.deepPurpleAccent[100],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                      ) ,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset("Images/Redirection/singSymbol.png",
+                            width: 30,
+                            height: 30,
+                            alignment: Alignment.bottomLeft,),
+                          Text(
+                            "SING",
+                            style: TextStyle(
+                              color: Colors.deepPurpleAccent[50],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Expanded (
-                  flex: 4,
+
+                Container(
+                  margin: EdgeInsets.only(right: 40, top: 60),
+                  alignment: Alignment.bottomRight,
+                  child : SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Game();
+                        })
+                        );
+                      },
+
+                      color: Colors.deepPurpleAccent[100],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                      ),
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset(
+                            "Images/Redirection/gamesSymbol.png",
+                            width: 40,
+                            height: 40,
+                          ),
+                          Text(
+                            "PLAY",
+                            style: TextStyle(
+                              color: Colors.deepPurpleAccent[50],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  height: 100,
+                ),
+
+                Container(
+                  alignment: Alignment.bottomRight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Image.asset("Images/alienp.png",
-                        height: 650,
-                        width: 150,
+                      Container(
                         alignment: Alignment.bottomLeft,
+                        child: Image.asset("Images/Redirection/alienp.png",
+                          height: 200,
+                          alignment: Alignment.bottomLeft,
+                        ),
                       ),
-                      Container(
-                        height: 70,
-                        width:  100,
-                        alignment: Alignment.bottomCenter,
-                      ),
-                      Container(
-                          alignment: Alignment.topRight,
-                          child :RaisedButton(
-                              onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Game();
-                                })
-                                );
-                              },
-                              color: Colors.deepPurpleAccent,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset(
-                                    "Images/gamesSymbol.png",
-                                    width: 40,
-                                    height: 40,
-                                  ),
-                                  Text(
-                                    "  PLAY",
-                                    style: TextStyle(
-                                        color: Colors.deepPurpleAccent[50],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
-                                ],
-                              ))
-                      ) ],
+                    ],
+                  ),
+                ),
 
-                  ),)
-
-              ], ),
+              ],
+            ),
 
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
               image:  DecorationImage(
-                  image: AssetImage("Images/background.png"),
+                  image: AssetImage("Images/Redirection/background.png"),
                   fit: BoxFit.fill
               ),
             ),
           ),
-
         ),
-
-
-
       ),
     );
 

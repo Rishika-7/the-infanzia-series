@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:worditkid/Screens/Pre-School/Dictionary.dart';
+import 'package:worditkid/Screens/Pre-School/introduction.dart';
 import 'package:worditkid/Screens/Pre-School/opposite.dart';
 import 'package:worditkid/Screens/Pre-School/similar.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
@@ -12,11 +13,22 @@ import 'package:worditkid/Screens/Pre-School/Exercises/similar/simExe.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/opposite/oppExe.dart';
 
 class Levels extends StatefulWidget {
+  final String name;
+  final String age;
+  Levels({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  LevelsState createState() => new LevelsState();
+  LevelsState createState() => new LevelsState(
+    name : name,
+    age: age,
+  );
 }
 
 class LevelsState extends State<Levels> {
+
+  String name;
+  String age;
+  LevelsState({this.name, this.age});
 
   @override
   Widget build(BuildContext context) {
@@ -34,18 +46,32 @@ class LevelsState extends State<Levels> {
           ),
         ),
 
-        child: Grid(),
+        child: Grid(
+          name: name,
+          age: age,
+        ),
       ),
     );
   }
 }
 
 class Grid extends StatefulWidget {
+  final String name;
+  final String age;
+  Grid({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  GridApp createState() => new GridApp();
+  GridApp createState() => new GridApp(
+    name : name,
+    age: age,
+  );
 }
 
 class GridApp extends State<Grid> {
+
+  String name;
+  String age;
+  GridApp({this.name, this.age});
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +85,8 @@ class GridApp extends State<Grid> {
 
         scrollDirection: Axis.horizontal,
 
-
         children: <Widget>[
+
           Container(
             width: 300,
             padding: EdgeInsets.all(10),
@@ -80,8 +106,16 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {},
-
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Intro(
+                        name: name,
+                        age: age,
+                      );
+                    })
+                    );
+                  },
                   backgroundColor: Colors.green,
                   child: Center(
                     child: Text(
@@ -91,22 +125,6 @@ class GridApp extends State<Grid> {
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
                       ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn12",
-                  onPressed: () {},
-
-                  backgroundColor: Colors.green,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
                     ),
                   ),
                 ),

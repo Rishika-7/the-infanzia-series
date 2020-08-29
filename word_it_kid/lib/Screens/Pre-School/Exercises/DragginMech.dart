@@ -19,7 +19,7 @@ class _dragState extends State<drag> {
           alphabet,
           style: TextStyle(
               fontSize: 85,
-              color: Colors.green,
+              color: Colors.amber,
             fontWeight: FontWeight.bold
           ),
         ));

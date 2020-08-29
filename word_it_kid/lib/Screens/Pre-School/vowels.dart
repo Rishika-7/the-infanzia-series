@@ -46,6 +46,8 @@ class GridApp extends State<Grid> {
   Widget build(BuildContext context) {
 
     speak() async{
+      await flutterTts.setLanguage("en-IN");
+      await flutterTts.setSpeechRate(1);
       await flutterTts.speak("A. E. I. O. U. are vowels");
     }
 

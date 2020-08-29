@@ -13,18 +13,26 @@ class HomePage extends State<DescribingWords> {
   final FlutterTts flutterTts = FlutterTts();
 
   speak_big() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("I live in a BIG house! Big is a Describing Word!");
   }
 
   speak_pink() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("I love my bow! My bow is pink in colour! All colours are Describing Words.");
   }
 
   speak_sweet() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("I have a sweet voice and I love to sing! Sweet is a Describing Word.");
   }
 
   speak_tasty() async{
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak("My banana is very tasty! Tasty is a Describing Word!");
   }
 

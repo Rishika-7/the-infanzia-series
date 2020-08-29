@@ -21,10 +21,12 @@ class Exercise extends StatefulWidget {
   int max ;
   int min ;
   Exercise({this.min, this.max});
+
   _ExerciseState createState() => _ExerciseState(
     max: max,
     min: min,
   );
+
 }
 
 class _ExerciseState extends State<Exercise> {
@@ -141,7 +143,8 @@ class _ExerciseState extends State<Exercise> {
                                 )
                               ],
                             );
-                          });
+                          }
+                          );
                     },
                   ),
 

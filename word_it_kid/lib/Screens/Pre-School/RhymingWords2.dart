@@ -52,6 +52,8 @@ class _secondPageState extends State<secondPage> {
     this.image4, this.text1, this.text2, this.text3, this.text4, this.content});
   Widget build(BuildContext context) {
     speak(String spk)async{
+      await _flutterTts.setLanguage("en-IN");
+      await _flutterTts.setSpeechRate(1);
       await _flutterTts.speak(spk);
     }
     return Scaffold(
@@ -64,19 +66,24 @@ class _secondPageState extends State<secondPage> {
               fit: BoxFit.fill,
             )
           ),
+
           child: ListView(
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(content,
-                    style: TextStyle(
-                      fontSize: 200,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.amber,
-                    ),),
                   Container(
+                    margin: EdgeInsets.only(left: 20),
+                    child: Text(content,
+                      style: TextStyle(
+                        fontSize: 200,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 10),
                     child: IconButton(
-                        icon: Icon(Icons.volume_up),
+                        icon: Icon(Icons.volume_up, size: 50, color: Colors.deepOrange,),
                         onPressed:  () => speak(audiofile)
                     ),
                   ),
@@ -85,7 +92,6 @@ class _secondPageState extends State<secondPage> {
                       height: 100,
                       width: 92,
                       alignment: Alignment.topRight,),
-
                   )
                 ],
               ),

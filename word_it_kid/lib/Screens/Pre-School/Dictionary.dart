@@ -148,12 +148,15 @@ class _FirstRouteState extends State<FirstRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
       bottomNavigationBar: Container(
         child: Image.asset(
           "Images/Forest.png",
           fit: BoxFit.cover,
         ),
       ),
+
 
 
       backgroundColor: Colors.green[900],
@@ -169,25 +172,29 @@ class _FirstRouteState extends State<FirstRoute> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 46,
-                color: Colors.yellowAccent,
+                color: Colors.amber,
               ),
               textAlign: TextAlign.center,
             ),
           ),
         ),
       ),
-      body:GridView.count(
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
-        crossAxisCount: 3,
-        padding: EdgeInsets.all(8),
-        children: alphaList,),
+      body: Container(
+
+        child: GridView.count(
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+          crossAxisCount: 3,
+          padding: EdgeInsets.all(8),
+          children: alphaList,),
+      ),
     );
   }
 }
 
 class Detail extends StatelessWidget {
   final FlutterTts _flutterTts = FlutterTts();
+
   @override
   String alphabet;
   String image;
@@ -201,124 +208,136 @@ class Detail extends StatelessWidget {
   Detail({this.alphabet, this.image, this.image2, this.image3, this.image4,
     this.text1, this.text2, this.text3, this.text4});
   Widget build(BuildContext context) {
+
     speak() async{
       await _flutterTts.speak(alphabet);
     }
+
     return Scaffold(
       backgroundColor: Colors.green[900],
-      body:  new ListView(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text(
-                alphabet + alphabet.toLowerCase(),
-                style: TextStyle(
-                  fontSize: 163,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.yellowAccent,
+
+      body:  Container(
+        child: new ListView(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(left: 50, top: 50),
+                  child: Text(
+                    alphabet + alphabet.toLowerCase(),
+                    style: TextStyle(
+                      fontSize: 163,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amberAccent,
+                    ),
+                  ),
                 ),
-              ),
-              Container(
-                  child: IconButton(
-                      icon: Icon(Icons.volume_up),
-                      onPressed:  () => speak()
-                  )
-              )
-            ],
-          ),
-          Hero(
-            tag : "alpha",
-            child: new Material(
-              color: Colors.green[900],
-              child: new InkWell(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Card(
-                            color: Colors.green,
+                Container(
+                  margin: EdgeInsets.only(left: 20, top: 50),
+                    child: IconButton(
+                      color: Colors.yellow,
+                        icon: Icon(Icons.volume_up, size: 80,),
+                      onPressed: (){
+                        speak();
+                      },
+                    )
+                )
+              ],
+            ),
+            Hero(
+              tag : "alpha",
+              child: new Material(
+                color: Colors.green[900],
+                child: new InkWell(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Card(
+                              color: Colors.green,
+                              child : Column(
+                                children: <Widget>[
+                                  Image.asset(image,
+                                    height: 150,
+                                    width: 150,
+                                    alignment: Alignment.bottomLeft,
+                                  ),
+                                  Text(text1,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+                                    ),)
+                                ],
+                              )
+                          ),
+                          Card(
+                            color: Colors.deepPurple,
                             child : Column(
                               children: <Widget>[
-                                Image.asset(image,
+                                Image.asset(image2,
                                   height: 150,
                                   width: 150,
                                   alignment: Alignment.bottomLeft,
                                 ),
-                                Text(text1,
+                                Text(text2,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20
                                   ),)
                               ],
-                            )
-                        ),
-                        Card(
-                          color: Colors.deepPurple,
-                          child : Column(
-                            children: <Widget>[
-                              Image.asset(image2,
-                                height: 150,
-                                width: 150,
-                                alignment: Alignment.bottomLeft,
-                              ),
-                              Text(text2,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),)
-                            ],
-                          ) ,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Card(
-                          color: Colors.amber,
-                          child : Column(
-                            children: <Widget>[
-                              Image.asset(image3,
-                                height: 150,
-                                width: 150,
-                                alignment: Alignment.bottomLeft,
-                              ),
-                              Text(text3,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),)
-                            ],
+                            ) ,
                           ),
-                        ),
-                        Card(
-                          color: Colors.lightGreenAccent,
-                          child : Column(
-                            children: <Widget>[
-                              Image.asset(image4,
-                                height: 150,
-                                width: 150,
-                                alignment: Alignment.bottomLeft,
-                              ),
-                              Text(text4,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                ),)
-                            ],
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Card(
+                            color: Colors.amber,
+                            child : Column(
+                              children: <Widget>[
+                                Image.asset(image3,
+                                  height: 150,
+                                  width: 150,
+                                  alignment: Alignment.bottomLeft,
+                                ),
+                                Text(text3,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20
+                                  ),)
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-                  ],
+                          Card(
+                            color: Colors.lightGreenAccent,
+                            child : Column(
+                              children: <Widget>[
+                                Image.asset(image4,
+                                  height: 150,
+                                  width: 150,
+                                  alignment: Alignment.bottomLeft,
+                                ),
+                                Text(text4,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20
+                                  ),)
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

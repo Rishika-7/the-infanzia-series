@@ -7,162 +7,185 @@ import 'package:worditkid/Screens/Rhymes/rhymes.dart';
 
 
 class KG_RP extends StatelessWidget {
+
+  final String name;
+  final String age;
+  KG_RP({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-
         body: Container(
           child: Container(
             child: Column(
               children: <Widget>[
 
-                Expanded (
-                  flex: 3,
-                  child : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Image.asset("Images/Redirection/bird.png",
-                        height: 170,
-                        width: 160,
-                        alignment: Alignment.topRight,
-                        fit: BoxFit.fill,
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset("Images/Redirection/bird.png",
+                    height: 170,
+                    width: 160,
+                    alignment: Alignment.topRight,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.only(right: 40, top: 10),
+                  alignment: Alignment.bottomRight,
+                  child : SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Levels(
+                            name: name,
+                            age: age,
+                          );
+                        }));
+                      },
+
+                      color: Colors.amber,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
                       ),
-                      Container(
-                          alignment: Alignment.bottomRight,
-                          child : RaisedButton(
 
-                              onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Levels();
-                                })
-                                );
-                              },
-
-                              color: Colors.amber,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset(
-                                    "Images/Redirection/LearnSymbol.png",
-                                    width: 30,
-                                    height: 30,
-                                  ),
-                                  Text(
-                                    "  LEARN",
-                                    style: TextStyle(
-                                        color: Colors.green[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
-
-                                ],
-                              ))
-                      ) ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset(
+                            "Images/Redirection/LearnSymbol.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "LEARN",
+                            style: TextStyle(
+                              color: Colors.green[900],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Expanded(
-                  flex: 3,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      Container(
-                          alignment: Alignment.center,
-                          child :RaisedButton(
-                              onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Rhyme();
-                                })
-                                );
-                              },
 
-                              color: Colors.amber,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset("Images/Redirection/singSymbol.png",
-                                    width: 30,
-                                    height: 30,
-                                    alignment: Alignment.bottomLeft,),
-                                  Text(
-                                    "SING",
-                                    style: TextStyle(
-                                        color: Colors.green[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
+                Container(
+                  margin: EdgeInsets.only(top: 60),
+                  alignment: Alignment.center,
+                  child :SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Rhyme();
+                        })
+                        );
+                      },
+                      color: Colors.amber,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                      ) ,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset("Images/Redirection/singSymbol.png",
+                            width: 30,
+                            height: 30,
+                            alignment: Alignment.bottomLeft,),
+                          Text(
+                            "SING",
+                            style: TextStyle(
+                              color: Colors.green[900],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
 
-                                ],
-                              ))
-                      )],
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Expanded (
-                  flex: 4,
+
+                Container(
+                  margin: EdgeInsets.only(right: 40, top: 60),
+                  alignment: Alignment.bottomRight,
+                  child : SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: RaisedButton(
+                      onPressed: () {
+                        debugPrint('Clicked');
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return Game();
+                        })
+                        );
+                      },
+
+                      color: Colors.amber,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                      ),
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Image.asset(
+                            "Images/Redirection/gamesSymbol.png",
+                            width: 20,
+                            height: 20,
+                          ),
+                          Text(
+                            "PLAY",
+                            style: TextStyle(
+                              color: Colors.green[900],
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                Container(
+                  alignment: Alignment.bottomRight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Image.asset("Images/Redirection/girrafe.png",
-                        height: 650,
-                        width: 150,
-                        alignment: Alignment.bottomLeft,
-                      ),
-                      Image.asset(
-                        "Images/Redirection/frog.png",
-                        height: 70,
-                        width:  100,
-                        alignment: Alignment.bottomCenter,
-                      ),
                       Container(
-                          alignment: Alignment.topRight,
-                          child :RaisedButton(
+                        alignment: Alignment.bottomLeft,
+                        child: Image.asset("Images/Redirection/girrafe.png",
+                          height: 300,
+                          alignment: Alignment.bottomLeft,
+                        ),
+                      ),
 
-                              onPressed: () {
-                                debugPrint('Clicked');
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return Game();
-                                })
-                                );
-                              },
+                      Container(
+                        child: Image.asset(
+                          "Images/Redirection/frog.png",
+                          height: 80,
+                          width:  100,
+                          alignment: Alignment.bottomCenter,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
 
-                              color: Colors.amber,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)
-                              ) ,
-                              child: Row(
-                                children: <Widget>[
-                                  Image.asset(
-                                    "Images/Redirection/gamesSymbol.png",
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    "  PLAY",
-                                    style: TextStyle(
-                                        color: Colors.green[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18
-                                    ),
-                                  ),
-                                ],
-                              ))
-                      ) ],
-
-                  ),)
-
-              ], ),
+              ],
+            ),
 
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
@@ -172,13 +195,8 @@ class KG_RP extends StatelessWidget {
               ),
             ),
           ),
-
         ),
-
-
-
       ),
     );
-
   }
 }

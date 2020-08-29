@@ -15,11 +15,22 @@ import 'package:worditkid/Screens/Kindergarten/Exercise/ExerciseKG5/SinPluExe.da
 
 
 class Levels extends StatefulWidget {
+  final String name;
+  final String age;
+  Levels({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  LevelsState createState() => new LevelsState();
+  LevelsState createState() => new LevelsState(
+    name : name,
+    age: age,
+  );
 }
 
 class LevelsState extends State<Levels> {
+
+  String name;
+  String age;
+  LevelsState({this.name, this.age});
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +48,33 @@ class LevelsState extends State<Levels> {
           ),
         ),
 
-        child: Grid(),
+        child: Grid(
+          name: name,
+          age: age,
+        ),
       ),
     );
   }
 }
 
 class Grid extends StatefulWidget {
+
+  final String name;
+  final String age;
+  Grid({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  GridApp createState() => new GridApp();
+  GridApp createState() => new GridApp(
+      name : name,
+      age: age,
+  );
 }
 
 class GridApp extends State<Grid> {
+
+  String name;
+  String age;
+  GridApp({this.name, this.age});
 
   @override
   Widget build(BuildContext context) {

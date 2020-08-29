@@ -45,12 +45,13 @@ class HomeState extends State<Home> {
             if('${doc.data['module']}'.contains('pre-school')) {
               return PS_RP(
                 name: '${doc.data['name']}',
-                  age: '${doc.data['age']}'
+                age: '${doc.data['age']}',
               );
             }
             else{
               return KG_RP(
-//                name: '${doc.data['name']}',
+                name: '${doc.data['name']}',
+                age: '${doc.data['age']}',
               );
             }
           })

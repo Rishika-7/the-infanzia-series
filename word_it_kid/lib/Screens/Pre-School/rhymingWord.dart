@@ -94,7 +94,7 @@ class GridApp extends State<Grid> {
                               text4: "Rat",
 
                               audiofile: "Hello. We will learn about"
-                                  "rhyming words that end with at. Like a bat.   a cat. a mat. "
+                                  "rayeming words that end with at. Like a bat.   a cat. a mat. "
                                   "and a rat. All these words have A T at the end.",
                             ),
                           ),
@@ -151,8 +151,8 @@ class GridApp extends State<Grid> {
                             image4: "Images/RhymingWords/tall.png",
                             text4: "Tall",
                             audiofile: "Hello. We will learn about"
-                                "rhyming words that end with . L L. Like a Ball.   a Wall. a Call. "
-                                "and a Tall. All these words have L L at the end.",
+                                "rayeming words that end with . L L. Like a Ball.   a Wall. a Call. "
+                                "and Tall. All these words have L L at the end.",
 
                           ),));
                       },
@@ -208,7 +208,7 @@ class GridApp extends State<Grid> {
                           image4: "Images/RhymingWords/bar.png",
                           text4: "Bar",
                           audiofile: "Hello! We will learn about"
-                              "rhyming words that end with . A R. Like a Car.   a Jar. a War. "
+                              "rayeming words that end with . A R. Like a Car.   a Jar. War. "
                               "and a Bar. All these words have A R at the end.",
 
                         ),));
@@ -256,7 +256,7 @@ class GridApp extends State<Grid> {
                           image4: "Images/RhymingWords/cot.png",
                           text4: "Cot",
                           audiofile: "Hello! We will learn about"
-                              "rhyming words that end with . O T. Like a Pot.   a Dot.  Hot. "
+                              "rayeming words that end with . O T. Like a Pot.   a Dot.  Hot. "
                               "and a cot. All these words have O T at the end.",
 
                         ),),
@@ -303,7 +303,7 @@ class GridApp extends State<Grid> {
                           image4: "Images/RhymingWords/pan.png",
                           text4: "Pan",
                           audiofile: "Hello! We will learn about"
-                              "rhyming words that end with . A N. Like a Van.   a Man. a Can. "
+                              "rayeming words that end with . A N. Like a Van.   a Man. a Can. "
                               "and a Pan. All these words have A N at the end.",
                         ),));
                     },

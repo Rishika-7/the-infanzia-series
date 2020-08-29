@@ -9,70 +9,38 @@ class BodyParts extends StatefulWidget {
 }
 
 class HomePage extends State<BodyParts> {
-  final ScrollController _scrollController = ScrollController();
+
   final FlutterTts flutterTts = FlutterTts();
 
-  speakPart(i) async {
+  speakPart(index) async {
     var parts = [
-      'body parts',
-      'hair',
-      'eyes and eyebrows',
-      'ear',
-      'mouth',
-      'hands',
-      'leg and knee'
+      "This is the eye",
+      'These are the ears',
+      'This is the nose',
+      'This is the mouth',
+      'These are hands',
+      'These are legs'
     ];
 
-    await flutterTts.speak(parts[i]);
+    await flutterTts.speak(parts[index]);
   }
 
-  List<Container> namingList = new List();
+  PageController pageController;
 
-  var inputs = [
-    'Images/humanparts.png',
-    'Images/hair.png',
-    'Images/eye&brow.png',
-    'Images/ear.png',
-    'Images/mouth.png',
+  //image list
+  List<String> images = [
+    'Images/eye2.jpg',
+    'Images/ear2.png',
+    'Images/nose2.jpg',
+    'Images/mouth2.jpg',
     'Images/hands.png',
-    'Images/leg&knee.png',
+    'Images/legs.png'
   ];
 
-  buildList() async {
-    for (int i = 0; i < inputs.length; i++) {
-      final element = inputs[i];
-
-      namingList.add(
-        Container(
-          child: Card(
-            elevation: 5.0,
-            color: Color(0x00000000),
-            child: GestureDetector(
-              onTap: () {
-                speakPart(i);
-              },
-              child: Container(
-                alignment: Alignment.topRight,
-                padding: EdgeInsets.only(right: 20, top: 20),
-                decoration: BoxDecoration(
-                  color: Color(0xFF006666),
-                  image: DecorationImage(
-                    image: AssetImage(element),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-  }
-
+  @override
   void initState() {
-    buildList();
     super.initState();
+    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
   }
 
   @override
@@ -88,21 +56,52 @@ class HomePage extends State<BodyParts> {
             fit: BoxFit.fill,
           ),
         ),
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: images.length,
+            itemBuilder: (context, position) {
+              return cardSlider(position);
+            }),
+      ),
+    );
+  }
+
+  cardSlider(int index) {
+    return AnimatedBuilder(
+      animation: pageController,
+      builder: (context, widget) {
+        double value = 1;
+        if (pageController.position.haveDimensions) {
+          value = pageController.page - index;
+          value = (1 - (value.abs() - 0.3)).clamp(0.0, 1.0);
+        }
+
+        return Center(
+            child: SizedBox(
+              height: Curves.easeInOut.transform(value) * 250,
+              width: Curves.easeInOut.transform(value) * 400,
+              child: widget,
+            ));
+      },
+      child: GestureDetector(
+        onTap: () {
+          speakPart(index);
+        },
         child: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(24),
-          height: 400,
-          child: Scrollbar(
-            isAlwaysShown: true,
-            controller: _scrollController,
-            child: GridView.count(
-              controller: _scrollController,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 30,
-              crossAxisCount: 1,
-              primary: false,
-              children: namingList,
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Container(child: Icon(Icons.volume_up)),
+          ),
+          alignment: Alignment.topRight,
+          //padding: EdgeInsets.only(right: 20, top: 20),
+          decoration: BoxDecoration(
+            color: Color(0xFF006666),
+            image: DecorationImage(
+              image: AssetImage(images[index]),
+              fit: BoxFit.fill,
             ),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
         ),
       ),

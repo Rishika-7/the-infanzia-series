@@ -142,7 +142,7 @@ class ColorGameState extends State<ColorGame> {
       onAccept: (data) {
         setState(() {
           score[emoji] = true;
-          plyr.play('success.mp3');
+          player.play('success.mp3');
         });
       },
       onLeave: (data) {},
@@ -172,4 +172,4 @@ class Emoji extends StatelessWidget {
   }
 }
 
-AudioCache plyr = AudioCache();
+AudioCache player = AudioCache();

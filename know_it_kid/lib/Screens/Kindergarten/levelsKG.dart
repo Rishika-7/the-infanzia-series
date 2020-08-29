@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
 
 class KGLevels extends StatefulWidget {
   @override
@@ -59,7 +60,13 @@ class GridApp extends State<Grid> {
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {},
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return Seasons();
+                        }));
+                  },
                   backgroundColor: Colors.green,
                   child: Center(
                     child: Text(

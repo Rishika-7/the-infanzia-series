@@ -10,91 +10,32 @@ class Shapes extends StatefulWidget {
 }
 
 class HomePage extends State<Shapes> {
-  final ScrollController _scrollController = ScrollController();
+  PageController pageController;
   final FlutterTts flutterTts = FlutterTts();
 
-  speak_circle() async {
-    await flutterTts.speak("Circle");
+  speakShape(index) async {
+    var shapes = [
+      "Circle",
+      'Triangle',
+      'Square',
+      'Rectangle',
+    ];
+
+    await flutterTts.speak(shapes[index]);
   }
 
-  speak_triangle() async {
-    await flutterTts.speak("Triangle");
-  }
-
-  speak_square() async {
-    await flutterTts.speak("Square");
-  }
-
-  speak_rectangle() async {
-    await flutterTts.speak("Rectangle");
-  }
-
-  List<Container> namingList = new List();
-
-  var inputs = [
+  //image list
+  var images = [
     {"Image1": "Images/circle.png", "Image2": "Images/circle_b.png"},
     {"Image1": "Images/triangle.png", "Image2": "Images/triangle_b.png"},
     {"Image1": "Images/square.png", "Image2": "Images/square_b.png"},
     {"Image1": "Images/rectangle.png", "Image2": "Images/rectangle_b.png"},
   ];
 
-  buildList() async {
-    for (int i = 0; i < inputs.length; i++) {
-      final element = inputs[i];
-
-      namingList.add(
-        Container(
-          child: Card(
-            elevation: 0.0,
-            color: Color(0x00000000),
-            child: FlipCard(
-              direction: FlipDirection.HORIZONTAL,
-              speed: 1000,
-              front: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF006666),
-                  image: DecorationImage(
-                    image: AssetImage(element["Image1"]),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-              ),
-              back: GestureDetector(
-                onTap: () {
-                  if (i == 0) {
-                    speak_circle();
-                  } else if (i == 1) {
-                    speak_triangle();
-                  } else if (i == 2) {
-                    speak_square();
-                  } else {
-                    speak_rectangle();
-                  }
-                },
-                child: Container(
-                  alignment: Alignment.topRight,
-                  padding: EdgeInsets.only(right: 15, top: 10),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF006666),
-                    image: DecorationImage(
-                      image: AssetImage(element["Image2"]),
-                      fit: BoxFit.fill,
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-  }
-
+  @override
   void initState() {
-    buildList();
     super.initState();
+    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
   }
 
   @override
@@ -110,19 +51,71 @@ class HomePage extends State<Shapes> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(24),
-          height: 400,
-          child: Scrollbar(
-            isAlwaysShown: true,
-            controller: _scrollController,
-            child: GridView.count(
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 30,
-              crossAxisCount: 1,
-              primary: false,
-              children: namingList,
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: images.length,
+            itemBuilder: (context, position) {
+              return cardSlider(position);
+            }),
+      ),
+    );
+  }
+
+  cardSlider(int index) {
+    return AnimatedBuilder(
+      animation: pageController,
+      builder: (context, widget) {
+        double value = 1;
+        if (pageController.position.haveDimensions) {
+          value = pageController.page - index;
+          value = (1 - (value.abs() - 0.3)).clamp(0.0, 1.0);
+        }
+
+        return Center(
+            child: SizedBox(
+          height: Curves.easeInOut.transform(value) * 250,
+          width: Curves.easeInOut.transform(value) * 400,
+          child: widget,
+        ));
+      },
+      child: Container(
+        child: Card(
+          elevation: 0.0,
+          color: Color(0x00000000),
+          child: FlipCard(
+            direction: FlipDirection.HORIZONTAL,
+            speed: 1000,
+            front: Container(
+              decoration: BoxDecoration(
+                color: Color(0xFF006666),
+                image: DecorationImage(
+                  image: AssetImage(images[index]["Image1"]),
+                  fit: BoxFit.fill,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              ),
+            ),
+            back: GestureDetector(
+              onTap: () {
+                speakShape(index);
+              },
+              child: Container(
+                child: SizedBox(
+                  height: 30,
+                  width: 30,
+                  child: Container(child: Icon(Icons.volume_up)),
+                ),
+                alignment: Alignment.topRight,
+                padding: EdgeInsets.only(right: 15, top: 10),
+                decoration: BoxDecoration(
+                  color: Color(0xFF006666),
+                  image: DecorationImage(
+                    image: AssetImage(images[index]["Image2"]),
+                    fit: BoxFit.fill,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
+              ),
             ),
           ),
         ),

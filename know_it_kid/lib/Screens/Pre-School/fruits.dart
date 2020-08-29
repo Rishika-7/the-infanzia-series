@@ -3,104 +3,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class Fruits extends StatefulWidget {
+class Fruits extends StatelessWidget {
   @override
-  HomePage createState() => HomePage();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Fruits',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: FruitsHomePage(title: 'Fruits'));
+  }
 }
 
-class HomePage extends State<Fruits> {
-  final ScrollController _scrollController = ScrollController();
+class FruitsHomePage extends StatefulWidget {
+  FruitsHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+  @override
+  _FruitsHomePageState createState() => _FruitsHomePageState();
+}
+
+class _FruitsHomePageState extends State<FruitsHomePage> {
   final FlutterTts flutterTts = FlutterTts();
 
-  speakApple() async {
-    await flutterTts.speak("Apple");
+  speakFruit(index) async {
+    var fruits = [
+      'apple',
+      'banana',
+      'orange',
+      'watermelon',
+      'grapes',
+      'strawberry',
+      'pineapple',
+    ];
+
+    await flutterTts.speak(fruits[index]);
   }
 
-  speakBanana() async {
-    await flutterTts.speak("Banana");
-  }
+  PageController pageController;
 
-  speakWatermelon() async {
-    await flutterTts.speak("Watermelon");
-  }
-
-  speakOrange() async {
-    await flutterTts.speak("Orange");
-  }
-
-  speakGrapes() async {
-    await flutterTts.speak("Grapes");
-  }
-
-  speakPineapple() async {
-    await flutterTts.speak("Pineapple");
-  }
-
-  speakStrawberry() async {
-    await flutterTts.speak("Strawberry");
-  }
-
-  List<Container> namingList = new List();
-
-  var inputs = [
-    {"Image1": "Images/Apple.png"},
-    {"Image1": "Images/Banana.png"},
-    {"Image1": "Images/Watermelon.png"},
-    {"Image1": "Images/Oranges.png"},
-    {"Image1": "Images/Grapes.png"},
-    {"Image1": "Images/Pineapple.png"},
-    {"Image1": "Images/Strawberrry.png"},
+  //image list
+  List<String> images = [
+    "Images/Apple.png",
+    "Images/Banana.png",
+    "Images/Oranges.png",
+    "Images/Watermelon.png",
+    "Images/Grapes.png",
+    "Images/Strawberrry.png",
+    "Images/Pineapple.png"
   ];
 
-  buildList() async {
-    for (int i = 0; i < inputs.length; i++) {
-      final element = inputs[i];
-
-      namingList.add(
-        Container(
-          child: Card(
-            elevation: 5.0,
-            color: Color(0x00000000),
-            child: GestureDetector(
-              onTap: () {
-                if (i == 0) {
-                  speakApple();
-                } else if (i == 1) {
-                  speakBanana();
-                } else if (i == 2) {
-                  speakWatermelon();
-                } else if (i == 3) {
-                  speakOrange();
-                } else if (i == 4) {
-                  speakGrapes();
-                } else if (i == 5) {
-                  speakPineapple();
-                } else {
-                  speakStrawberry();
-                }
-              },
-              child: Container(
-                alignment: Alignment.topRight,
-                padding: EdgeInsets.only(right: 20, top: 20),
-                decoration: BoxDecoration(
-                  color: Color(0xFF006666),
-                  image: DecorationImage(
-                    image: AssetImage(element["Image1"]),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-  }
-
+  @override
   void initState() {
-    buildList();
     super.initState();
+    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
   }
 
   @override
@@ -116,21 +74,50 @@ class HomePage extends State<Fruits> {
             fit: BoxFit.fill,
           ),
         ),
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: images.length,
+            itemBuilder: (context, position) {
+              return cardSlider(position);
+            }),
+      ),
+    );
+  }
+
+  cardSlider(int index) {
+    return AnimatedBuilder(
+      animation: pageController,
+      builder: (context, widget) {
+        double value = 1;
+        if (pageController.position.haveDimensions) {
+          value = pageController.page - index;
+          value = (1 - (value.abs() - 0.4)).clamp(0.0, 1.0);
+        }
+
+        return Center(
+            child: SizedBox(
+              height: Curves.easeInOut.transform(value) * 250,
+              width: Curves.easeInOut.transform(value) * 400,
+                child: widget,
+        ));
+      },
+      child: GestureDetector(
+        onTap: () {
+          speakFruit(index);
+        },
         child: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(24),
-          height: 400,
-          child: Scrollbar(
-            isAlwaysShown: true,
-            controller: _scrollController,
-            child: GridView.count(
-              controller: _scrollController,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 30,
-              crossAxisCount: 1,
-              primary: false,
-              children: namingList,
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Container(child: Icon(Icons.volume_up)),
+          ),
+          alignment: Alignment.topRight,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(images[index]),
+              fit: BoxFit.fill,
             ),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
         ),
       ),

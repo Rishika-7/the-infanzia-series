@@ -268,7 +268,8 @@ flutter:
     - Images/ExerciseImages/coin.png
     - Images/ExerciseImages/crown.gif
     - Images/seasons/autumn-bg.png
-    - 'Sound/Miracle-sound-effect.mp3'
+    - Sound/Miracle-sound-effect.mp3
+    - Sound/Christmas.mp3
     - Images/ExerciseImages/blocks.png
     - Images/ExerciseImages/donut.png
     - Images/ExerciseImages/teddyBear.png

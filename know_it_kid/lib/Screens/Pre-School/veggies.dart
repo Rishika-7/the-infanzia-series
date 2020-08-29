@@ -3,16 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-class Veggies extends StatefulWidget {
+
+class Veggies extends StatelessWidget {
   @override
-  HomePage createState() => HomePage();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Vegetables',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: VeggiesHomePage(title: 'Vegetables'));
+  }
 }
 
-class HomePage extends State<Veggies> {
-  final ScrollController _scrollController = ScrollController();
+class VeggiesHomePage extends StatefulWidget {
+  VeggiesHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+  @override
+  _VeggiesHomePageState createState() => _VeggiesHomePageState();
+}
+
+class _VeggiesHomePageState extends State<VeggiesHomePage> {
   final FlutterTts flutterTts = FlutterTts();
 
-  speakVeggie(i) async {
+  speakVeggie(index) async {
     var veggies = [
       'cabbage',
       'carrot',
@@ -23,15 +40,15 @@ class HomePage extends State<Veggies> {
       'pumpkin',
       'lettuce',
       'garlic',
-      'bottlegourd'
     ];
 
-    await flutterTts.speak(veggies[i]);
+    await flutterTts.speak(veggies[index]);
   }
 
-  List<Container> namingList = new List();
+  PageController pageController;
 
-  var inputs = [
+  //image list
+  List<String> images = [
     'Images/Cabbage.png',
     'Images/Carrot.png',
     'Images/Cauliflower.png',
@@ -41,44 +58,12 @@ class HomePage extends State<Veggies> {
     'Images/Pumpkin.png',
     'Images/Lettuce.png',
     'Images/Garlic.png',
-    'Images/Bottlegourd.png',
   ];
 
-  buildList() async {
-    for (int i = 0; i < inputs.length; i++) {
-      final element = inputs[i];
-
-      namingList.add(
-        Container(
-          child: Card(
-            elevation: 5.0,
-            color: Color(0x00000000),
-            child: GestureDetector(
-              onTap: () {
-                speakVeggie(i);
-              },
-              child: Container(
-                alignment: Alignment.topRight,
-                padding: EdgeInsets.only(right: 20, top: 20),
-                decoration: BoxDecoration(
-                  color: Color(0xFF006666),
-                  image: DecorationImage(
-                    image: AssetImage(element),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-  }
-
+  @override
   void initState() {
-    buildList();
     super.initState();
+    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
   }
 
   @override
@@ -94,24 +79,56 @@ class HomePage extends State<Veggies> {
             fit: BoxFit.fill,
           ),
         ),
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: images.length,
+            itemBuilder: (context, position) {
+              return cardSlider(position);
+            }),
+      ),
+    );
+  }
+
+  cardSlider(int index) {
+    return AnimatedBuilder(
+      animation: pageController,
+      builder: (context, widget) {
+        double value = 1;
+        if (pageController.position.haveDimensions) {
+          value = pageController.page - index;
+          value = (1 - (value.abs() - 0.3)).clamp(0.0, 1.0);
+        }
+
+        return Center(
+            child: SizedBox(
+              height: Curves.easeInOut.transform(value) * 250,
+              width: Curves.easeInOut.transform(value) * 400,
+              child: widget,
+            ));
+      },
+      child: GestureDetector(
+        onTap: () {
+          speakVeggie(index);
+        },
         child: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(24),
-          height: 400,
-          child: Scrollbar(
-            isAlwaysShown: true,
-            controller: _scrollController,
-            child: GridView.count(
-              controller: _scrollController,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 30,
-              crossAxisCount: 1,
-              primary: false,
-              children: namingList,
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Container(child: Icon(Icons.volume_up)),
+          ),
+          alignment: Alignment.topRight,
+          //padding: EdgeInsets.only(right: 20, top: 20),
+          decoration: BoxDecoration(
+            color: Color(0xFF006666),
+            image: DecorationImage(
+              image: AssetImage(images[index]),
+              fit: BoxFit.fill,
             ),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
         ),
       ),
     );
   }
 }
+

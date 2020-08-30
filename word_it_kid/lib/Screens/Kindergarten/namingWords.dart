@@ -34,7 +34,7 @@ class HomePage extends State<NamingWords> {
   speak_boy() async{
     await flutterTts.setLanguage("en-IN");
     await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("This is Sonal! She is my best friend! Sonal is a girl! Girl is a Naming Word.");
+    await flutterTts.speak("This is Lily! She is my best friend! Lily is a girl! Girl is a Naming Word.");
   }
 
   List<Container> namingList = new List();

@@ -8,7 +8,7 @@ import 'package:knowitkid/Screens/Kindergarten/profession.dart';
 import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
 import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
-import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
+import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Profession)/PofessionExe.dart';
 
 
 
@@ -207,10 +207,13 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
-                    //Navigator.of(context).push(
-                    //  new MaterialPageRoute(builder: (BuildContext context) {
-                    //return Exercise2();
-                    //}));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return ProfessionExe(
+                            min: 0,
+                            max: 5,
+                          );
+                        }));
                   },
                   backgroundColor: Colors.orange,
                   child: Center(

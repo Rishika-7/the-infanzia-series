@@ -26,10 +26,10 @@ class HomePage extends State<Shapes> {
 
   //image list
   var images = [
-    {"Image1": "Images/circle.png", "Image2": "Images/circle_b.png"},
-    {"Image1": "Images/triangle.png", "Image2": "Images/triangle_b.png"},
-    {"Image1": "Images/square.png", "Image2": "Images/square_b.png"},
-    {"Image1": "Images/rectangle.png", "Image2": "Images/rectangle_b.png"},
+    {"Image1": "Images/circle_f.png", "Image2": "Images/circle_b.png"},
+    {"Image1": "Images/triangle_f.png", "Image2": "Images/triangle_b.png"},
+    {"Image1": "Images/square_f.png", "Image2": "Images/square_b.png"},
+    {"Image1": "Images/rectangle_f.png", "Image2": "Images/rectangle_b.png"},
   ];
 
   @override

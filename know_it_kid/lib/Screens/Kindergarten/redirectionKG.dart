@@ -8,6 +8,10 @@ import 'package:knowitkid/Screens/Rhymes/rhymes.dart';
 
 
 class Kindergarten extends StatelessWidget {
+  final String name;
+  final String age;
+  Kindergarten({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

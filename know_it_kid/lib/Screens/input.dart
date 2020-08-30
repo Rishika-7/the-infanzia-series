@@ -4,6 +4,8 @@ import 'package:flutter/rendering.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../home.dart';
+
 class Input extends StatefulWidget {
   @override
   InputState createState() => new InputState();
@@ -55,21 +57,21 @@ class DemoCard extends State<Disp> {
 
   TextFormField buildTextFormField() {
     return TextFormField(
-      cursorColor: Colors.green,
+      cursorColor: Colors.black,
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
 
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.green,
+            color: Colors.black,
           ),
         ),
       ),
 
       style: TextStyle(
         fontSize: 25.0,
-        color: Colors.green,
+        color: Colors.black,
       ),
 
       // ignore: missing_return
@@ -84,21 +86,21 @@ class DemoCard extends State<Disp> {
 
   TextFormField buildTextFormFieldAge() {
     return TextFormField(
-      cursorColor: Colors.green,
+      cursorColor: Colors.black,
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
 
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.green,
+            color: Colors.black,
           ),
         ),
       ),
 
       style: TextStyle(
         fontSize: 25.0,
-        color: Colors.green,
+        color: Colors.black,
       ),
 
       // ignore: missing_return
@@ -127,7 +129,7 @@ class DemoCard extends State<Disp> {
           Container(
             height: 200,
             child: Image(
-              image: AssetImage("Images/Home/Heading.png"),
+              image: AssetImage("Images/Heading.png"),
               fit: BoxFit.contain,
             ),
           ),
@@ -135,7 +137,8 @@ class DemoCard extends State<Disp> {
           Text(
             'ENTER NAME',
             style: TextStyle(
-              color: Colors.yellow,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
               fontSize: 20.0,
             ),
             textAlign: TextAlign.center,
@@ -155,7 +158,8 @@ class DemoCard extends State<Disp> {
                 Text(
                   'ENTER AGE',
                   style: TextStyle(
-                    color: Colors.yellow,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                     fontSize: 20.0,
                   ),
                   textAlign: TextAlign.center,
@@ -170,7 +174,8 @@ class DemoCard extends State<Disp> {
                 Text(
                   'SELECT GROUP',
                   style: TextStyle(
-                    color: Colors.yellow,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                     fontSize: 20.0,
                   ),
                   textAlign: TextAlign.center,
@@ -185,7 +190,7 @@ class DemoCard extends State<Disp> {
                       Container(
                         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                         decoration: BoxDecoration(
-                          color: Colors.green[800],
+                          color: Colors.blue[800],
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                         ),
 
@@ -194,19 +199,20 @@ class DemoCard extends State<Disp> {
                             Text(
                               'PRE-\nSCHOOL',
                               style: TextStyle(
-                                color: Colors.yellow,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
                               textAlign: TextAlign.center,
                             ),
 
-                            Icon(Icons.pets),
+                            Icon(Icons.opacity),
 
                             SizedBox(
                               child: Radio(
                                 onChanged: (String val) {
                                   setRadioValue(val);
                                 },
-                                activeColor: Colors.yellow,
+                                activeColor: Colors.black,
                                 value: 'pre-school',
                                 groupValue: radioValue,
                               ),
@@ -218,7 +224,7 @@ class DemoCard extends State<Disp> {
                       Container(
                         padding: EdgeInsets.only(top: 10, left: 10, right: 10),
                         decoration: BoxDecoration(
-                          color: Colors.green[800],
+                          color: Colors.blue[800],
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                         ),
 
@@ -227,19 +233,20 @@ class DemoCard extends State<Disp> {
                             Text(
                               'KINDER\nGARTEN',
                               style: TextStyle(
-                                color: Colors.yellow,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
                               textAlign: TextAlign.center,
                             ),
 
-                            Icon(Icons.pets),
+                            Icon(Icons.opacity),
 
                             SizedBox(
                               child: Radio(
                                 onChanged: (String val) {
                                   setRadioValue(val);
                                 },
-                                activeColor: Colors.yellow,
+                                activeColor: Colors.black,
                                 value: 'kindergarten',
                                 groupValue: radioValue,
                               ),
@@ -274,7 +281,7 @@ class DemoCard extends State<Disp> {
 
                   },
 
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.lightBlue,
                   child: Center(
                     child: Text(
                       'GO',

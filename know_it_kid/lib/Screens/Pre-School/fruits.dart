@@ -39,6 +39,8 @@ class _FruitsHomePageState extends State<FruitsHomePage> {
       'pineapple',
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(fruits[index]);
   }
 

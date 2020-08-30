@@ -42,6 +42,8 @@ class _VeggiesHomePageState extends State<VeggiesHomePage> {
       'garlic',
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(veggies[index]);
   }
 

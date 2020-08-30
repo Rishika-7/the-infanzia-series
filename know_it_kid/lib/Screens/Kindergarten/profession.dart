@@ -22,6 +22,8 @@ class HomePage extends State<Professions> {
       'An athlete'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(professions[index]);
   }
 

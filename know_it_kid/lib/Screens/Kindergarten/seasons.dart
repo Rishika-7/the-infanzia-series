@@ -22,6 +22,8 @@ class HomePage extends State<Seasons> {
       'Winter! Cold! Winter is very cold. Snow! I like to make snowman in winter.'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(seasons[index]);
   }
 

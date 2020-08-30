@@ -22,6 +22,8 @@ class HomePage extends State<BodyParts> {
       'These are legs'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(parts[index]);
   }
 

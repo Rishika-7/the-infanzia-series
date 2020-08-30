@@ -22,6 +22,8 @@ class HomePage extends State<GoodHabits> {
       'Go to sleep early at night'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(habits[index]);
   }
 

@@ -21,6 +21,8 @@ class HomePage extends State<TrafficRules> {
       'Always use a helmet while riding a bicycle'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1.5);
     await flutterTts.speak(rules[index]);
   }
 

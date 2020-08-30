@@ -14,7 +14,7 @@ class TracingState extends State<Tracing> {
   speakLine(i) async {
     var lines = [
       "Let us draw a straight line",
-      "a zigzag straight",
+      "a zigzag line",
       "a wavy line",
       "a dotted line",
       "and a curvy line"

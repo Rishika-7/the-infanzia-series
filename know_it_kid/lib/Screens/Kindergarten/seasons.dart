@@ -15,11 +15,11 @@ class HomePage extends State<Seasons> {
 
   speakSeason(index) async {
     var seasons = [
-      "Spring! Warm! Spring is warm. Flower! Spring is flowering season.",
-      'Summer! Hot! Summer is very hot. Beach! I like to go to beach in summer.',
-      'Rainy! Wet! Rain is wet. Umbrella! I carry an umbrella in rainy season',
-      'Fall! Cool! Fall is cool. Leaves! Leaves fall in fall season.',
-      'Winter! Cold! Winter is very cold. Snow! I like to make snowman in winter.'
+      "Spring! Spring is warm. Spring is flowering season.",
+      'Summer! Summer is very hot. I like to go to beach in summer.',
+      'Rainy! Rain is wet. I carry an umbrella in rainy season',
+      'Fall! Fall is cool. Leaves fall in fall season.',
+      'Winter! Winter is very cold. I like to make snowman in winter.'
     ];
 
     await flutterTts.setLanguage("en-IN");

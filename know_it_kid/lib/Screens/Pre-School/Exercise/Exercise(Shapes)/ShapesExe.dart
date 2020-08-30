@@ -56,13 +56,8 @@ class _ShapesExeState extends State<ShapesExe> {
 
             child: Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                    )
-                  ],
+                Container(
+                      height: 150,
                 ),
 
                 Row(
@@ -122,7 +117,7 @@ class _ShapesExeState extends State<ShapesExe> {
                                 title: Text('How to Play?',
                                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                                 content: Text(
-                                  'Match the similar words!\n\n'
+                                  'Match the Shapes!\n\n'
                                       'Just Drag and Drop 👆➡✔',
                                   style: TextStyle(fontSize: 20),
                                 ),

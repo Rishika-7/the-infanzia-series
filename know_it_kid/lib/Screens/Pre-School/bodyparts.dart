@@ -36,7 +36,7 @@ class HomePage extends State<BodyParts> {
     'Images/nose2.jpg',
     'Images/mouth2.jpg',
     'Images/hands.png',
-    'Images/Legs.png'
+    'Images/legs.png'
   ];
 
   @override

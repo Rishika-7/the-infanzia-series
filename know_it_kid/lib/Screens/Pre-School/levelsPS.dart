@@ -186,6 +186,7 @@ class GridApp extends State<Grid> {
               ],
             ),
           ),
+
           Container(
             width: 300,
             padding: EdgeInsets.all(10),

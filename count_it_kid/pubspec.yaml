@@ -67,6 +67,11 @@ flutter:
     - Images/Levels/Tracing/Tracing.png
     - Images/Levels/Tracing/tracing-bg.png
     - Images/Levels/Tracing/tracing-full.png
+    - Images/Levels/Tracing/straightline.png
+    - Images/Levels/Tracing/zigzagline.png
+    - Images/Levels/Tracing/wavyline.png
+    - Images/Levels/Tracing/dottedline.png
+    - Images/Levels/Tracing/curvyline.png
     - Images/Levels/LessThan/lessThan.png
     - Images/Levels/LessThan/lessThan-bg.png
     - Images/Levels/LessThan/lessThan-full.png

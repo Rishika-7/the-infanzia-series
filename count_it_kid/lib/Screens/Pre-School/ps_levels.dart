@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import 'Exercise/Numonary/exercise.dart';
 import 'equalTo.dart';
 
 
@@ -108,7 +109,14 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn12",
                   onPressed: () {
-
+                    Navigator.of(context).push(
+                        new MaterialPageRoute(builder: (BuildContext context) {
+                          return NumoExe(
+                            max: 5,
+                            min: 0,
+                          );
+                        })
+                    );
                   },
 
                   backgroundColor: Colors.orange,
@@ -234,6 +242,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
 
                   },
+
 
                   backgroundColor: Colors.pinkAccent[100],
                   child: Center(

@@ -56,6 +56,9 @@ flutter:
     - Images/Bodyparts/
     - Images/Colors/
     - Images/Seasons/
+    - Images/Animals/
+    - Images/Animals/dolphin.png
+    - Images/Animals/dog.png
 
 
   # To add assets to your application, add an assets section, like this:

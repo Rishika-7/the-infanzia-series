@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(animals).dart';
 import 'package:knowitkid/Screens/Kindergarten/animals.dart';
 import 'package:knowitkid/Screens/Kindergarten/goodhabits.dart';
 import 'package:knowitkid/Screens/Kindergarten/profession.dart';
 import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
 import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
+import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
+
 
 
 class KGLevels extends StatefulWidget {
@@ -147,13 +150,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
-                    // Navigator.of(context).push(
-                    //   new MaterialPageRoute(builder: (BuildContext context) {
-                    //return Exercise(
-                    //max: 5,
-                    //min: 0,
-                    //);
-                    //}));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return animalsExe();
+                        }));
                   },
                   backgroundColor: Colors.redAccent,
                   child: Center(

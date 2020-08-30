@@ -32,7 +32,7 @@ class _CoolorsState extends State<Coolors> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/ColorsBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(
@@ -42,7 +42,7 @@ class _CoolorsState extends State<Coolors> {
                   color: Colors.blue[300],
                   padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 40),
                   child: Image.asset("Images/Colors/duck.png",
-                    fit: BoxFit.cover,),
+                    fit: BoxFit.fill,),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -150,7 +150,7 @@ class _Route2State extends State<Route2> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/ColorsBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(
@@ -267,7 +267,7 @@ class _Route3State extends State<Route3> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/ColorsBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(
@@ -385,7 +385,7 @@ class _Route4State extends State<Route4> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/ColorsBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(
@@ -504,7 +504,7 @@ class _Route5State extends State<Route5> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/ColorsBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(

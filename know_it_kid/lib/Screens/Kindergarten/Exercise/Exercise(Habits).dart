@@ -6,16 +6,16 @@ void main() {
   runApp(
       MaterialApp(
         title: "Rhyming Words",
-        home: Route1(),
+        home: HabitsExe(),
       )
   );
 }
-class Route1 extends StatefulWidget {
+class HabitsExe extends StatefulWidget {
   @override
-  _Route1State createState() => _Route1State();
+  _HabitsExeState createState() => _HabitsExeState();
 }
 
-class _Route1State extends State<Route1> {
+class _HabitsExeState extends State<HabitsExe> {
   bool isRight = false;
   bool isWrong = false;
   int score = 0;
@@ -26,7 +26,7 @@ class _Route1State extends State<Route1> {
           body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/FruitsBG.png"),
+                    image: AssetImage("Images/GoodhabitsBG.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -37,14 +37,16 @@ class _Route1State extends State<Route1> {
                     borderRadius: BorderRadius.all(Radius.circular(60)),
                   ),
                   padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
-                  child: Image.asset("Images/Fruits/orange.gif",
-                    fit: BoxFit.cover,),
+                  child: Image.asset("Images/Habits/BrushTeeth.jpg",
+                    height: 250,
+                    width: 250,
+                    fit: BoxFit.fill,),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.redAccent:Colors.orange,
+                      color: isWrong?Colors.redAccent:Colors.blue,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -61,7 +63,7 @@ class _Route1State extends State<Route1> {
 
                       },
                       child: Text(
-                        "Apple",
+                        "Bad",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold
@@ -69,7 +71,7 @@ class _Route1State extends State<Route1> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.lightGreenAccent[700]:Colors.orange,
+                      color: isRight?Colors.lightGreenAccent[700]:Colors.blue,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -86,7 +88,7 @@ class _Route1State extends State<Route1> {
 
                       },
                       child: Text(
-                        "Orange",
+                        "Good",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold
@@ -122,7 +124,7 @@ class _Route2State extends State<Route2> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("Images/FruitsBG.png"),
+                  image: AssetImage("Images/GoodhabitsBG.png"),
                   fit: BoxFit.fill
               )
           ),
@@ -134,13 +136,15 @@ class _Route2State extends State<Route2> {
                 ),
                 padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
                 child: Image.asset(
-                    "Images/Fruits/apple.gif"),
+                    "Images/Habits/EatJunk.jpg",
+                height: 250,
+                width: 250,),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   RaisedButton(
-                    color: isWrong?Colors.lightGreenAccent[700]:Colors.orange,
+                    color: isWrong?Colors.lightGreenAccent[700]:Colors.blue,
                     onPressed: (){
                       setState(() {
                         isWrong = true;
@@ -156,7 +160,7 @@ class _Route2State extends State<Route2> {
 
                     },
                     child: Text(
-                      "Apple",
+                      "Bad",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -164,7 +168,7 @@ class _Route2State extends State<Route2> {
                     ),
                   ),
                   RaisedButton(
-                    color: isRight?Colors.redAccent:Colors.orange,
+                    color: isRight?Colors.redAccent:Colors.blue,
                     onPressed: (){
                       setState(() {
                         isRight = true;
@@ -181,7 +185,7 @@ class _Route2State extends State<Route2> {
 
                     },
                     child: Text(
-                      "Watermelon",
+                      "Good",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -217,7 +221,7 @@ class _Route3State extends State<Route3> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("Images/FruitsBG.png"),
+                  image: AssetImage("Images/GoodhabitsBG.png"),
                   fit: BoxFit.fill
               )
           ),
@@ -228,13 +232,16 @@ class _Route3State extends State<Route3> {
                   borderRadius: BorderRadius.all(Radius.circular(60)),
                 ),
                 padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
-                child: Image.asset("Images/Fruits/banana.gif"),
+                child: Image.asset("Images/Habits/sleepAtTime.jpg",
+                  height: 250,
+                  width: 250,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   RaisedButton(
-                    color: isRight?Colors.lightGreenAccent[700]:Colors.orange,
+                    color: isRight?Colors.lightGreenAccent[700]:Colors.blue,
                     onPressed: (){
                       setState(() {
                         isRight = true;
@@ -249,7 +256,7 @@ class _Route3State extends State<Route3> {
                       });
                     },
                     child: Text(
-                      "Banana",
+                      "Good",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -257,7 +264,7 @@ class _Route3State extends State<Route3> {
                     ),
                   ),
                   RaisedButton(
-                    color: isWrong? Colors.red[900]: Colors.orange,
+                    color: isWrong? Colors.red[900]: Colors.blue,
                     onPressed: () async {
                       setState(() {
                         isWrong = true;
@@ -273,7 +280,7 @@ class _Route3State extends State<Route3> {
                       });
                     },
                     child: Text(
-                      "Orange",
+                      "Bad",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -308,7 +315,7 @@ class _Route5State extends State<Route5> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("Images/FruitsBG.png"),
+                  image: AssetImage("Images/GoodhabitsBG.png"),
                   fit: BoxFit.fill
               )
           ),
@@ -318,15 +325,18 @@ class _Route5State extends State<Route5> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(60)),
                 ),
-                padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
+                padding: EdgeInsets.only(left: 20, right: 20, bottom: 30,top: 140),
                 child: Image.asset(
-                    "Images/Fruits/strawberry.gif"),
+                    "Images/Habits/Teasing.jpg",
+                fit: BoxFit.fill,
+                height: 280,
+                width: 250,),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   RaisedButton(
-                    color: isWrong?Colors.lightGreenAccent[700]:Colors.orange,
+                    color: isWrong?Colors.lightGreenAccent[700]:Colors.blue,
                     onPressed: (){
                       setState(() {
                         isWrong = true;
@@ -335,14 +345,14 @@ class _Route5State extends State<Route5> {
                         Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => Route6(score: score,),
+                              builder: (context) => Route4(score: score,),
                             )
                         );
                       });
 
                     },
                     child: Text(
-                      "Strawberry",
+                      "Bad",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -350,7 +360,7 @@ class _Route5State extends State<Route5> {
                     ),
                   ),
                   RaisedButton(
-                    color: isRight?Colors.redAccent:Colors.orange,
+                    color: isRight?Colors.redAccent:Colors.blue,
                     onPressed: (){
                       setState(() {
                         isRight = true;
@@ -359,7 +369,7 @@ class _Route5State extends State<Route5> {
                         Navigator.pop(context);
                         Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => Route6(score: score,),
+                              builder: (context) => Route4(score: score,),
                             )
                         );
                       });
@@ -367,7 +377,7 @@ class _Route5State extends State<Route5> {
 
                     },
                     child: Text(
-                      "Watermelon",
+                      "Good",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -403,7 +413,7 @@ class _Route4State extends State<Route4> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("Images/FruitsBG.png",
+                  image: AssetImage("Images/GoodhabitsBG.png",
                   ),
                   fit: BoxFit.fill
               )
@@ -415,13 +425,15 @@ class _Route4State extends State<Route4> {
                   borderRadius: BorderRadius.all(Radius.circular(60)),
                 ),
                 padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
-                child: Image.asset("Images/Fruits/grapes.gif"),
+                child: Image.asset("Images/Habits/studying.jpg",
+                height: 250,
+                width: 250,),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   RaisedButton(
-                    color: isRight? Colors.lightGreen[600]: Colors.orange,
+                    color: isRight? Colors.lightGreen[600]: Colors.blue,
                     onPressed: (){
                       setState(() {
                         isRight = true;
@@ -429,7 +441,7 @@ class _Route4State extends State<Route4> {
 
                     },
                     child: Text(
-                      "Grapes",
+                      "Good",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -437,7 +449,7 @@ class _Route4State extends State<Route4> {
                     ),
                   ),
                   RaisedButton(
-                    color: isWrong? Colors.red[900] : Colors.orange,
+                    color: isWrong? Colors.red[900] : Colors.blue,
                     onPressed: (){
                       setState(() {
                         isWrong = true;
@@ -445,7 +457,7 @@ class _Route4State extends State<Route4> {
 
                     },
                     child: Text(
-                      "Orange",
+                      "Bad",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -464,7 +476,7 @@ class _Route4State extends State<Route4> {
                     onPressed: (){
                       Navigator.pop(context);
                       Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) =>Route1(
+                          builder: (BuildContext context) =>HabitsExe(
                           )));
                     },),
                   FloatingActionButton(
@@ -485,100 +497,5 @@ class _Route4State extends State<Route4> {
     );
   }
 }
-
-class Route6 extends StatefulWidget {
-  @override
-  int score;
-  Route6({this.score});
-  _Route6State createState() => _Route6State(score: score);
-}
-
-class _Route6State extends State<Route6> {
-  int score;
-  _Route6State({this.score});
-  bool isRight = false;
-  bool isWrong = false;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("Images/FruitsBG.png"),
-                  fit: BoxFit.fill
-              )
-          ),
-          child: Column(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(60)),
-                ),
-                padding: EdgeInsets.only(left: 20, right: 20, bottom: 50,top: 140),
-                child: Image.asset(
-                    "Images/Fruits/watermelons.gif"),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  RaisedButton(
-                    color: isWrong?Colors.lightGreenAccent[700]:Colors.orange,
-                    onPressed: (){
-                      setState(() {
-                        isWrong = true;
-                      });
-                      Future.delayed(const Duration(seconds: 2),(){
-                        Navigator.pop(context);
-                        Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => Route4(score: score ,),
-                            )
-                        );
-                      });
-
-                    },
-                    child: Text(
-                      "Watermelon",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
-                  RaisedButton(
-                    color: isRight?Colors.redAccent:Colors.orange,
-                    onPressed: (){
-                      setState(() {
-                        isRight = true;
-                      });
-                      Future.delayed(const Duration(seconds: 2),(){
-                        Navigator.pop(context);
-                        Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => Route4(score: score,),
-                            )
-                        );
-                      });
-
-
-                    },
-                    child: Text(
-                      "Kiwi",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  )
-
-                ],
-              )
-            ],
-          ),
-        )
-    );
-  }
-}
-
 
 

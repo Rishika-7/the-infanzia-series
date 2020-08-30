@@ -16,7 +16,7 @@ class _SeasonsExeState extends State<SeasonsExe> {
           decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("Images/SeasonsBG.png"),
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               )
           ),
           child:Column(
@@ -58,6 +58,7 @@ class _SeasonsExeState extends State<SeasonsExe> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),

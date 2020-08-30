@@ -16,15 +16,14 @@ class _dragState extends State<drag> {
   _dragState(this.alphabet){
      alpha = Container(
        width: 120,
-        height: 80,
-        margin: EdgeInsets.all(10),
-        color: Colors.amber,
-        padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+        height: 100,
+        color: Colors.blue[500],
+        padding: EdgeInsets.fromLTRB(15, 20, 10, 10),
         child: Text(
           alphabet,
           style: TextStyle(
               fontSize: 32,
-              color: Colors.green,
+              color: Colors.blue[900],
             fontWeight: FontWeight.bold
           ),
         ));
@@ -37,7 +36,7 @@ class _dragState extends State<drag> {
         child: Text(
           alphabet,
           style: TextStyle(
-              color: Colors.green
+              color: Colors.blue[500]
           ),
         ),
       ),
@@ -53,8 +52,9 @@ class _dragState extends State<drag> {
       onDragCompleted: () {
         setState(() {
           alpha = Container(
+            color: Colors.blue[500],
               height: 100,
-              width: 100,);
+              width: 120,);
         });
       },
 
@@ -76,7 +76,8 @@ class _TargetState extends State<Target> {
    _TargetState(this.alphabet,this.imgURL){
       res = Container(
          height: 100,
-         width: 100,
+         width: 120,
+         color: Colors.blue[500],
          child: Image.asset(imgURL)
      );
    }
@@ -93,8 +94,9 @@ class _TargetState extends State<Target> {
         setState(() {
           res = Container(
             height: 100,
-            width: 100,
+            width: 120,
             decoration: BoxDecoration(
+              color: Colors.blue[500],
               image: DecorationImage(
                 image: AssetImage(imgURL),
                 fit: BoxFit.fill

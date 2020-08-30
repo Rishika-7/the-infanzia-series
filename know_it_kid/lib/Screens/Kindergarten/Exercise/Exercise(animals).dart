@@ -15,8 +15,8 @@ class _animalsExeState extends State<animalsExe> {
       body:  Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/SeasonsBG.png"),
-                fit: BoxFit.cover,
+                image: AssetImage("Images/AnimalsBG.png"),
+                fit: BoxFit.fill,
               )
           ),
           child:Column(
@@ -24,7 +24,7 @@ class _animalsExeState extends State<animalsExe> {
               Row(
                 children: <Widget>[
                   Container(
-                    height: 75,
+                    height: 100,
                     width: 100,
                   ),
                 ],
@@ -60,6 +60,7 @@ class _animalsExeState extends State<animalsExe> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),
@@ -104,7 +105,7 @@ class _TargetState extends State<Target> {
             fit: BoxFit.cover
           )
       ),
-      height: 100,
+      height: 85,
       width: 120,
       child: Center(
         child: Text(
@@ -132,7 +133,7 @@ class _TargetState extends State<Target> {
             count += 1;
             if(count == 3 || (count == 2 && type == "at")){
               res = Container(
-                height: 100,
+                height: 85,
                 width: 120,
                 child: Image.asset("Images/Animals/mermaid.png"),
               );

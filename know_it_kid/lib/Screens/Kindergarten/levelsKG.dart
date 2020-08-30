@@ -277,27 +277,7 @@ class GridApp extends State<Grid> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 40,
-                ),
-                FloatingActionButton(
-                  heroTag: "btn32",
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return ProfessionExe(
-                            min: 0,
-                            max: 5,
-                          );
-                        }));
-                  },
-                  backgroundColor: Colors.orange,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
+
               ],
             ),
           ),

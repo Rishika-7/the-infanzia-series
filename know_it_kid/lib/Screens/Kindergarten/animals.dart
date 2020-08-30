@@ -34,6 +34,8 @@ class HomePage extends State<Animals> {
       'Fish'
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(animals[index]);
   }
 

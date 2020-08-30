@@ -21,6 +21,8 @@ class HomePage extends State<Shapes> {
       'Rectangle',
     ];
 
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
     await flutterTts.speak(shapes[index]);
   }
 

@@ -55,6 +55,7 @@ flutter:
     - Images/tick.png
     - Images/Bodyparts/
     - Images/Colors/
+    - Images/Seasons/
 
 
   # To add assets to your application, add an assets section, like this:

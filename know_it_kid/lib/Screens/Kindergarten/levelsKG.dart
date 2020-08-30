@@ -6,6 +6,8 @@ import 'package:knowitkid/Screens/Kindergarten/goodhabits.dart';
 import 'package:knowitkid/Screens/Kindergarten/profession.dart';
 import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
 import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
+import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
+
 
 class KGLevels extends StatefulWidget {
   @override
@@ -88,7 +90,12 @@ class GridApp extends State<Grid> {
                 ),
                 FloatingActionButton(
                   heroTag: "btn12",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return SeasonsExe();
+                        }));
+                  },
                   backgroundColor: Colors.green,
                   child: Center(
                     child: Icon(

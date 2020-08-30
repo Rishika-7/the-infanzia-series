@@ -85,6 +85,8 @@ flutter:
     - Images/Levels/Equals/equals-bg.png
     - Images/Levels/Equals/equals-full.png
     - Images/Levels/Equals/
+    - Images/Levels/NumberNames/
+    - Images/Levels/NumberNames/NumNames.png
     - Images/tick.png
     - Images/ExerciseImages/treasure.png
     - Images/ExerciseImages/crown.gif

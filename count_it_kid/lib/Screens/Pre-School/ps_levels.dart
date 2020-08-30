@@ -72,7 +72,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/num.png"),
+                image: AssetImage("Images/Levels/numonary.png"),
                 fit: BoxFit.fill,
               ),
             ),

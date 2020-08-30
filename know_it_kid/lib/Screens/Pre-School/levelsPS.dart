@@ -12,10 +12,12 @@ import 'package:knowitkid/Screens/Pre-School/fruits.dart';
 import 'package:knowitkid/Screens/Pre-School/shapes.dart';
 import 'package:knowitkid/Screens/Pre-School/veggies.dart';
 
+import 'introduction.dart';
+
 class PSLevels extends StatefulWidget {
   final String name;
   final String age;
-  PSLevels({Key key, this.name, this.age}) : super(key: key);
+  PSLevels({Key key, @required this.name, this.age}) : super(key: key);
 
   @override
   LevelsState createState() => new LevelsState(
@@ -25,6 +27,7 @@ class PSLevels extends StatefulWidget {
 }
 
 class LevelsState extends State<PSLevels> {
+
   String name;
   String age;
   LevelsState({this.name, this.age});
@@ -42,27 +45,90 @@ class LevelsState extends State<PSLevels> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Grid(),
+        child: Grid(
+          name: name,
+          age: age,
+        ),
       ),
     );
   }
 }
 
 class Grid extends StatefulWidget {
+  final String name;
+  final String age;
+  Grid({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  GridApp createState() => new GridApp();
+  GridApp createState() => new GridApp(
+    name : name,
+    age: age,
+  );
 }
 
 class GridApp extends State<Grid> {
+
+  String name;
+  String age;
+  GridApp({this.name, this.age});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       height: 300.0,
       margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/intro.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn81",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Intro(
+                        name: name,
+                        age: age,
+                      );
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.blue[900],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
           Container(
             width: 300,
             padding: EdgeInsets.all(10),
@@ -120,6 +186,7 @@ class GridApp extends State<Grid> {
               ],
             ),
           ),
+
           Container(
             width: 300,
             padding: EdgeInsets.all(10),

@@ -13,52 +13,52 @@ class _SeasonsExeState extends State<SeasonsExe> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:  Container(
+
           decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("Images/SeasonsBG.png"),
                 fit: BoxFit.fill,
               )
           ),
+
           child:Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                    height: 75,
-                    width: 100,
-                  ),
-                ],
+
+              SizedBox(
+                height: 120,
               ),
+
               row1(),
               row2(),
               row3(),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(height: 100,
-                    width: 100,),
+
                   Target(type: "all",
                   img: "Images/summer_b.png",)
                 ],
               ),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Target(
                     type: "ot",
                     img: "Images/winter_b.png",
 
                   ) ,
-                  Container(
-                    height: 150,
-                    width: 50,
-                  ),
+
                   Target(
                     type: "at",
                     img: "Images/rainy_b.png",
                   ) ,
                 ],
               ),
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),

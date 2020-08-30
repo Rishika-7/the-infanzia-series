@@ -21,21 +21,18 @@ class _animalsExeState extends State<animalsExe> {
           ),
           child:Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 100,
-                  ),
-                ],
+              Container(
+                height: 120,
+                width: 100,
               ),
+
               row1(),
               row2(),
               row3(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(height: 100,
-                    width: 100,),
+
                   Target(type: "all",
                     img: "Images/Animals/prision.jpg",
                   word: "Pet",)
@@ -49,9 +46,7 @@ class _animalsExeState extends State<animalsExe> {
                     img: "Images/Animals/prision.jpg",
                     word: "Wild",
                   ) ,
-                  Container(
-                    height: 150,
-                  ),
+
                   Target(
                     type: "at",
                     img: "Images/Animals/prision.jpg",
@@ -60,7 +55,7 @@ class _animalsExeState extends State<animalsExe> {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),

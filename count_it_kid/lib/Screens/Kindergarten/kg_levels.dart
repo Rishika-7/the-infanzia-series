@@ -1,85 +1,64 @@
+
+import 'package:countitkid/Screens/Kindergarten/NumberNames.dart';
+import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
+import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
+import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
+import 'package:countitkid/Screens/Pre-School/greaterThan.dart';
+import 'package:countitkid/Screens/Pre-School/lessThan.dart';
+import 'package:countitkid/Screens/Pre-School/tracing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(animals).dart';
-import 'package:knowitkid/Screens/Kindergarten/animals.dart';
-import 'package:knowitkid/Screens/Kindergarten/goodhabits.dart';
-import 'package:knowitkid/Screens/Kindergarten/profession.dart';
-import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
-import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
-import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
-import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Habits).dart';
-import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Profession)/PofessionExe.dart';
-import 'package:knowitkid/Screens/Pre-School/introduction.dart';
 
-
-
-class KGLevels extends StatefulWidget {
-  final String name;
-  final String age;
-  KGLevels({Key key, @required this.name, this.age}) : super(key: key);
-
+class Levels extends StatefulWidget {
   @override
-  LevelsState createState() => new LevelsState(
-    name : name,
-    age: age,
-  );
+  LevelsState createState() => new LevelsState();
 }
 
-class LevelsState extends State<KGLevels> {
-
-  String name;
-  String age;
-  LevelsState({this.name, this.age});
+class LevelsState extends State<Levels> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
+
       body: Container(
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height,
+
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/LearnBG.png"),
+            image: AssetImage("Images/Levels/LearnBG.png"),
             fit: BoxFit.fill,
           ),
         ),
-        child: Grid(
-            name: name,
-            age: age,
-        ),
+
+        child: Grid(),
       ),
     );
   }
 }
 
 class Grid extends StatefulWidget {
-  final String name;
-  final String age;
-  Grid({Key key, @required this.name, this.age}) : super(key: key);
 
   @override
-  GridApp createState() => new GridApp(
-    name : name,
-    age: age,
-  );
+  GridApp createState() => new GridApp();
 }
 
 class GridApp extends State<Grid> {
 
-  String name;
-  String age;
-  GridApp({this.name, this.age});
-
   @override
   Widget build(BuildContext context) {
     return Container(
+
       alignment: Alignment.center,
       height: 300.0,
       margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+
       child: ListView(
+
         scrollDirection: Axis.horizontal,
+
         children: <Widget>[
 
           Container(
@@ -89,7 +68,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/intro.png"),
+                image: AssetImage("Images/Levels/NumberNames/num.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -98,173 +77,17 @@ class GridApp extends State<Grid> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
 
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn81",
-                  onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return Intro(
-                        name: name,
-                        age: age,
-                      );
-                    })
-                    );
-                  },
-                  backgroundColor: Colors.blue[900],
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/seasons.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 FloatingActionButton(
                   heroTag: "btn1",
                   onPressed: () {
                     debugPrint('Clicked');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return Seasons();
-                        }));
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return NumberNames();
+                    })
+                    );
                   },
-                  backgroundColor: Colors.green,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 40,
-                ),
-                FloatingActionButton(
-                  heroTag: "btn12",
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return SeasonsExe();
-                        }));
-                  },
-                  backgroundColor: Colors.green,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/animaltypes.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn2",
-                  onPressed: () {
-                    debugPrint('Clicked');
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) {
-                        return Animals();
-                      }));
-                  },
-                  backgroundColor: Colors.redAccent,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 40,
-                ),
-                FloatingActionButton(
-                  heroTag: "btn22",
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return animalsExe();
-                        }));
-                  },
-                  backgroundColor: Colors.redAccent,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
 
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/profession.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn3",
-                  onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return Professions();
-                        }));
-                  },
                   backgroundColor: Colors.orange,
                   child: Center(
                     child: Text(
@@ -278,106 +101,276 @@ class GridApp extends State<Grid> {
                   ),
                 ),
 
-              ],
-            ),
-          ),
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/trafficrules.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn4",
-                  onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return TrafficRules();
-                        }));
-                  },
-                  backgroundColor: Colors.pinkAccent,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
                 SizedBox(
                   width: 40,
                 ),
-              ],
-            ),
-          ),
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/goodhabits.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
+
                 FloatingActionButton(
-                  heroTag: "btn5",
+                  heroTag: "btn12",
                   onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return GoodHabits();
-                        }));
+
                   },
-                  backgroundColor: Colors.lightBlueAccent[200],
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 40,
-                ),
-                FloatingActionButton(
-                  heroTag: "btn52",
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                          return HabitsExe();
-                        }));
-                  },
-                  backgroundColor: Colors.lightBlueAccent[200],
+
+                  backgroundColor: Colors.orange,
                   child: Center(
                     child: Icon(
                       Icons.library_books,
                     ),
                   ),
                 ),
+
               ],
             ),
           ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/Tracing/Tracing.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn2",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Tracing();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.greenAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn22",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return WhiteBoard();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.greenAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/LessThan/lessThan.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn3",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return LessThan();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.pinkAccent[100],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn32",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.pinkAccent[100],
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/GreaterThan/GreaterThan.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return GreaterThan();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn42",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.redAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/Equals/equals.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn5",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.red[900],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.red[900],
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
         ],
       ),
     );

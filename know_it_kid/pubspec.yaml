@@ -59,6 +59,7 @@ flutter:
     - Images/Animals/
     - Images/Animals/dolphin.png
     - Images/Animals/dog.png
+    - Images/Profession/
 
 
   # To add assets to your application, add an assets section, like this:

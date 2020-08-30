@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:knowitkid/Screens/Pre-School/bodyparts.dart';
-
+import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Fruits).dart';
 import 'package:knowitkid/Screens/Pre-School/colors.dart';
 import 'package:knowitkid/Screens/Pre-School/fruits.dart';
 import 'package:knowitkid/Screens/Pre-School/shapes.dart';
@@ -199,10 +199,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
-                    //Navigator.of(context).push(
-                    //  new MaterialPageRoute(builder: (BuildContext context) {
-                    //return Exercise2();
-                    //}));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return Route1();
+                        }));
                   },
                   backgroundColor: Colors.green,
                   child: Center(

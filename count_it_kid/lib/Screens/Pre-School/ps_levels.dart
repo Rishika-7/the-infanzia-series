@@ -1,8 +1,13 @@
 
 import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
+import 'package:countitkid/Screens/Pre-School/greaterThan.dart';
+import 'package:countitkid/Screens/Pre-School/lessThan.dart';
+import 'package:countitkid/Screens/Pre-School/tracing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import 'equalTo.dart';
 
 
 class Levels extends StatefulWidget {
@@ -74,11 +79,135 @@ class GridApp extends State<Grid> {
 
               children: <Widget>[
                 FloatingActionButton(
-                  heroTag: "btn3",
+                  heroTag: "btn1",
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return FirstRoute();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn12",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/Tracing/Tracing.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn2",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Tracing();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.greenAccent,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn22",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.greenAccent,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/num.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn3",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return LessThan();
                     })
                     );
                   },
@@ -117,6 +246,131 @@ class GridApp extends State<Grid> {
               ],
             ),
           ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/num.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn4",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return GreaterThan();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn42",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/Levels/num.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn5",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return EqualTo();
+                    })
+                    );
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: 40,
+                ),
+
+                FloatingActionButton(
+                  heroTag: "btn52",
+                  onPressed: () {
+
+                  },
+
+                  backgroundColor: Colors.orange,
+                  child: Center(
+                    child: Icon(
+                      Icons.library_books,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
         ],
       ),
     );

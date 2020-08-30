@@ -50,9 +50,8 @@ class _FirstRouteState extends State<FirstRoute> {
       final element = inputs[i];
       alphaList.add(
           Container(
-              color: Colors.green[900],
               child: Card(
-                  color: Colors.yellowAccent ,
+                  color: Colors.blueGrey,
                   child : Column(
                     children: <Widget>[
                       Expanded(

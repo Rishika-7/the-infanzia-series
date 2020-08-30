@@ -10,8 +10,7 @@ class PreSchool extends StatelessWidget {
 
   final String name;
   final String age;
-
-  PreSchool({Key key, this.name, this.age}) : super(key: key);
+  PreSchool({Key key, @required this.name, this.age}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,10 @@ class PreSchool extends StatelessWidget {
                       onPressed: () {
                         debugPrint('Clicked');
                         Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return PSLevels();
+                          return PSLevels(
+                            name: name,
+                            age: age,
+                          );
                         })
                         );
                       },

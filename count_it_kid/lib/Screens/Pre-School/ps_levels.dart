@@ -192,7 +192,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/num.png"),
+                image: AssetImage("Images/Levels/LessThan/lessThan.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -212,7 +212,7 @@ class GridApp extends State<Grid> {
                     );
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.pinkAccent[100],
                   child: Center(
                     child: Text(
                       'GO',
@@ -235,7 +235,7 @@ class GridApp extends State<Grid> {
 
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.pinkAccent[100],
                   child: Center(
                     child: Icon(
                       Icons.library_books,
@@ -254,7 +254,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/num.png"),
+                image: AssetImage("Images/Levels/GreaterThan/GreaterThan.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -274,7 +274,7 @@ class GridApp extends State<Grid> {
                     );
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.redAccent,
                   child: Center(
                     child: Text(
                       'GO',
@@ -297,7 +297,7 @@ class GridApp extends State<Grid> {
 
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.redAccent,
                   child: Center(
                     child: Icon(
                       Icons.library_books,
@@ -316,7 +316,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/num.png"),
+                image: AssetImage("Images/Levels/Equals/equals.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -336,7 +336,7 @@ class GridApp extends State<Grid> {
                     );
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.red[900],
                   child: Center(
                     child: Text(
                       'GO',
@@ -359,7 +359,7 @@ class GridApp extends State<Grid> {
 
                   },
 
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.red[900],
                   child: Center(
                     child: Icon(
                       Icons.library_books,

@@ -22,7 +22,7 @@ class EqualToState extends State<EqualTo> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Levels/LearnBG.png"),
+            image: AssetImage("Images/Levels/Equals/equals-full.png"),
             fit: BoxFit.fill,
           ),
         ),

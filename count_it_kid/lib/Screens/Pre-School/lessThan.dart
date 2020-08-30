@@ -22,7 +22,7 @@ class LessThanState extends State<LessThan> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Levels/LearnBG.png"),
+            image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
             fit: BoxFit.fill,
           ),
         ),

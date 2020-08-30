@@ -22,7 +22,7 @@ class GreaterThanState extends State<GreaterThan> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Levels/LearnBG.png"),
+            image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
             fit: BoxFit.fill,
           ),
         ),

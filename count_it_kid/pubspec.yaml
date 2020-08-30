@@ -65,6 +65,15 @@ flutter:
     - Images/Levels/Tracing/Tracing.png
     - Images/Levels/Tracing/tracing-bg.png
     - Images/Levels/Tracing/tracing-full.png
+    - Images/Levels/LessThan/lessThan.png
+    - Images/Levels/LessThan/lessThan-bg.png
+    - Images/Levels/LessThan/lessThan-full.png
+    - Images/Levels/GreaterThan/GreaterThan.png
+    - Images/Levels/GreaterThan/greaterThan-full.png
+    - Images/Levels/GreaterThan/greaterThan-bg.png
+    - Images/Levels/Equals/equals.png
+    - Images/Levels/Equals/equals-bg.png
+    - Images/Levels/Equals/equals-full.png
     - 'success.mp3'
 
 

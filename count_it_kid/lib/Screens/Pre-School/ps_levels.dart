@@ -4,11 +4,12 @@ import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
 import 'package:countitkid/Screens/Pre-School/greaterThan.dart';
 import 'package:countitkid/Screens/Pre-School/lessThan.dart';
+import 'package:countitkid/Screens/Pre-School/Exercise/moreThanExe.dart';
+import 'package:countitkid/Screens/Pre-School/Exercise/EqualTo.dart';
 import 'package:countitkid/Screens/Pre-School/tracing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'Exercise/Numonary/exercise.dart';
 import 'equalTo.dart';
 
@@ -246,7 +247,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return LessthanExe();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.pinkAccent[100],
@@ -308,7 +312,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn42",
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return morethanExe();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.redAccent,
@@ -370,7 +377,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn52",
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Route1();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.red[900],

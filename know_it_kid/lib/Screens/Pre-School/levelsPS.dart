@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:knowitkid/Screens/Pre-School/bodyparts.dart';
 import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Fruits).dart';
 import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Vegetables).dart';
+import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Color).dart';
 import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Shapes)/ShapesExe.dart';
 import 'package:knowitkid/Screens/Pre-School/Exercise/Exercise(Bodyparts)/BodypartExe.dart';
 import 'package:knowitkid/Screens/Pre-School/colors.dart';
@@ -91,7 +92,13 @@ class GridApp extends State<Grid> {
                 ),
                 FloatingActionButton(
                   heroTag: "btn12",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return Coolors(
+                          );
+                        }));
+                  },
                   backgroundColor: Colors.redAccent,
                   child: Center(
                     child: Icon(

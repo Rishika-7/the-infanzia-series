@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -10,154 +9,101 @@ class Tracing extends StatefulWidget {
 }
 
 class TracingState extends State<Tracing> {
-
   final FlutterTts flutterTts = FlutterTts();
 
-  speakStraight() async{
+  speakLine(i) async {
+    var lines = [
+      "Let us draw a straight line",
+      "a zigzag straight",
+      "a wavy line",
+      "a dotted line",
+      "and a curvy line"
+    ];
+
     await flutterTts.setLanguage("en-IN");
     await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("Let us draw a straight line");
+    await flutterTts.speak(lines[i]);
   }
 
-  speakZigzag() async{
-    await flutterTts.setLanguage("en-IN");
-    await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("a zigzag straight");
-  }
+  PageController pageController;
 
-  speakWavy() async{
-    await flutterTts.setLanguage("en-IN");
-    await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("a wavy line");
-  }
-
-  speakDotted() async{
-    await flutterTts.setLanguage("en-IN");
-    await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("a dotted line");
-  }
-
-  speakCurvy() async{
-    await flutterTts.setLanguage("en-IN");
-    await flutterTts.setSpeechRate(1);
-    await flutterTts.speak("and a curvy line");
-  }
-
-  List<Container> namingList = new List();
-
-  var inputs = [
-    {"Image1" : "Images/Levels/Tracing/straightline.png"},
-    {"Image1" : "Images/Levels/Tracing/zigzagline.png"},
-    {"Image1" : "Images/Levels/Tracing/wavyline.png"},
-    {"Image1" : "Images/Levels/Tracing/dottedline.png"},
-    {"Image1" : "Images/Levels/Tracing/curvyline.png"},
+  //image list
+  List<String> images = [
+    "Images/Levels/Tracing/straightline.png",
+    "Images/Levels/Tracing/zigzagline.png",
+    "Images/Levels/Tracing/wavyline.png",
+    "Images/Levels/Tracing/dottedline.png",
+    "Images/Levels/Tracing/curvyline.png",
   ];
 
-  buildList() async{
-    for(int i = 0; i < inputs.length; i++) {
-      final element = inputs[i];
-
-      namingList.add(
-        Container(
-          child: Card(
-            elevation: 0.0,
-            color: Color(0x00000000),
-
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: EdgeInsets.only(right: 15, top: 10),
-
-              decoration: BoxDecoration(
-                color: Color(0xFF006666),
-                image: DecorationImage(
-                  image: AssetImage(element["Image1"]),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-
-              child: Column(
-                children: <Widget>[
-
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-
-                    child: FloatingActionButton(
-                      heroTag: i,
-                      onPressed: () {
-
-                        if (i == 0) {
-                          speakStraight();
-                        }
-                        else if(i == 1) {
-                          speakZigzag();
-                        }
-                        else if(i == 2) {
-                          speakWavy();
-                        }
-                        else if(i == 3) {
-                          speakDotted();
-                        }
-                        else {
-                          speakCurvy();
-                        }
-                      },
-
-                      backgroundColor: Colors.blueAccent,
-                      child: Icon(
-                        Icons.tag_faces,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-            ),
-          ),
-        ),
-      );
-    }
-  }
-
-  void initState(){
-    buildList();
+  @override
+  void initState() {
     super.initState();
+    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height,
-
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("Images/Levels/Tracing/tracing-full.png"),
             fit: BoxFit.fill,
           ),
         ),
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: images.length,
+            itemBuilder: (context, position) {
+              return cardSlider(position);
+            }),
+      ),
+    );
+  }
 
+  cardSlider(int index) {
+    return AnimatedBuilder(
+      animation: pageController,
+      builder: (context, widget) {
+        double value = 1;
+        if (pageController.position.haveDimensions) {
+          value = pageController.page - index;
+          value = (1 - (value.abs() - 0.3)).clamp(0.0, 1.0);
+        }
+
+        return Center(
+            child: SizedBox(
+          height: Curves.easeInOut.transform(value) * 250,
+          width: Curves.easeInOut.transform(value) * 400,
+          child: widget,
+        ));
+      },
+      child: GestureDetector(
+        onTap: () {
+          speakLine(index);
+        },
         child: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(24),
-          height: 400,
-
-          child: GridView.count(
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 30,
-            crossAxisCount: 2,
-            primary: false,
-
-            children: namingList,
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Container(child: Icon(Icons.volume_up)),
+          ),
+          alignment: Alignment.topRight,
+          //padding: EdgeInsets.only(right: 20, top: 20),
+          decoration: BoxDecoration(
+            color: Color(0xFF006666),
+            image: DecorationImage(
+              image: AssetImage(images[index]),
+              fit: BoxFit.fill,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
         ),
       ),
     );
-
   }
 }

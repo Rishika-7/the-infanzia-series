@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   youtube_player_flutter: ^7.0.0+7
   flutter_tts: ^0.6.0
+  whiteboardkit: ^0.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -73,11 +74,16 @@ flutter:
     - Images/Levels/LessThan/
     - Images/Levels/GreaterThan/GreaterThan.png
     - Images/Levels/GreaterThan/greaterThan-full.png
+    - Images/Levels/GreaterThan/
     - Images/Levels/GreaterThan/greaterThan-bg.png
     - Images/Levels/Equals/equals.png
     - Images/Levels/Equals/equals-bg.png
     - Images/Levels/Equals/equals-full.png
     - Images/tick.png
+    - Images/ExerciseImages/treasure.png
+    - Images/ExerciseImages/crown.gif
+    - Images/ExerciseImages/coin.png
+    - Images/ExerciseImages/rocket.png
     - 'success.mp3'
 
 

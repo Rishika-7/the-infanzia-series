@@ -3,12 +3,12 @@ import 'package:countitkid/Screens/Kindergarten/kg_levels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class LessthanExe extends StatefulWidget {
+class AdditionExe extends StatefulWidget {
   @override
-  _LessthanExeState createState() => _LessthanExeState();
+  _AdditionExeState createState() => _AdditionExeState();
 }
 
-class _LessthanExeState extends State<LessthanExe> {
+class _AdditionExeState extends State<AdditionExe> {
   bool isRight = false;
   bool isWrong = false;
   bool isEqual = false;
@@ -21,7 +21,7 @@ class _LessthanExeState extends State<LessthanExe> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/Add/addition-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -31,21 +31,21 @@ class _LessthanExeState extends State<LessthanExe> {
                   children: [
                     Container(
                       height: 150,
-                      width: 100,
+                      width: 75,
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("Images/Levels/Equals/8.png",
+                      child: Image.asset("Images/Levels/Equals/1.png",
                         fit: BoxFit.fill,),
 
                     ),
                     Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
-                        width: 100,
+                        width: 60,
                         padding: EdgeInsets.all(10),
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            "?",
+                            "+",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -56,17 +56,33 @@ class _LessthanExeState extends State<LessthanExe> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 100,
-                      child: Image.asset("Images/Levels/Equals/8f.png",
+                      width: 75,
+                      child: Image.asset("Images/Levels/Equals/1.png",
                         fit: BoxFit.fill,),
                     ),
+                    Container(
+                      color: Colors.white,
+                      height: 150,
+                      width: 65,
+                      child: Center(
+                        child: Center(
+                          child: Text("=",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 50
+                          ),),
+                        ),
+                      )
+                    ),
+
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.lightGreenAccent[700]:Colors.white,
+                      color: isWrong?Colors.lightGreenAccent[700]:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -83,7 +99,7 @@ class _LessthanExeState extends State<LessthanExe> {
 
                       },
                       child: Text(
-                        "=",
+                        "2",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -91,7 +107,7 @@ class _LessthanExeState extends State<LessthanExe> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.redAccent:Colors.white,
+                      color: isRight?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -108,7 +124,7 @@ class _LessthanExeState extends State<LessthanExe> {
 
                       },
                       child: Text(
-                        ">",
+                        "8",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -116,7 +132,7 @@ class _LessthanExeState extends State<LessthanExe> {
                       ),
                     ),
                     RaisedButton(
-                      color: isEqual?Colors.redAccent:Colors.white,
+                      color: isEqual?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isEqual = true;
@@ -133,7 +149,7 @@ class _LessthanExeState extends State<LessthanExe> {
 
                       },
                       child: Text(
-                        "<",
+                        "9",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -168,7 +184,7 @@ class _Route2State extends State<Route2> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/Add/addition-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -178,21 +194,21 @@ class _Route2State extends State<Route2> {
                   children: [
                     Container(
                       height: 150,
-                      width: 100,
+                      width: 75,
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("Images/Levels/GreaterThan/3b.png",
+                      child: Image.asset("Images/Levels/Equals/2.png",
                         fit: BoxFit.fill,),
 
                     ),
                     Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
-                        width: 100,
+                        width: 60,
                         padding: EdgeInsets.all(10),
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            "?",
+                            "+",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -203,17 +219,33 @@ class _Route2State extends State<Route2> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 100,
-                      child: Image.asset("Images/Levels/GreaterThan/1b.png",
+                      width: 75,
+                      child: Image.asset("Images/Levels/Equals/3b.png",
                         fit: BoxFit.fill,),
                     ),
+                    Container(
+                        color: Colors.white,
+                        height: 150,
+                        width: 65,
+                        child: Center(
+                          child: Center(
+                            child: Text("=",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 50
+                              ),),
+                          ),
+                        )
+                    ),
+
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.redAccent:Colors.white,
+                      color: isWrong?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -230,7 +262,7 @@ class _Route2State extends State<Route2> {
 
                       },
                       child: Text(
-                        "=",
+                        "6",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -238,7 +270,7 @@ class _Route2State extends State<Route2> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.lightGreenAccent[700]:Colors.white,
+                      color: isRight?Colors.lightGreenAccent[700]:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -255,7 +287,7 @@ class _Route2State extends State<Route2> {
 
                       },
                       child: Text(
-                        ">",
+                        "5",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -263,7 +295,7 @@ class _Route2State extends State<Route2> {
                       ),
                     ),
                     RaisedButton(
-                      color: isEqual?Colors.redAccent:Colors.white,
+                      color: isEqual?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isEqual = true;
@@ -280,7 +312,7 @@ class _Route2State extends State<Route2> {
 
                       },
                       child: Text(
-                        "<",
+                        "8",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -315,7 +347,7 @@ class _Route3State extends State<Route3> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/Add/addition-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -325,21 +357,21 @@ class _Route3State extends State<Route3> {
                   children: [
                     Container(
                       height: 150,
-                      width: 100,
+                      width: 75,
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("Images/Levels/GreaterThan/5b.png",
+                      child: Image.asset("Images/Levels/GreaterThan/3b.png",
                         fit: BoxFit.fill,),
 
                     ),
                     Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
-                        width: 100,
+                        width: 60,
                         padding: EdgeInsets.all(10),
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            "?",
+                            "+",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -350,17 +382,33 @@ class _Route3State extends State<Route3> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 100,
-                      child: Image.asset("Images/Levels/GreaterThan/6b.png",
+                      width: 75,
+                      child: Image.asset("Images/Levels/GreaterThan/1b.png",
                         fit: BoxFit.fill,),
                     ),
+                    Container(
+                        color: Colors.white,
+                        height: 150,
+                        width: 65,
+                        child: Center(
+                          child: Center(
+                            child: Text("=",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 50
+                              ),),
+                          ),
+                        )
+                    ),
+
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.redAccent:Colors.white,
+                      color: isWrong?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -377,7 +425,7 @@ class _Route3State extends State<Route3> {
 
                       },
                       child: Text(
-                        "=",
+                        "2",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -385,7 +433,7 @@ class _Route3State extends State<Route3> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.redAccent:Colors.white,
+                      color: isRight?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -402,7 +450,7 @@ class _Route3State extends State<Route3> {
 
                       },
                       child: Text(
-                        ">",
+                        "9",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -410,7 +458,7 @@ class _Route3State extends State<Route3> {
                       ),
                     ),
                     RaisedButton(
-                      color: isEqual?Colors.lightGreenAccent[700]:Colors.white,
+                      color: isEqual?Colors.lightGreenAccent[700]:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isEqual = true;
@@ -427,7 +475,7 @@ class _Route3State extends State<Route3> {
 
                       },
                       child: Text(
-                        "<",
+                        "4",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -462,7 +510,7 @@ class _Route4State extends State<Route4> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/Add/addition-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -472,21 +520,21 @@ class _Route4State extends State<Route4> {
                   children: [
                     Container(
                       height: 150,
-                      width: 100,
+                      width: 75,
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("Images/Levels/Equals/1i.png",
+                      child: Image.asset("Images/Levels/LessThan/5p.png",
                         fit: BoxFit.fill,),
 
                     ),
                     Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
-                        width: 100,
+                        width: 60,
                         padding: EdgeInsets.all(10),
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            "?",
+                            "+",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -497,17 +545,33 @@ class _Route4State extends State<Route4> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 100,
-                      child: Image.asset("Images/Levels/Equals/1.png",
+                      width: 75,
+                      child: Image.asset("Images/Levels/LessThan/3p.png",
                         fit: BoxFit.fill,),
                     ),
+                    Container(
+                        color: Colors.white,
+                        height: 150,
+                        width: 65,
+                        child: Center(
+                          child: Center(
+                            child: Text("=",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 50
+                              ),),
+                          ),
+                        )
+                    ),
+
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.lightGreenAccent[700]:Colors.white,
+                      color: isWrong?Colors.lightGreenAccent[700]:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -524,7 +588,7 @@ class _Route4State extends State<Route4> {
 
                       },
                       child: Text(
-                        "=",
+                        "8",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -532,7 +596,7 @@ class _Route4State extends State<Route4> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.redAccent:Colors.white,
+                      color: isRight?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -549,7 +613,7 @@ class _Route4State extends State<Route4> {
 
                       },
                       child: Text(
-                        ">",
+                        "6",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -557,7 +621,7 @@ class _Route4State extends State<Route4> {
                       ),
                     ),
                     RaisedButton(
-                      color: isEqual?Colors.redAccent:Colors.white,
+                      color: isEqual?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isEqual = true;
@@ -574,7 +638,7 @@ class _Route4State extends State<Route4> {
 
                       },
                       child: Text(
-                        "<",
+                        "3",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -609,7 +673,7 @@ class _Route5State extends State<Route5> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/Add/addition-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -619,21 +683,21 @@ class _Route5State extends State<Route5> {
                   children: [
                     Container(
                       height: 150,
-                      width: 100,
+                      width: 75,
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("Images/Levels/GreaterThan/4b.png",
+                      child: Image.asset("Images/Levels/LessThan/2b.png",
                         fit: BoxFit.fill,),
 
                     ),
                     Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
-                        width: 100,
+                        width: 60,
                         padding: EdgeInsets.all(10),
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            "?",
+                            "+",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -644,17 +708,33 @@ class _Route5State extends State<Route5> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 100,
-                      child: Image.asset("Images/Levels/GreaterThan/2b.png",
+                      width: 75,
+                      child: Image.asset("Images/Levels/LessThan/4b.png",
                         fit: BoxFit.fill,),
                     ),
+                    Container(
+                        color: Colors.white,
+                        height: 150,
+                        width: 65,
+                        child: Center(
+                          child: Center(
+                            child: Text("=",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 50
+                              ),),
+                          ),
+                        )
+                    ),
+
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     RaisedButton(
-                      color: isWrong?Colors.redAccent:Colors.white,
+                      color: isWrong?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isWrong = true;
@@ -662,7 +742,7 @@ class _Route5State extends State<Route5> {
 
                       },
                       child: Text(
-                        "=",
+                        "8",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -670,7 +750,7 @@ class _Route5State extends State<Route5> {
                       ),
                     ),
                     RaisedButton(
-                      color: isRight?Colors.lightGreenAccent[700]:Colors.white,
+                      color: isRight?Colors.lightGreenAccent[700]:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isRight = true;
@@ -680,7 +760,7 @@ class _Route5State extends State<Route5> {
 
                       },
                       child: Text(
-                        ">",
+                        "6",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -688,14 +768,14 @@ class _Route5State extends State<Route5> {
                       ),
                     ),
                     RaisedButton(
-                      color: isEqual?Colors.redAccent:Colors.white,
+                      color: isEqual?Colors.redAccent:Colors.greenAccent,
                       onPressed: (){
                         setState(() {
                           isEqual = true;
                         });
                       },
                       child: Text(
-                        "<",
+                        "5",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold
@@ -714,7 +794,7 @@ class _Route5State extends State<Route5> {
                       onPressed: (){
                         Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
-                            builder: (BuildContext context) =>LessthanExe(
+                            builder: (BuildContext context) =>AdditionExe(
                             )));
                       },),
                     FloatingActionButton(

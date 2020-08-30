@@ -3,6 +3,7 @@ import 'package:countitkid/Screens/Kindergarten/Addition.dart';
 import 'package:countitkid/Screens/Kindergarten/NumberNames.dart';
 import 'package:countitkid/Screens/Kindergarten/Shapes.dart';
 import 'package:countitkid/Screens/Kindergarten/Subtraction.dart';
+import 'package:countitkid/Screens/Kindergarten/Exercises/AdditionExe.dart';
 import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
@@ -173,7 +174,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return AdditionExe();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.greenAccent,

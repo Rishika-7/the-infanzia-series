@@ -1,5 +1,8 @@
 
+import 'package:countitkid/Screens/Kindergarten/Addition.dart';
 import 'package:countitkid/Screens/Kindergarten/NumberNames.dart';
+import 'package:countitkid/Screens/Kindergarten/Shapes.dart';
+import 'package:countitkid/Screens/Kindergarten/Subtraction.dart';
 import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
@@ -130,7 +133,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/Tracing/Tracing.png"),
+                image: AssetImage("Images/Levels/Add/addition.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -145,7 +148,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return Tracing();
+                      return Addition();
                     })
                     );
                   },
@@ -170,11 +173,7 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn22",
                   onPressed: () {
-                    debugPrint('Clicked');
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return WhiteBoard();
-                    })
-                    );
+
                   },
 
                   backgroundColor: Colors.greenAccent,
@@ -196,7 +195,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/LessThan/lessThan.png"),
+                image: AssetImage("Images/Levels/Subtract/subtract.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -211,7 +210,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return LessThan();
+                      return Subtraction();
                     })
                     );
                   },
@@ -258,7 +257,7 @@ class GridApp extends State<Grid> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("Images/Levels/GreaterThan/GreaterThan.png"),
+                image: AssetImage("Images/Levels/Shapes/shapes.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -273,7 +272,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return GreaterThan();
+                      return Shapes();
                     })
                     );
                   },
@@ -302,64 +301,6 @@ class GridApp extends State<Grid> {
                   },
 
                   backgroundColor: Colors.redAccent,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/Levels/Equals/equals.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn5",
-                  onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.red[900],
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn52",
-                  onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.red[900],
                   child: Center(
                     child: Icon(
                       Icons.library_books,

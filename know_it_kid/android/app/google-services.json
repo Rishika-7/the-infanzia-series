@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "441985040462",
+    "firebase_url": "https://know-it-kid.firebaseio.com",
+    "project_id": "know-it-kid",
+    "storage_bucket": "know-it-kid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441985040462:android:c954d3b7233e33e81fc31f",
+        "android_client_info": {
+          "package_name": "com.example.knowitkid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441985040462-c4lrq92neq3bl4urt65an4um3drsgj2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_xe33uOtHP5OPI84aR8Y62uN8rQljDd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441985040462-c4lrq92neq3bl4urt65an4um3drsgj2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,11 +13,22 @@ import 'package:knowitkid/Screens/Pre-School/shapes.dart';
 import 'package:knowitkid/Screens/Pre-School/veggies.dart';
 
 class PSLevels extends StatefulWidget {
+  final String name;
+  final String age;
+  PSLevels({Key key, this.name, this.age}) : super(key: key);
+
   @override
-  LevelsState createState() => new LevelsState();
+  LevelsState createState() => new LevelsState(
+    name : name,
+    age: age,
+  );
 }
 
 class LevelsState extends State<PSLevels> {
+  String name;
+  String age;
+  LevelsState({this.name, this.age});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

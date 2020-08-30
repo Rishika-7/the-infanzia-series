@@ -34,7 +34,7 @@ class HomePage extends State<GoodHabits> {
     'Images/bathedaily.png',
     'Images/washhands.png',
     'Images/exercise.png',
-    'Images/sleepingearly'
+    'Images/sleepingearly.png'
   ];
 
   @override
@@ -89,8 +89,8 @@ class HomePage extends State<GoodHabits> {
         },
         child: Container(
           child: SizedBox(
-            height: 50,
-            width: 50,
+            height: 10,
+            width: 20,
             child: Container(child: Icon(Icons.volume_up)),
           ),
           alignment: Alignment.topRight,

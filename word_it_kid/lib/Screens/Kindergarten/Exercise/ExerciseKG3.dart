@@ -3,8 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:worditkid/Screens/Kindergarten/levelsKG.dart';
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
+
 
 
 class Exercise4 extends StatefulWidget {
@@ -267,24 +266,6 @@ class SnowMan extends StatefulWidget {
 }
 
 class _SnowmanState extends State<SnowMan> {
-
-  AudioPlayer advancedPlayer;
-
-  @override
-  initState() {
-    super.initState();
-    loadMusic();
-  }
-
-  Future loadMusic() async {
-    advancedPlayer = await AudioCache().loop("Sounds/Christmas.mp3");
-  }
-
-  @override
-  void dispose() {
-    advancedPlayer = null;
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,14 @@
 import 'dart:math';
-import 'package:countitkid/Screens/Pre-School/ps_levels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:countitkid/Screens/Pre-School/ps_levels.dart';
 
-class LessthanExe extends StatefulWidget {
+class morethanExe extends StatefulWidget {
   @override
-  _LessthanExeState createState() => _LessthanExeState();
+  _morethanExeState createState() => _morethanExeState();
 }
 
-class _LessthanExeState extends State<LessthanExe> {
+class _morethanExeState extends State<morethanExe> {
   bool isRight = false;
   bool isWrong = false;
   bool isEqual = false;
@@ -21,7 +21,7 @@ class _LessthanExeState extends State<LessthanExe> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -168,7 +168,7 @@ class _Route2State extends State<Route2> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -315,7 +315,7 @@ class _Route3State extends State<Route3> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -462,7 +462,7 @@ class _Route4State extends State<Route4> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -609,7 +609,7 @@ class _Route5State extends State<Route5> {
             padding: EdgeInsets.only(top: 300),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("Images/Levels/LessThan/lessThan-full.png"),
+                    image: AssetImage("Images/Levels/GreaterThan/greaterThan-full.png"),
                     fit: BoxFit.fill
                 )
             ),
@@ -714,7 +714,7 @@ class _Route5State extends State<Route5> {
                       onPressed: (){
                         Navigator.pop(context);
                         Navigator.of(context).push(new MaterialPageRoute(
-                            builder: (BuildContext context) =>LessthanExe(
+                            builder: (BuildContext context) =>morethanExe(
                             )));
                       },),
                     FloatingActionButton(

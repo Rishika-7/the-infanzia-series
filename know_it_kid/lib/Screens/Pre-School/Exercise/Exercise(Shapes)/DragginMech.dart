@@ -18,6 +18,7 @@ class _dragState extends State<drag> {
      alpha = Container(
        height: 100,
        width: 100,
+       color: Colors.blueAccent[200],
        padding: EdgeInsets.all(10),
        child: Image.asset(img),
      );
@@ -38,6 +39,7 @@ class _dragState extends State<drag> {
       childWhenDragging: Container(
         height: 100,
         width: 100,
+        color: Colors.blueAccent[200],
         padding: EdgeInsets.all(10),
         child: Image.asset(img),
       ),
@@ -45,6 +47,7 @@ class _dragState extends State<drag> {
       onDragCompleted: () {
         setState(() {
           alpha = Container(
+            color: Colors.blueAccent[200],
               height: 100,
               width: 100,);
         });
@@ -69,6 +72,7 @@ class _TargetState extends State<Target> {
       res = Container(
          height: 100,
          width: 100,
+         color: Colors.blueAccent[200],
          padding: EdgeInsets.all(10),
          child: Image.asset(imgURL)
      );
@@ -89,6 +93,7 @@ class _TargetState extends State<Target> {
             height: 100,
             width: 100,
             decoration: BoxDecoration(
+              color: Colors.blueAccent[200],
               image: DecorationImage(
                 image: AssetImage(imgURL),
                 fit: BoxFit.fill

@@ -19,7 +19,7 @@ class _vegetableState extends State<vegetable> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("Images/VegetablesBG.png"),
-                    fit: BoxFit.cover
+                    fit: BoxFit.fill
                 )
             ),
             child: Column(
@@ -113,7 +113,7 @@ class _Route2State extends State<Route2> {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("Images/VegetablesBG.png"),
-                  fit: BoxFit.cover
+                  fit: BoxFit.fill
               )
           ),
           child: Column(
@@ -207,7 +207,7 @@ class _Route3State extends State<Route3> {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("Images/VegetablesBG.png"),
-                  fit: BoxFit.cover
+                  fit: BoxFit.fill
               )
           ),
           child: Column(
@@ -298,7 +298,7 @@ class _Route5State extends State<Route5> {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("Images/VegetablesBG.png"),
-                  fit: BoxFit.cover
+                  fit: BoxFit.fill
               )
           ),
           child: Column(
@@ -395,7 +395,7 @@ class _Route4State extends State<Route4> {
               image: DecorationImage(
                   image: AssetImage("Images/VegetablesBG.png",
                   ),
-                  fit: BoxFit.cover
+                  fit: BoxFit.fill
               )
           ),
           child: Column(
@@ -496,7 +496,7 @@ class _Route6State extends State<Route6> {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("Images/VegetablesBG.png"),
-                  fit: BoxFit.cover
+                  fit: BoxFit.fill
               )
           ),
           child: Column(

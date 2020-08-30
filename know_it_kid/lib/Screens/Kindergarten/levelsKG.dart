@@ -8,6 +8,7 @@ import 'package:knowitkid/Screens/Kindergarten/profession.dart';
 import 'package:knowitkid/Screens/Kindergarten/seasons.dart';
 import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
+import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Habits).dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Profession)/PofessionExe.dart';
 
 
@@ -263,24 +264,6 @@ class GridApp extends State<Grid> {
                 SizedBox(
                   width: 40,
                 ),
-                FloatingActionButton(
-                  heroTag: "btn42",
-                  onPressed: () {
-                    // Navigator.of(context).push(
-                    //   new MaterialPageRoute(builder: (BuildContext context) {
-                    //return SimilarExe(
-                    //max: 5,
-                    //min: 0,
-                    //);
-                    //}));
-                  },
-                  backgroundColor: Colors.pinkAccent,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -325,13 +308,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn52",
                   onPressed: () {
-                    //  Navigator.of(context).push(
-                    //    new MaterialPageRoute(builder: (BuildContext context) {
-                    //return OppExe(
-                    //max: 5,
-                    //min: 0,
-                    //);
-                    //}));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                          return HabitsExe();
+                        }));
                   },
                   backgroundColor: Colors.lightBlueAccent[200],
                   child: Center(

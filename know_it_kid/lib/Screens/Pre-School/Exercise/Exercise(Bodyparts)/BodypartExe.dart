@@ -75,6 +75,7 @@ class _BodypartState extends State<Bodypart> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   FloatingActionButton(
                     child: Icon(Icons.refresh),

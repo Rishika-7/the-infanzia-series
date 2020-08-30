@@ -10,15 +10,28 @@ import 'package:knowitkid/Screens/Kindergarten/trafficrules.dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exerise(Seasons).dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Habits).dart';
 import 'package:knowitkid/Screens/Kindergarten/Exercise/Exercise(Profession)/PofessionExe.dart';
+import 'package:knowitkid/Screens/Pre-School/introduction.dart';
 
 
 
 class KGLevels extends StatefulWidget {
+  final String name;
+  final String age;
+  KGLevels({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  LevelsState createState() => new LevelsState();
+  LevelsState createState() => new LevelsState(
+    name : name,
+    age: age,
+  );
 }
 
 class LevelsState extends State<KGLevels> {
+
+  String name;
+  String age;
+  LevelsState({this.name, this.age});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,18 +45,33 @@ class LevelsState extends State<KGLevels> {
             fit: BoxFit.fill,
           ),
         ),
-        child: Grid(),
+        child: Grid(
+            name: name,
+            age: age,
+        ),
       ),
     );
   }
 }
 
 class Grid extends StatefulWidget {
+  final String name;
+  final String age;
+  Grid({Key key, @required this.name, this.age}) : super(key: key);
+
   @override
-  GridApp createState() => new GridApp();
+  GridApp createState() => new GridApp(
+    name : name,
+    age: age,
+  );
 }
 
 class GridApp extends State<Grid> {
+
+  String name;
+  String age;
+  GridApp({this.name, this.age});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,6 +81,53 @@ class GridApp extends State<Grid> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
+
+          Container(
+            width: 300,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/intro.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn81",
+                  onPressed: () {
+                    debugPrint('Clicked');
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Intro(
+                        name: name,
+                        age: age,
+                      );
+                    })
+                    );
+                  },
+                  backgroundColor: Colors.blue[900],
+                  child: Center(
+                    child: Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+
           Container(
             width: 300,
             padding: EdgeInsets.all(10),

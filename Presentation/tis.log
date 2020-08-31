@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2020.7.16)  31 AUG 2020 16:27
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2020.7.16)  31 AUG 2020 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1191,18 +1191,7 @@ Overfull \vbox (48.78189pt too high) detected at line 18
 
 ] [28
 
-]
-File: Issue1.jpeg Graphic file (type bmp)
-<Issue1.jpeg>
-File: Issue2.jpeg Graphic file (type bmp)
-<Issue2.jpeg>
-File: Issue3.jpeg Graphic file (type bmp)
-<Issue3.jpeg>
-
-Overfull \vbox (1531.55965pt too high) detected at line 126
- []
-
-[29
+] [29
 
 ] [30
 
@@ -1210,7 +1199,8 @@ Overfull \vbox (1531.55965pt too high) detected at line 126
 
 ] [32
 
-] [33
+]
+[33
 
 ] [34
 
@@ -1232,14 +1222,11 @@ Overfull \vbox (1531.55965pt too high) detected at line 126
 
 ] [43
 
-]
-[44
+] [44
 
 ] [45
 
 ] [46
-
-] [47
 
 ]
 \tf@nav=\write6
@@ -1251,21 +1238,22 @@ Overfull \vbox (1531.55965pt too high) detected at line 126
 \tf@snm=\write8
 \openout8 = `tis.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
- (./tis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 189.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
+
+(./tis.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `tis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
  ) 
 Here is how much of TeX's memory you used:
- 34694 strings out of 492912
- 708199 string characters out of 6134893
- 784179 words of memory out of 5000000
- 38240 multiletter control sequences out of 15000+600000
+ 34705 strings out of 492912
+ 708880 string characters out of 6134893
+ 784251 words of memory out of 5000000
+ 38264 multiletter control sequences out of 15000+600000
  532794 words of font info for 37 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,13n,79p,1802b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,13n,88p,1802b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tis.pdf (47 pages).
+Output written on tis.pdf (46 pages).

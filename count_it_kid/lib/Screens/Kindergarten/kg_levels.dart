@@ -4,6 +4,7 @@ import 'package:countitkid/Screens/Kindergarten/NumberNames.dart';
 import 'package:countitkid/Screens/Kindergarten/Shapes.dart';
 import 'package:countitkid/Screens/Kindergarten/Subtraction.dart';
 import 'package:countitkid/Screens/Kindergarten/Exercises/AdditionExe.dart';
+import 'package:countitkid/Screens/Kindergarten/Exercises/SubstractionExe.dart';
 import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
 import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
@@ -101,24 +102,6 @@ class GridApp extends State<Grid> {
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
                       ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn12",
-                  onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.orange,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
                     ),
                   ),
                 ),
@@ -239,7 +222,10 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SubstractionExe();
+                    })
+                    );
                   },
 
                   backgroundColor: Colors.pinkAccent[100],

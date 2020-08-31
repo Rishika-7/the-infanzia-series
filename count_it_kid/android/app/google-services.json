@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1018935536358",
+    "firebase_url": "https://count-it-kid.firebaseio.com",
+    "project_id": "count-it-kid",
+    "storage_bucket": "count-it-kid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018935536358:android:aab52e43709b0d64e0a927",
+        "android_client_info": {
+          "package_name": "com.example.countitkid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018935536358-o23cbl7bdmnvq2fqn6p06pumv7vtfrji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi3A7B4rL4Z099QaO11Ds7f2uHRfTfi-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018935536358-o23cbl7bdmnvq2fqn6p06pumv7vtfrji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

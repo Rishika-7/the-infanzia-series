@@ -28,10 +28,11 @@ class _SubstractionExeState extends State<SubstractionExe> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       height: 150,
-                      width: 75,
+                      width: 85,
                       margin: EdgeInsets.all(10),
                       child: Image.asset("Images/Levels/Equals/1.png",
                         fit: BoxFit.fill,),
@@ -56,7 +57,7 @@ class _SubstractionExeState extends State<SubstractionExe> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 75,
+                      width: 85,
                       child: Image.asset("Images/Levels/Equals/1.png",
                         fit: BoxFit.fill,),
                     ),
@@ -191,10 +192,11 @@ class _Route2State extends State<Route2> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       height: 150,
-                      width: 75,
+                      width: 85,
                       margin: EdgeInsets.all(10),
                       child: Image.asset("Images/Levels/Equals/3b.png",
                         fit: BoxFit.fill,),
@@ -219,7 +221,7 @@ class _Route2State extends State<Route2> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 75,
+                      width: 85,
                       child: Image.asset("Images/Levels/Equals/2.png",
                         fit: BoxFit.fill,),
                     ),
@@ -354,10 +356,11 @@ class _Route3State extends State<Route3> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       height: 150,
-                      width: 75,
+                      width: 85,
                       margin: EdgeInsets.all(10),
                       child: Image.asset("Images/Levels/GreaterThan/3b.png",
                         fit: BoxFit.fill,),
@@ -382,7 +385,7 @@ class _Route3State extends State<Route3> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 75,
+                      width: 85,
                       child: Image.asset("Images/Levels/GreaterThan/1b.png",
                         fit: BoxFit.fill,),
                     ),
@@ -517,10 +520,11 @@ class _Route4State extends State<Route4> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       height: 150,
-                      width: 75,
+                      width: 85,
                       margin: EdgeInsets.all(10),
                       child: Image.asset("Images/Levels/LessThan/5p.png",
                         fit: BoxFit.fill,),
@@ -545,7 +549,7 @@ class _Route4State extends State<Route4> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 75,
+                      width: 85,
                       child: Image.asset("Images/Levels/LessThan/3p.png",
                         fit: BoxFit.fill,),
                     ),
@@ -680,10 +684,11 @@ class _Route5State extends State<Route5> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       height: 150,
-                      width: 75,
+                      width: 85,
                       margin: EdgeInsets.all(10),
                       child: Image.asset("Images/Levels/LessThan/8f.png",
                         fit: BoxFit.fill,),
@@ -708,7 +713,7 @@ class _Route5State extends State<Route5> {
                     Container(
                       margin: EdgeInsets.all(10),
                       height: 150,
-                      width: 75,
+                      width: 85,
                       child: Image.asset("Images/Levels/LessThan/4f.png",
                         fit: BoxFit.fill,),
                     ),
@@ -801,8 +806,7 @@ class _Route5State extends State<Route5> {
                       heroTag: "btn2",
                       child: Icon(Icons.arrow_back_ios),
                       onPressed: (){
-                        Navigator.pop(context);
-                        Navigator.of(context).push(new MaterialPageRoute(
+                        Navigator.of(context).pop(new MaterialPageRoute(
                             builder: (BuildContext context) =>Levels(
                             )));
                       },),

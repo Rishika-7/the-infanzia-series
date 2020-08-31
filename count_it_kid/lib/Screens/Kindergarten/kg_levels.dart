@@ -1,15 +1,9 @@
 
 import 'package:countitkid/Screens/Kindergarten/Addition.dart';
 import 'package:countitkid/Screens/Kindergarten/NumberNames.dart';
-import 'package:countitkid/Screens/Kindergarten/Shapes.dart';
 import 'package:countitkid/Screens/Kindergarten/Subtraction.dart';
 import 'package:countitkid/Screens/Kindergarten/Exercises/AdditionExe.dart';
-import 'package:countitkid/Screens/Pre-School/Dictionary.dart';
-import 'package:countitkid/Screens/Pre-School/Exercise/tracingExercise.dart';
-import 'package:countitkid/Screens/Pre-School/Exercise/lessThanExe.dart';
-import 'package:countitkid/Screens/Pre-School/greaterThan.dart';
-import 'package:countitkid/Screens/Pre-School/lessThan.dart';
-import 'package:countitkid/Screens/Pre-School/tracing.dart';
+import 'package:countitkid/Screens/Kindergarten/Exercises/SubstractionExe.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -101,24 +95,6 @@ class GridApp extends State<Grid> {
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
                       ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn12",
-                  onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.orange,
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
                     ),
                   ),
                 ),
@@ -239,72 +215,13 @@ class GridApp extends State<Grid> {
                 FloatingActionButton(
                   heroTag: "btn32",
                   onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.pinkAccent[100],
-                  child: Center(
-                    child: Icon(
-                      Icons.library_books,
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-
-          Container(
-            width: 300,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10),
-
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("Images/Levels/Shapes/shapes.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-
-              children: <Widget>[
-                FloatingActionButton(
-                  heroTag: "btn4",
-                  onPressed: () {
-                    debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return Shapes();
+                      return SubstractionExe();
                     })
                     );
                   },
 
-                  backgroundColor: Colors.redAccent,
-                  child: Center(
-                    child: Text(
-                      'GO',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  width: 40,
-                ),
-
-                FloatingActionButton(
-                  heroTag: "btn42",
-                  onPressed: () {
-
-                  },
-
-                  backgroundColor: Colors.redAccent,
+                  backgroundColor: Colors.pinkAccent[100],
                   child: Center(
                     child: Icon(
                       Icons.library_books,

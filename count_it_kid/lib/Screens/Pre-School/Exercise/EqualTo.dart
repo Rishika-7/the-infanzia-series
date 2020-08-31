@@ -721,8 +721,7 @@ class _Route5State extends State<Route5> {
                       heroTag: "btn2",
                       child: Icon(Icons.arrow_back_ios),
                       onPressed: (){
-                        Navigator.pop(context);
-                        Navigator.of(context).push(new MaterialPageRoute(
+                        Navigator.of(context).pop(new MaterialPageRoute(
                             builder: (BuildContext context) =>Levels(
                             )));
                       },),

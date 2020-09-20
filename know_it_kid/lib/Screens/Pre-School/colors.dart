@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+//import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 class Colours extends StatefulWidget {
@@ -9,54 +9,74 @@ class Colours extends StatefulWidget {
 }
 
 class _ColorsState extends State<Colours> {
-
   final FlutterTts flutterTts = FlutterTts();
+  List<bool> selectedColor = [true, true, true, true, true, true, true, true];
 
-  speakColor(index) async {
-    var parts = [
-      'red',
-      'blue',
-      'green',
-      'yellow',
-      'black',
-      'pink',
-      'orange',
-      'purple',
-      'brown',
-      'white'
-    ];
-
-    await flutterTts.setLanguage("en-IN");
-    await flutterTts.setSpeechRate(1);
-    await flutterTts.speak(parts[index]);
-  }
-
-  PageController pageController;
-
-  //image list
-  List<String> images = [
-    "Images/red.png",
-    "Images/Blue.png",
-    "Images/green.png",
-    "Images/yellow.png",
-    "Images/black.png",
-    "Images/pink.png",
-    "Images/orange.png",
-    "Images/purple.png",
-    "Images/brown.png",
-    "Images/white.png",
+  List<String> colors = [
+    'RED',
+    'BLUE',
+    'GREEN',
+    'YELLOW',
+    'BLACK',
+    'PINK',
+    'ORANGE',
+    'BROWN'
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    pageController = PageController(initialPage: 1, viewportFraction: 0.5);
+  List<int> colorcode = [
+    0xFFD32F2F,
+    0xFF42A5F5,
+    0xFF388E3C,
+    0xFFFDD835,
+    0xFF000000,
+    0xFFF06292,
+    0xFFFB8C00,
+    0xFF5D4037
+  ];
+
+  speakColor(index) async {
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setSpeechRate(1);
+    await flutterTts.speak('${colors[index]}');
   }
 
   @override
   Widget build(BuildContext context) {
+    _showColorWidget(index) {
+      return GestureDetector(
+        onTap: () {
+          setState(() => selectedColor[index] = !selectedColor[index]);
+          speakColor(index);
+        },
+        child: AnimatedContainer(
+          height: 100,
+          width: 100,
+          duration: Duration(milliseconds: 500),
+          decoration: BoxDecoration(
+            shape: selectedColor[index] ? BoxShape.circle : BoxShape.rectangle,
+            color:
+                selectedColor[index] ? Color(colorcode[index]) : Colors.white,
+          ),
+          child: selectedColor[index]
+              ? Center(
+                  child: Icon(
+                    Icons.sentiment_very_satisfied,
+                    color: Colors.white,
+                  ),
+                )
+              : Center(
+                  child: Text(
+                  "${colors[index]}",
+                  style: TextStyle(
+                      color: Color(colorcode[index]),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold),
+                )),
+        ),
+      );
+    }
+
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
       body: Container(
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height,
@@ -66,53 +86,44 @@ class _ColorsState extends State<Colours> {
             fit: BoxFit.fill,
           ),
         ),
-        child: PageView.builder(
-            controller: pageController,
-            itemCount: images.length,
-            itemBuilder: (context, position) {
-              return cardSlider(position);
-            }),
-      ),
-    );
-  }
-
-  cardSlider(int index) {
-    return AnimatedBuilder(
-      animation: pageController,
-      builder: (context, widget) {
-        double value = 1;
-        if (pageController.position.haveDimensions) {
-          value = pageController.page - index;
-          value = (1 - (value.abs() - 0.3)).clamp(0.0, 1.0);
-        }
-
-        return Center(
-            child: SizedBox(
-              height: Curves.easeInOut.transform(value) * 250,
-              width: Curves.easeInOut.transform(value) * 400,
-              child: widget,
-            ));
-      },
-      child: GestureDetector(
-        onTap: () {
-          speakColor(index);
-        },
-        child: Container(
-          child: SizedBox(
-            height: 50,
-            width: 50,
-            child: Container(child: Icon(Icons.volume_up)),
-          ),
-          alignment: Alignment.topRight,
-          //padding: EdgeInsets.only(right: 20, top: 20),
-          decoration: BoxDecoration(
-            color: Color(0xFF006666),
-            image: DecorationImage(
-              image: AssetImage(images[index]),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 70.0, bottom: 60.0),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    _showColorWidget(0),
+                    SizedBox(height: 20, width: 20),
+                    _showColorWidget(1),
+                  ],
+                ),
+                SizedBox(height: 20, width: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    _showColorWidget(2),
+                    SizedBox(height: 20, width: 20),
+                    _showColorWidget(4),
+                    SizedBox(height: 20, width: 20),
+                    _showColorWidget(3),
+                  ],
+                ),
+                SizedBox(height: 20, width: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    _showColorWidget(5),
+                    SizedBox(height: 20, width: 20),
+                    _showColorWidget(6),
+                  ],
+                ),
+              ]),
         ),
       ),
     );

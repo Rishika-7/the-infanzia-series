@@ -7,6 +7,7 @@ import 'package:worditkid/Screens/Pre-School/introduction.dart';
 import 'package:worditkid/Screens/Pre-School/opposite.dart';
 import 'package:worditkid/Screens/Pre-School/similar.dart';
 import 'package:worditkid/Screens/Pre-School/rhymingWord.dart';
+import 'package:worditkid/Screens/Pre-School/Helpscreen.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise1.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/Exercise2.dart';
 import 'package:worditkid/Screens/Pre-School/Exercises/similar/simExe.dart';
@@ -251,7 +252,7 @@ class GridApp extends State<Grid> {
                   heroTag: "btn32",
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                      return Exercise2(
+                      return RhymingWordHS(
                       );
                     })
                     );

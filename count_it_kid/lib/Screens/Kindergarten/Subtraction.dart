@@ -82,7 +82,7 @@ class HomePage extends State<Subtraction> {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("Images/Levels/Add/addition-full.png"),
+            image: AssetImage("Images/Levels/Subtract/subtract-full.png"),
             fit: BoxFit.fill,
           ),
         ),

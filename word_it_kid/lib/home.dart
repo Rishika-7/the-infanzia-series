@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -19,7 +17,6 @@ class HomeState extends State<Home> {
 
   String id;
   final db = Firestore.instance;
-  final _formKey = GlobalKey<FormState>();
   String name;
   String module;
   String age;
@@ -63,6 +60,26 @@ class HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Align(
+              alignment: Alignment.center,
+              child: CircleAvatar(
+                radius: 60,
+
+                child: ClipOval(
+                  child: SizedBox(
+                      width: 120.0,
+                      height: 120.0,
+                      child:Image.network("${doc.data['image']}", fit: BoxFit.fill,)
+                  ),
+                ),
+
+              ),
+            ),
 
             Text(
               '${doc.data['name']}',

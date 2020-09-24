@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'Exercise/Numonary/exercise.dart';
 import 'equalTo.dart';
+import 'package:countitkid/Helpscreen.dart';
 
 
 class Levels extends StatefulWidget {
@@ -183,7 +184,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     debugPrint('Clicked');
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return WhiteBoard();
+                      return TracingHS();
                     })
                     );
                   },
@@ -313,7 +314,7 @@ class GridApp extends State<Grid> {
                   heroTag: "btn42",
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return morethanExe();
+                      return GreaterThanHS();
                     })
                     );
                   },

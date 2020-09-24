@@ -27,6 +27,9 @@ dependencies:
   flutter_tts: ^0.6.0
   whiteboardkit: ^0.2.2
   firebase_database: ^3.1.1
+  firebase_storage: ^3.1.6
+  font_awesome_flutter: ^8.8.1
+  image_picker: ^0.6.7+10
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -57,6 +60,7 @@ flutter:
   assets:
     - Images/
     - Images/Home/HomeBG.png
+    - Images/Home/HomeBg.png
     - Images/Redirection/alien.png
     - Images/Redirection/alienp.png
     - Images/Redirection/background.png
@@ -99,6 +103,7 @@ flutter:
     - Images/ExerciseImages/coin.png
     - Images/ExerciseImages/rocket.png
     - 'success.mp3'
+    - Images/Helpscreens/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

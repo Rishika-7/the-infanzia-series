@@ -11,7 +11,7 @@ import 'package:knowitkid/Screens/Pre-School/colors.dart';
 import 'package:knowitkid/Screens/Pre-School/fruits.dart';
 import 'package:knowitkid/Screens/Pre-School/shapes.dart';
 import 'package:knowitkid/Screens/Pre-School/veggies.dart';
-
+import 'package:knowitkid/Helpscreen.dart';
 import 'introduction.dart';
 
 class PSLevels extends StatefulWidget {
@@ -172,7 +172,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return Coolors(
+                          return ColorsHS(
                           );
                         }));
                   },
@@ -230,10 +230,7 @@ class GridApp extends State<Grid> {
                   onPressed: () {
                      Navigator.of(context).push(
                        new MaterialPageRoute(builder: (BuildContext context) {
-                    return ShapesExe(
-                    max: 5,
-                    min: 0,
-                    );
+                    return ShapesHS();
                     }));
                   },
                   backgroundColor: Colors.lightBlueAccent[200],

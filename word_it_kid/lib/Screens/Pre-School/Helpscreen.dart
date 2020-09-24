@@ -59,6 +59,7 @@ class VowelsHS extends StatelessWidget {
               )
           ),
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.fromLTRB(75, 190, 75, 35),
@@ -104,6 +105,7 @@ class OppositeHS extends StatelessWidget {
               )
           ),
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.fromLTRB(75, 220, 75, 35),

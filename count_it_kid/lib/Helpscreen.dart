@@ -59,6 +59,7 @@ class TracingHS extends StatelessWidget {
               )
           ),
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.fromLTRB(40, 180, 40, 35),

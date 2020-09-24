@@ -16,6 +16,7 @@ class ColorsHS extends StatelessWidget {
               )
           ),
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.fromLTRB(50, 175, 50, 35),
@@ -59,9 +60,10 @@ class ShapesHS extends StatelessWidget {
               )
           ),
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(75, 210, 75, 35),
+                margin: EdgeInsets.fromLTRB(75, 180, 90, 35),
                 child: Image.asset("Images/Helpscreen/ShapesHS.gif",
 
                 ),

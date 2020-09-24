@@ -389,10 +389,7 @@ class GridApp extends State<Grid> {
                   heroTag: "btn52",
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
-                      return OppExe(
-                        max: 4,
-                        min: 0,
-                      );
+                      return OppositeHS();
                     })
                     );
                   },

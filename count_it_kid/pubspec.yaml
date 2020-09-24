@@ -103,6 +103,7 @@ flutter:
     - Images/ExerciseImages/coin.png
     - Images/ExerciseImages/rocket.png
     - 'success.mp3'
+    - Images/Helpscreens/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
